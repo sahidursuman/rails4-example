@@ -22,7 +22,7 @@ module AdminHelper
 
   def display_user_name(user)
     html = ""
-    html += "<span class=\'glyphicon glyphicon-user\'></span>" if user.role?('admin')
+    html += "<span class=\'glyphicon glyphicon-user\'></span> " if user.role?('admin')
     html += user.username
     html += " <span class=\'help-block devise\'>#{t('label.unconfirmed').downcase}</span>" if !user.confirmed?
     html

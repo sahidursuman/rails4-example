@@ -1,7 +1,7 @@
 en:
   header:
     fix_me: "Missing %{thing}. Fix me!"
-    branding: "rails4-starter-example"
+    branding: "rails4-example"
     
     default:
       h1: "H1 text not found. Fix me!"
