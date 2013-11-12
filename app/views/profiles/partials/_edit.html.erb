@@ -1,0 +1,52 @@
+<%= form_for(@user, :url => profile_path(@user), :remote => true, :html => { :method => :patch, :role => 'form', :class => 'form-horizontal'}) do |f| %>
+
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title"><%= t('profiles.edit.h1') %></h4>
+      </div>
+      <div class="modal-body">
+        <%= format_user_error_messages(@user) -%>
+      
+        <div class="form-group">
+          <label for="inputUsername1" class="col-md-4 control-label devise"><%= t('label.username') -%></label>
+          <div class="col-md-8">
+            <%= f.text_field :username, class: "form-control", id: "inputUsername1", value: @user.username %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-md-offset-4  col-md-8">
+            <span class="help-block devise">NOTE: Passwords can only be reset by the user.</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputEmail1" class="col-md-4 control-label devise"><%= t('label.email') -%></label>
+          <div class="col-md-8">
+            <%= f.email_field :email, class: "form-control", id: "inputEmail1", value: @user.email %>
+            <% if @user.pending_reconfirmation? %>
+              <span class="help-block devise">Currently waiting confirmation for: <%= @user.unconfirmed_email %></span>
+            <% else %>
+              <span class="help-block devise">(email confirmation request will be sent)</span>
+            <% end %>  
+          </div>
+        </div>
+        <% unless current_user.role?('manager') && @user.role?('admin') -%>
+          <div class="form-group">
+            <label for="selectRole" class="col-md-4 control-label devise"><%= t('label.role') -%></label>
+            <div class="col-md-8">
+              <%= f.select :role, options_for_select(list_roles_for_select(@user), @user.role.to_s), {}, {class: "form-control"} -%>
+            </div>
+          </div>
+        <% end -%>
+      </div>
+      <div class="modal-footer">
+        <% if current_user.role?('admin') -%>
+          <%= link_to t('button.delete_user', username: @user.username), profile_path(:id => @user.id), {:title => t('tooltip.delete_user'), :rel => :tooltip, data: { confirm: t('button.confirm_delete_user', username: @user.username) },  :method => :delete, :remote => true, class: 'btn btn-danger', style: "float:left;"} %>
+        <% end -%>
+        <button type="button" class="btn btn-warning" data-dismiss="modal">Cancel</button>
+        <%= f.submit t('button.save_changes'), class: "btn btn-success" %>
+      </div>
+    </div>
+  </div>
+<% end -%>

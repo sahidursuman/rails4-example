@@ -1,0 +1,43 @@
+<div id="flash_messages"><%= flash_messages -%></div>
+
+<table class="table table-hover table-condensed">
+<thead>
+  <tr>
+    <th>#</th>
+    <th><%= t('label.username') -%></th>
+    <% if current_user.role?('admin') -%>
+      <th><%= t('label.email') -%></th>
+      <th><%= t('label.ip') -%></th>
+      <th><%= t('label.role') -%></th>
+    <% end -%>
+    <th><%= t('label.last_login') -%></th>
+    <th><%= t('label.login_count') -%></th>
+    <th></th>
+  </tr>
+</thead>
+<tbody>
+
+<% @users.each do |user| -%>
+  <tr>
+    <td><%= user.id %></td>
+    <td><%= display_user_name(user).html_safe -%></td>
+    <% if current_user.role?('admin') -%>
+      <td><%= display_email(user).html_safe -%></td>
+      <td><%= display_last_ip(user) %></td>
+      <td><%= user.role %></td>
+    <% end -%>
+    <td><%= display_last_login(user) %></td>
+    <td><%= user.sign_in_count if user.sign_in_count > 0 %></td>
+    <td>
+      <% if current_user.role?('admin') && (user.username.downcase != current_user.username.downcase) -%>
+        <%= link_to t('button.edit'), edit_profile_path(:id => user.id), {:title => t('tooltip.edit_user'), :rel => :tooltip, data: { toggle: 'modal', target: 'edit_user_modal'},  :remote => true, :class => 'btn btn-success btn-xs'} %>
+      <%end -%>
+    </td>
+  </tr>
+<% end -%>
+</tbody>
+</table>
+
+<%= render :partial => 'admin/partials/add_user' %>
+
+<div class="modal" id="edit_user_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
