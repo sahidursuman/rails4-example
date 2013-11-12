@@ -23,7 +23,7 @@ end
 
 
 group :development do
-  gem 'capistrano', '~>2.15.5'
+  gem 'capistrano', '2.15.4'
   gem "better_errors"
   gem "binding_of_caller"
 end

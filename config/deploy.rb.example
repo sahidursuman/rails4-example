@@ -1,0 +1,62 @@
+require 'bundler/capistrano'
+
+load 'deploy/assets'
+
+set :application, "APPLICATION_NAME"
+set :repository,  "git@github.com:jehughes/rails4-example.git"
+set :deploy_to, "/APPLICATION_DIR/#{application}"
+
+set :format, :pretty
+set :log_level, :debug
+#set :ssh_options, {
+#   verbose: :debug
+#}
+
+role :web, "XXXX.example.com"  # Your HTTP server, Apache/etc
+role :app, "XXXX.example.com"  # This may be the same as your `Web` server
+role :db,  "XXXX.example.com", :primary => true # This is where Rails migrations will run
+
+set :user, "USERNAME"
+
+set :scm, :git
+set :scm_username, "USERNAME"
+set :branch, 'master'
+set :scm_verbose, true
+
+set :use_sudo, false
+default_run_options[:pty] = true
+set :keep_releases, 3
+
+set :rails_env, :production
+set :rake, "bundle exec rake"
+
+before "deploy:finalize_update", "deploy:copy_git_ignored_config_files"
+
+after  "deploy", "deploy:run_bundle_install"
+after  "deploy:run_bundle_install", "deploy:migrate"
+after  "deploy:migrate", "deploy:cleanup"
+after  "deploy:cleanup", "deploy:restart"
+
+namespace :deploy do
+
+  desc "cause Passenger and nginx to initiate a restart"
+  task :restart do
+    run "#{deploy_to}/bin/stop && #{deploy_to}/bin/start && touch #{current_path}/tmp/restart.txt"
+  end
+  
+  desc "install the necessary prerequisites"
+  task :run_bundle_install, :roles => :app do
+    run "cd #{release_path} && bundle install"
+  end
+
+  desc "copy over files not stored in git: database.yml, private.yml"
+  task :copy_git_ignored_config_files do    
+    # since config/private.yml and config/database.yml are in .gitignore   
+    begin
+      run "cp #{shared_path}/config/database.yml #{release_path}/config && cp #{shared_path}/config/private.yml #{release_path}/config"
+    rescue Exception
+      puts "\nCOPYING OF database.yml AND/OR private.yml FAILED - CHECK THEY EXIST\n\n"
+    end
+  end
+end
+ 
