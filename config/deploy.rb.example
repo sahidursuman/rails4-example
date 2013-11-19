@@ -1,25 +1,24 @@
 require 'bundler/capistrano'
 
-load 'deploy/assets'
+# handle here instead to force full recompile and no symlink
+#load 'deploy/assets'
 
-set :application, "APPLICATION_NAME"
+set :application, "[app-name]"
 set :repository,  "git@github.com:jehughes/rails4-example.git"
-set :deploy_to, "/APPLICATION_DIR/#{application}"
+set :deploy_to, "/home/[location]/#{application}"
 
 set :format, :pretty
 set :log_level, :debug
-#set :ssh_options, {
-#   verbose: :debug
-#}
+#set :ssh_options, {verbose: :debug}
 
-role :web, "XXXX.example.com"  # Your HTTP server, Apache/etc
-role :app, "XXXX.example.com"  # This may be the same as your `Web` server
-role :db,  "XXXX.example.com", :primary => true # This is where Rails migrations will run
+role :web, xxx
+role :app, xxx
+role :db,  xxx, :primary => true
 
-set :user, "USERNAME"
+set :user, "[user-name]"
 
 set :scm, :git
-set :scm_username, "USERNAME"
+set :scm_username, "[user-name]"
 set :branch, 'master'
 set :scm_verbose, true
 
@@ -27,10 +26,19 @@ set :use_sudo, false
 default_run_options[:pty] = true
 set :keep_releases, 3
 
+# TODO: find a better way to do this, rvm?
+set :default_environment, {
+  'PATH' => "#{deploy_to}/gems/bin:#{deploy_to}/bin:#{ENV['PATH']}",
+  'GEM_HOME' => "#{deploy_to}/gems",
+  'BUNDLE_PATH' => "#{deploy_to}/gems" 
+}
+
 set :rails_env, :production
 set :rake, "bundle exec rake"
 
 before "deploy:finalize_update", "deploy:copy_git_ignored_config_files"
+before "deploy:finalize_update", "deploy:assets:clean_out"
+after  "deploy:update_code", "deploy:assets:precompile"
 
 after  "deploy", "deploy:run_bundle_install"
 after  "deploy:run_bundle_install", "deploy:migrate"
@@ -39,7 +47,7 @@ after  "deploy:cleanup", "deploy:restart"
 
 namespace :deploy do
 
-  desc "cause Passenger and nginx to initiate a restart"
+  desc "cause Passenger restart"
   task :restart do
     run "#{deploy_to}/bin/stop && #{deploy_to}/bin/start && touch #{current_path}/tmp/restart.txt"
   end
@@ -48,7 +56,7 @@ namespace :deploy do
   task :run_bundle_install, :roles => :app do
     run "cd #{release_path} && bundle install"
   end
-
+  
   desc "copy over files not stored in git: database.yml, private.yml"
   task :copy_git_ignored_config_files do    
     # since config/private.yml and config/database.yml are in .gitignore   
@@ -58,5 +66,21 @@ namespace :deploy do
       puts "\nCOPYING OF database.yml AND/OR private.yml FAILED - CHECK THEY EXIST\n\n"
     end
   end
+  
+  namespace :assets do
+    
+    desc "compile assets"
+    task :precompile, :roles => :web do
+      run("cd #{release_path} && rake assets:precompile RAILS_ENV=#{rails_env}")
+    end
+
+    desc "fully clean-out assets to start fresh"
+    task :clean_out, :roles => :web do
+      run("rm -rf #{latest_release}/public/assets")
+      run("rm -rf #{latest_release}/tmp/cache/assets")
+      run("mkdir -p #{latest_release}/public/assets")
+    end
+  end
+  
 end
  
