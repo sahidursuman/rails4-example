@@ -2,14 +2,12 @@
 
 @import "colors";
 
-@navbar-inverse-color:                      @white;
-@navbar-inverse-bg:                         @belize-hole;
-@navbar-inverse-border:                     @navbar-inverse-bg;
-@navbar-inverse-link-color:                 @white;
-@navbar-inverse-link-hover-color:           @white;
-@navbar-inverse-brand-hover-color:          @white;
-
-@icon-font-path: "";
+@navbar-inverse-color:               @white;
+@navbar-inverse-bg:                  @belize-hole;
+@navbar-inverse-border:              @navbar-inverse-bg;
+@navbar-inverse-link-color:          @white;
+@navbar-inverse-link-hover-color:    @white;
+@navbar-inverse-brand-hover-color:   @white;
 
 @state-warning-text:   darken(@sun-flower, 20%);
 @state-warning-bg:     lighten( @state-warning-text, 50%);
@@ -21,6 +19,7 @@
 @state-info-bg:        lighten( @state-info-text, 50%);
 
 @import "bootstrap/bootstrap";
+@import "bootstrap-icons"; // reset default location for production (issue in gem?)
 
 // tighten up form spacing a bit
 // careful - may create problem with .help_block bottom

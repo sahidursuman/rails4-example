@@ -12,6 +12,7 @@
 /tmp
 /vendor
 /bin
+/public/assets
 
 /config/database.yml
 /config/private.yml
