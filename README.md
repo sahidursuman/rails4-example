@@ -2,9 +2,13 @@
 
 Very beginnings of a Rails 4 / Ruby 2 site using Devise and Bootstrap 3.
 
-See demo site dashboard for a full list of the gems used.
+See demo site dashboard for a full list of the gems and versions.
 
-Demo site: <http://rails4example.gitrepoexamples.com>
+Demo sites:
+
+><http://rails4example.gitrepoexamples.com> (master branch)
+  
+><http://arails4eg.joanswork.net/> (dev branch)
 
 ##Installation Note
 
