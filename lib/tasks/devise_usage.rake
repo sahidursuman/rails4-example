@@ -1,21 +1,24 @@
 namespace :devise_usage do
 
   desc %{quick list of last 10 days of devise usage}
-  task :report => :environment do |t|
+  task :report, [:exclude_ip] => :environment do |t, args|
+    exclude_ip = args[:exclude_ip] || ''
     printf("\nDevise Usage Log - %s (previous 10 days)\n",
       Time.now.strftime("%m/%d/%Y"))
     printf("=================================================\n")
-    
+   
     (Date.today).downto(Date.today - 9.days) do |date|
       entries = DeviseUsageLog.where("CAST(updated_at as DATE) = ?", date).order('user_id,updated_at')
       if entries.count > 0
         printf "\n%s:\n-----------\n", date
         entries.each do |entry|
-          printf "USER: %-12s IP: %-15s ROLE: %-8s ACTION: %s\n", 
-            (entry.user) ? entry.user.username : "(unknown)", # keep orphaned log entries to see deleted user
-            entry.user_ip, 
-            entry.role,
-            list_actions(entry)
+          unless exclude_ip.present? && entry.user_ip == exclude_ip
+            printf "USER: %-12s IP: %-15s ROLE: %-8s ACTION: %s\n", 
+              (entry.user) ? entry.user.username : "(unknown)", # keep orphaned log entries to see deleted user
+              entry.user_ip, 
+              entry.role,
+              list_actions(entry)
+          end
         end
       end
     end
