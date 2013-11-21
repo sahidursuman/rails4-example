@@ -1,12 +1,14 @@
 #rails4-example
 
-Very beginnings of a Rails 4 / Ruby 2 site using Devise and Bootstrap 3. (See demo site for a full list of gems.)
+Very beginnings of a Rails 4 / Ruby 2 site using Devise and Bootstrap 3.
 
-Demo site: <http://rails4-example.gitrepoexamples.com>
+See demo site dashboard for a full list of the gems used.
+
+Demo site: <http://rails4example.gitrepoexamples.com>
 
 ##Installation Note
 
-There are three files will need to customized to your application/account.
+There are three files will need to be customized to your application location and accounts.
 
   ```
   cp config/database-yml.example config/database.yml
