@@ -1,4 +1,4 @@
-#rails4-example
+##rails4-example
 
 Very beginnings of a Rails 4 / Ruby 2 site using Devise and Bootstrap 3.
 
@@ -10,7 +10,7 @@ Demo sites:
   
 ><http://arails4eg.joanswork.net/> (dev branch)
 
-##Installation Note
+###Installation Note
 
 There are three files will need to be customized to your application location and accounts.
 
@@ -20,13 +20,16 @@ There are three files will need to be customized to your application location an
   cp config/debug.rb.example config/debug.rb
   ```
 
-##Author
+###See Also
+>[Rails 3 / Devise / Bootstrap Example](https://github.com/jehughes/rails3-devise-bootstrap-example)
+
+###Author
 
 Joan Hughes
 
 http://www.linkedin.com/in/jehughes
 
-##License
+###License
 The MIT License (MIT)
 
 Copyright (c) 2013 Joan Hughes (ZoeOberon Solutions)
