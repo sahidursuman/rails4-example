@@ -29,17 +29,17 @@ group :development do
 end
 
 group :development, :test do
-  gem 'rspec-rails', '~> 2.14.0'
-  gem 'factory_girl_rails', '~> 4.2.1'
+  gem 'rspec-rails', '~> 2'
+  gem 'factory_girl_rails', '~> 4'
 end
 
 group :test do
-  gem 'faker', '~> 1.1.2'
-  gem 'capybara', '~> 2.1.0'
-  gem 'database_cleaner', '~> 1.0.1'
-  gem 'launchy', '~> 2.3.0'
-  gem 'shoulda-matchers', '~> 2.2.0'
-  gem 'selenium-webdriver', '~> 2.35.1'
+  gem 'faker', '~> 1'
+  gem 'capybara', '~> 2'
+  gem 'database_cleaner', '~> 1'
+  gem 'launchy', '~> 2'
+  gem 'shoulda-matchers', '~> 2'
+  gem 'selenium-webdriver', '~> 2'
 end
 
 gem 'less-rails'
