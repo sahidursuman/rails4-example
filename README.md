@@ -42,3 +42,5 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ![X](http://joanswork.com/images/gh_rails4eg_spot.png)
 
+[![Analytics](https://ga-beacon.appspot.com/UA-46923629-1/rails4-example/README)](https://github.com/igrigorik/ga-beacon)
+
