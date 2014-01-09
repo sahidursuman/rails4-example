@@ -1,0 +1,34 @@
+= form_for(@user, :url => profile_path(@user), :remote => true, :html => { :method => :patch, :role => 'form', :class => 'form-horizontal'}) do |f|
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-hidden" => "true", data: {dismiss: "modal"}, type: "button"} X
+        %h4.modal-title= t('profiles.edit.h1')
+      .modal-body
+        = format_user_error_messages(@user)
+        .form-group
+          %label.col-md-4.control-label.devise{for: "inputUsername1"}= t('label.username')
+          .col-md-8
+            = f.text_field :username, class: "form-control", id: "inputUsername1", value: @user.username
+        .form-group
+          .col-md-offset-4.col-md-8
+            %span.help-block.devise NOTE: Passwords can only be reset by the user.
+        .form-group
+          %label.col-md-4.control-label.devise{for: "inputEmail1"}= t('label.email')
+          .col-md-8
+            = f.email_field :email, class: "form-control", id: "inputEmail1", value: @user.email
+            - if @user.pending_reconfirmation?
+              %span.help-block.devise
+                Currently waiting confirmation for: #{@user.unconfirmed_email}
+            - else
+              %span.help-block.devise (email confirmation request will be sent)
+        - unless current_user.role?('manager') && @user.role?('admin')
+          .form-group
+            %label.col-md-4.control-label.devise{for: "selectRole"}= t('label.role')
+            .col-md-8
+              = f.select :role, options_for_select(list_roles_for_select(@user), @user.role.to_s), {}, {class: "form-control"}
+      .modal-footer
+        - if current_user.role?('admin')
+          = link_to t('button.delete_user', username: @user.username), profile_path(:id => @user.id), {:title => t('tooltip.delete_user'), :rel => :tooltip, data: { confirm: t('button.confirm_delete_user', username: @user.username) },  :method => :delete, :remote => true, class: 'btn btn-danger', style: "float:left;"}
+        %button.btn.btn-warning{"data-dismiss" => "modal", type: "button"} Cancel
+        = f.submit t('button.save_changes'), class: "btn btn-success"

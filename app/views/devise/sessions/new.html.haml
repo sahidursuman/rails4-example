@@ -1,0 +1,29 @@
+= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :role => 'form', :class => 'form-horizontal'}) do |f|
+  .container
+    .row
+      .col-md-offset-3.col-md-5.round-box.devise
+        .modal-header.devise
+          %h3.modal-title.devise= t('menu.login')
+        .modal-body
+          = devise_error_messages!
+          .form-group
+            %label.col-md-4.control-label.devise{:for => "inputUsername1"}= t('label.username')
+            .col-md-8
+              = f.text_field :username, class: "form-control", id: "inputUsername1", placeholder: t('label.username').downcase
+          .form-group
+            %label.col-md-4.control-label.devise{:for => "inputPassword1"}= t('label.password')
+            .col-md-8
+              = f.password_field :password, class: "form-control", id: "inputPassword1", placeholder: t('label.password').downcase
+          - if devise_mapping.rememberable?
+            .form-group
+              .col-lg-offset-4.col-lg-8
+                .checkbox
+                  %label.devise
+                    = f.check_box :remember_me
+                    = t('label.remember_me')
+          .form-group
+            .col-md-offset-4.col-md-8
+              %br/
+              = f.submit t('button.login'), class: "btn btn-success"
+        .modal-footer.devise
+          = render "devise/shared/links"

@@ -1,0 +1,14 @@
+.row
+  .col-md-2
+    = %{Rails #{Rails.version}<br />}.html_safe
+    = %{Ruby #{RUBY_VERSION}<br />}.html_safe
+  .col-md-3
+    = display_bootstrap_version.html_safe
+  .col-md-2
+    = display_devise_version.html_safe
+    = display_cancan_version.html_safe
+  .col-md-3
+    %button.btn.btn-sm.btn-default{data: {target: "#list_gems", toggle: "collapse"}, :type => "button"} +/- List All Gems
+#list_gems.row.collapse
+  %br/
+  = all_gems.html_safe

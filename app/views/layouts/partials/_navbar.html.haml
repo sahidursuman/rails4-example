@@ -1,0 +1,45 @@
+/ Fixed navbar
+.navbar.navbar-inverse.navbar-fixed-top
+  .container
+    .navbar-header
+      %button.navbar-toggle{data: {target: ".navbar-collapse", toggle: "collapse"}, type: "button"}
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      = link_to branding_text, root_path, :class => "navbar-brand"
+    .collapse.navbar-collapse
+      %ul.nav.navbar-nav
+        %li{class: active_tab('dashboard')}= link_to t('menu.home'), dashboard_path
+        - if current_user && current_user.role?('user')
+          %li
+            %a{href: "#"}= t('menu.messages')
+          %li.dropdown
+            %a.dropdown-toggle{data: {toggle: "dropdown"}, href: "#"}
+              = t('menu.profile')
+              %b.caret
+            %ul.dropdown-menu
+              %li
+                %a{href: "#"}= t('menu.details')
+              %li
+                %a{href: "#"}= t('menu.licensing')
+              %li
+                %a{href: "#"}= t('menu.education')
+          %li
+            %a{href: "#"}= t('menu.reports')
+          - if current_user.role?('manager')
+            %li{class: active_tab('admin')}= link_to t('menu.admin'), admin_path
+        %li{class: active_tab('help')}= link_to t('menu.help'), help_path
+      %ul.nav.navbar-nav.navbar-right
+        %li
+          - if user_signed_in?
+            %p.navbar-text.avatar
+              = image_tag(avatar_url(current_user), :size => "30x30")
+              = link_to "&nbsp;#{current_user.username}&nbsp;".html_safe, edit_user_registration_path
+              = link_to "<span class='glyphicon glyphicon-cog'></span>".html_safe, edit_user_registration_path
+              = "&nbsp;&nbsp;|&nbsp;".html_safe
+              = link_to "#{t('menu.logout')}".html_safe, destroy_user_session_path, :method=>'delete'
+          - else
+            %p.navbar-text
+              = link_to "&nbsp;#{t('menu.login')}".html_safe, new_user_session_path
+              = "&nbsp;|&nbsp;".html_safe
+              = link_to "#{t('menu.register')}".html_safe, new_user_registration_path

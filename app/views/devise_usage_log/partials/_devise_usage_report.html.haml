@@ -1,0 +1,30 @@
+%h3= "Devise Usage Log for Past #{@num_days} Days"
+.row
+  .col-md-9
+    .row
+      .col-md-2
+        %b= t('label.username')
+      .col-md-2
+        %b= t('label.ip')
+      .col-md-2
+        %b= t('label.role')
+      .col-md-2
+        %b= t('label.action_time')
+      .col-md-2
+        (#{link_to t('label.close_report').downcase, close_devise_usage_report_path, remote: true})
+- (Date.today).downto(Date.today - (@num_days-1).days) do |date|
+  - entries = @log_entries.where("CAST(updated_at as DATE) = ?", date).order('user_id,updated_at')
+  - if entries.count > 0
+    .row
+      .col-md-9
+        %h4= date.strftime('%m/%d/%Y')
+        - entries.order('updated_at').each do |entry|
+          .row
+            .col-md-2= (entry.user) ? entry.user.username : "(unknown)"
+            .col-md-2= entry.user_ip
+            .col-md-2= entry.role
+            .col-md-4= format_devise_usage_action_for entry
+%br/
+%br/
+%br/
+%br/

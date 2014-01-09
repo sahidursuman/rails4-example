@@ -1,0 +1,31 @@
+= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :role => 'form', :class => 'form-horizontal'}) do |f|
+  .container
+    .row
+      .col-md-offset-3.col-md-5.round-box.devise
+        .modal-header.devise
+          %h3.modal-title.devise= t('menu.register')
+        .modal-body
+          = devise_error_messages!
+          = f.hidden_field :role, :value => 'guest'
+          .form-group
+            %label.col-md-4.control-label.devise{:for => "inputUsername1"}= t('label.username')
+            .col-md-8
+              = f.text_field :username, class: "form-control", id: "inputUsername1", placeholder: t('label.username').downcase
+          .form-group
+            %label.col-md-4.control-label.devise{:for => "inputEmail1"}= t('label.email')
+            .col-md-8
+              = f.email_field :email, class: "form-control", id: "inputEmail1", placeholder: t('label.email_example').downcase
+          .form-group
+            %label.col-md-4.control-label.devise{:for => "inputPassword1"}= t('label.password')
+            .col-md-8
+              = f.password_field :password, class: "form-control", id: "inputPassword1", placeholder: t('label.password').downcase
+          .form-group
+            %label.col-md-4.control-label.devise{:for => "inputConfirmPassword1"}= t('label.password_confirmation')
+            .col-md-8
+              = f.password_field :password_confirmation, class: "form-control", id: "inputConfirmPassword1", placeholder: t('label.password_confirmation').downcase
+          .form-group
+            .col-md-offset-4.col-md-8
+              %br/
+              = f.submit t('button.register'), class: "btn btn-success"
+        .modal-footer.devise
+          = render "devise/shared/links"

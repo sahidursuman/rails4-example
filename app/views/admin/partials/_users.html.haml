@@ -1,0 +1,34 @@
+#flash_messages= flash_messages
+%table.table.table-hover.table-condensed
+  %thead
+    %tr
+      %th #
+      %th= t('label.username')
+      - if current_user.role?('admin')
+        %th= t('label.email')
+        %th= t('label.ip')
+        %th= t('label.role')
+      %th= t('label.last_login')
+      %th= t('label.login_count')
+      %th
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td= user.id
+        %td= display_user_name(user).html_safe
+        - if current_user.role?('admin')
+          %td= display_email(user).html_safe
+          %td= display_last_ip(user)
+          %td= user.role
+        %td= display_last_login(user)
+        %td= user.sign_in_count if user.sign_in_count > 0
+        %td
+          - if current_user.role?('admin') && (user.username.downcase != current_user.username.downcase)
+            = link_to t('button.edit'), edit_profile_path(:id => user.id),
+             {:title => t('tooltip.edit_user'), :rel => :tooltip, 
+             data: { toggle: 'modal', target: 'edit_user_modal'},  
+             :remote => true, :class => 'btn btn-success btn-xs'}
+            
+= render :partial => 'admin/partials/add_user'
+
+#edit_user_modal.modal{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
