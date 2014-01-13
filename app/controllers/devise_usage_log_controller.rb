@@ -7,9 +7,11 @@ class DeviseUsageLogController < ApplicationController
   end
    
   def devise_usage_report
-    @num_days = params[:num_days].to_i
-    @num_days |= 10
-    @log_entries = DeviseUsageLog.where(query_last_days(@num_days))
+    @num_days = 10 # default
+    if params[:num_days]
+      @num_days = params[:num_days].to_i if params[:num_days].to_i.between?(1,60)
+    end
+    @log_entries = DeviseUsageLog.fetch_usage_report_entries(@num_days)  
     authorize! :read, @log_entries
     respond_to do |format|
       format.html { redirect_to admin_path }
@@ -22,14 +24,6 @@ class DeviseUsageLogController < ApplicationController
       format.html { redirect_to admin_path }
       format.js
     end    
-  end
-
-  private
-  
-  def query_last_days num_days
-    today = Time.now.strftime('%Y-%m-%d')
-    past_date = (Date.today - (num_days-1).days).strftime('%Y-%m-%d')
-    sprintf "CAST(updated_at as DATE) between '%s' and '%s'", past_date, today
   end
 
 end
