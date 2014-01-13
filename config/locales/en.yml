@@ -70,6 +70,7 @@ en:
     action_when: "Action (When)"
     close_report: "Close Report"
     unconfirmed: "Unconfirmed"
+    loading: "Loading..."
   tooltip:
     delete_user: "Delete user"    
     edit_user: "Edit or delete user"

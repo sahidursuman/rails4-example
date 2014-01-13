@@ -1,6 +1,15 @@
 ->
   $('#tabs').tab();
 
+# ajax spinners
+
+$(document).on "ajax:beforeSend", "*[data-spinner]", (e) ->
+  $($(this).data("spinner")).show()
+  e.stopPropagation() #Don't show spinner of parent elements.
+
+$(document).on "ajax:complete", "*[data-spinner]", ->
+  $($(this).data("spinner")).hide()
+
 # alert box html for js.erb files
 
 @alert_box = (level, close_btn, msg) ->
