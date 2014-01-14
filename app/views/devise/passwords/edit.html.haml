@@ -3,7 +3,7 @@
     .row
       .col-md-offset-3.col-md-6.round-box.devise
         .modal-header.devise
-          %h3.modal-title.devise= t('button.update_password')
+          %h3.modal-title.devise= t('devise.passwords.change_form')
         .modal-body
           = devise_error_messages!
           = f.hidden_field :reset_password_token
