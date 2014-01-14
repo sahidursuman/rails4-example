@@ -57,11 +57,16 @@ h1, .h1 {
   }
 }
 
+.small-text {
+  font: 85% Arial,sans-serif;
+  font-style:italic;
+}
+
 .round-box {
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   border-radius: 20px;
-  border:2px solid #000;
+  border:1px solid #000;
   &.devise {
     margin-top: 20px;
     border-color: @nephritis;
@@ -108,5 +113,10 @@ h1, .h1 {
 .btn-default:active {
   background-color: lighten(@belize-hole, 20%);
   border-color: lighten(@belize-hole, 10%);
+  color: @white;
+}
+.btn-radiant-orchid {
+  background-color: @radiant_orchid;
+  border-color: @radiant_orchid;
   color: @white;
 }

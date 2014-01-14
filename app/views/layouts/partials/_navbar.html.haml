@@ -40,8 +40,9 @@
               = "&nbsp;&nbsp;|&nbsp;".html_safe
               = link_to "#{t('menu.logout')}".html_safe, destroy_user_session_path, :method=>'delete'
           - else
-            %p.navbar-text
-              = "&nbsp;".html_safe
-              = link_to "#{t('menu.login')}".html_safe, new_user_session_path
-              = "&nbsp;|&nbsp;".html_safe
-              = link_to "#{t('menu.register')}".html_safe, new_user_registration_path
+            - unless controller_name == 'dashboard' && action_name == 'index'
+              %p.navbar-text
+                = "&nbsp;".html_safe
+                = link_to "#{t('menu.login')}".html_safe, new_user_session_path
+                = "&nbsp;|&nbsp;".html_safe
+                = link_to "#{t('menu.register')}".html_safe, new_user_registration_path
