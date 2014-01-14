@@ -43,7 +43,7 @@ en:
     resend_confirm: "Resend confirmation instructions"
     forgot_password: "Send me reset password instructions"
     update_password: "Change my password"
-    confirm_delete_user: "Are you sure you want to delete \"%{username}?\""
+    confirm_delete_user: "Are you sure you want to delete \"%{username}\"?"
     edit: "Edit"
     save_changes: "Save changes"
   label:
