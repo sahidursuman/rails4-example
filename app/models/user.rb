@@ -26,7 +26,7 @@ class User < ActiveRecord::Base
   end
 
   def log_devise_action(field)
-    log_entry = DeviseUsageLog.new ({user_id: id, role: role, user_ip: current_sign_in_ip})
+    log_entry = DeviseUsageLog.new ({user_id: id, role: role, user_ip: current_sign_in_ip, username: username})
     if log_entry.save
       log_entry.update_attribute(:"#{field}", Time.now) if field
     end

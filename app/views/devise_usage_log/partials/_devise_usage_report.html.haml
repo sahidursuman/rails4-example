@@ -20,7 +20,7 @@
       - current_date_string = entry.updated_at.strftime('%m/%d/%Y')
       %h4= current_date_string if current_date_string != previous_date_string
       .row
-        .col-md-2= (entry.user_name.present?) ? entry.user_name : "(unknown)"
+        .col-md-2= (entry.username.present?) ? entry.username : "(unknown)"
         .col-md-2= entry.user_ip
         .col-md-2= entry.role
         .col-md-4= format_devise_usage_action_for entry

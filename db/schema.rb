@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131014164944) do
+ActiveRecord::Schema.define(version: 20140115135922) do
 
   create_table "devise_usage_logs", force: true do |t|
     t.integer  "user_id",         null: false
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20131014164944) do
     t.datetime "deleted_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "username"
   end
 
   add_index "devise_usage_logs", ["user_id"], name: "index_devise_usage_logs_on_user_id", using: :btree
