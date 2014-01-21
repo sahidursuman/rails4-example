@@ -50,4 +50,4 @@ gem 'bootstrap-on-rails'
 
 gem 'devise'
 gem 'cancan'
-
+gem 'classy_enum', '~> 3.3.2'

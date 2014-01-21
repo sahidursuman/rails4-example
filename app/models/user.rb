@@ -25,11 +25,7 @@ class User < ActiveRecord::Base
     (id && confirmed_at.present? && reset_password_token.present? && last_sign_in_at.blank? && last_sign_in_ip.blank?) ? true : false
   end
 
-  def log_devise_action(field)
-    log_entry = DeviseUsageLog.new ({user_id: id, role: role, user_ip: current_sign_in_ip, username: username})
-    if log_entry.save
-      log_entry.update_attribute(:"#{field}", Time.now) if field
-    end
+  def log_devise_action(new_action)
+    DeviseUsageLog.create ({user_id: id, role: role, user_ip: current_sign_in_ip, username: username, action: new_action})
   end
-    
 end

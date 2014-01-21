@@ -76,7 +76,15 @@ en:
     edit_user: "Edit or delete user"
   error:
     general: "An error has occurred?"
-    
+  classy_enum:
+    devise_action:
+      new: "New Account"
+      confirmed: "Confirmed"
+      login: "Login"
+      password: "New Password"
+      unlocked: "Unlocked"
+      edit: "Edit Account"
+      delete: "Delete Account"
     
     
     

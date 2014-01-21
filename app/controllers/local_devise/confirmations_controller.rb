@@ -32,12 +32,12 @@ class LocalDevise::ConfirmationsController < Devise::ConfirmationsController
   end
 
   def after_confirmation_path_for(resource_name, resource)
-    resource.log_devise_action('confirmed_at') if resource
+    resource.log_devise_action('confirmed') if resource && resource.kind_of?(User)
     new_session_path(resource_name)
   end
 
   def after_confirmation_set_password_path_for(token)
-    resource.log_devise_action('confirmed_at') if resource
+    resource.log_devise_action('confirmed') if resource && resource.kind_of?(User)
     edit_user_password_path(reset_password_token: token)
   end
 

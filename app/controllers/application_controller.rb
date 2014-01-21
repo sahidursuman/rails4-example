@@ -31,7 +31,7 @@ class ApplicationController < ActionController::Base
   end
  
   def after_sign_in_path_for(resource_or_scope) 
-    resource_or_scope.log_devise_action('login_at') if resource_or_scope
+    resource_or_scope.log_devise_action('login') if resource_or_scope && resource_or_scope.kind_of?(User)
     stored_location_for(resource_or_scope) || signed_in_root_path(resource_or_scope)
   end
 
