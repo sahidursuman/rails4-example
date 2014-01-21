@@ -44,5 +44,7 @@ RailsStarter::Application.configure do
     :enable_starttls_auto => true
   }
 
+  # log all Devise actions
+  config.devise_usage_log_level = :all
 
 end

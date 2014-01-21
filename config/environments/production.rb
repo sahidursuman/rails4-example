@@ -91,5 +91,9 @@ RailsStarter::Application.configure do
     :authentication       => "plain",
     :enable_starttls_auto => true
   }
+  
+  # log only Devise logins
+  #config.devise_usage_log_level = :login
+  config.devise_usage_log_level = :all #TODO: for now
 
 end

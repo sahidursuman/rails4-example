@@ -8,4 +8,12 @@ class DeviseUsageLog < ActiveRecord::Base
     DeviseUsageLog.where("created_at > ?", DateTime.now - num_days.days).order('devise_usage_logs.created_at desc').order('user_id')
   end
 
+  def self.log(resource, new_action)
+    if resource && resource.kind_of?(User)
+      unless Rails.configuration.devise_usage_log_level == :login and new_action != DeviseAction::Login        
+        resource.log_devise_action(new_action)
+      end
+    end
+  end
+
 end
