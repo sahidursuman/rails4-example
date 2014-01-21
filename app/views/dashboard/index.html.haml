@@ -15,34 +15,7 @@
       %p Please sign-up and have a look around. Or try "jane", "123123".
     - unless current_user
       .col-md-3.round-box.devise
-        = form_for(:user, :as => 'user', :url => session_path('user'), :html => { :role => 'form', :class => 'form-horizontal'}) do |f|
-          .modal-body
-            -# = format_user_error_messages(:user)
-            .form-group
-              %label.col-md-3.control-label.devise.normal{:for => "inputUsername1"}= t('label.username')
-              .col-md-9
-                = f.text_field :username, class: "form-control", id: "inputUsername1", placeholder: t('label.username').downcase
-            .form-group
-              %label.col-md-3.control-label.devise.normal{:for => "inputPassword1"}= t('label.password')
-              .col-md-9
-                = f.password_field :password, class: "form-control", id: "inputPassword1", placeholder: t('label.password').downcase
-            .form-group
-              .col-md-offset-3.col-md-9
-                .checkbox
-                  %label.devise.small-text
-                    = f.check_box :remember_me
-                    = t('label.remember_me')
-            .form-group
-              .col-md-offset-3.col-md-9
-                .row
-                  .col-md-3
-                    = f.submit t('button.login'), class: "btn btn-success"
-                  .col-md-offset-2.col-md-6.small-text
-                    = link_to "Forgot&nbsp;password?".html_safe, new_password_path('user')
-                    = link_to "Other&nbsp;login&nbsp;help".html_safe, help_path
-            .form-group
-              %hr/        
-              = link_to t('button.register'), new_registration_path('user'), class: "btn btn-block btn-radiant-orchid"
+        = render :partial => 'dashboard/partials/login_form'
   .row
     .col-md-12
       %br/

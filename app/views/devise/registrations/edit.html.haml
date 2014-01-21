@@ -15,27 +15,27 @@
             .col-md-8
               = f.password_field :current_password, class: "form-control", id: "inputCurrentPassword1", placeholder: t('label.current_password').downcase
               %span.help-block.devise (need current password to confirm changes)
-            %hr.devise/
-            .form-group
-              %label.col-md-4.control-label.devise{:for => "inputEmail1"}= t('label.email')
-              .col-md-8
-                = f.email_field :email, class: "form-control", id: "inputEmail1", placeholder: t('label.email_example').downcase
-            - if resource.pending_reconfirmation?
-              .help-block.devise
-                Currently waiting confirmation for: #{resource.unconfirmed_email}
-            .form-group
-              %label.col-md-4.control-label.devise{:for => "inputPassword1"}= t('label.new_password')
-              .col-md-8
-                = f.password_field :password, class: "form-control", id: "inputPassword1", placeholder: t('label.new_password').downcase
-                %span.help-block.devise (leave blank if you don't want to change it)
-            .form-group
-              %label.col-md-4.control-label.devise{:for => "inputConfirmPassword1"}= t('label.confirm_new_password')
-              .col-md-8
-                = f.password_field :password_confirmation, class: "form-control", id: "inputConfirmPassword1", placeholder: t('label.confirm_new_password').downcase
-            .form-group
-              .col-md-offset-4.col-md-8
-                %br/
-                = f.submit t('button.update'), class: "btn btn-success"
+          %hr.devise/
+          .form-group
+            %label.col-md-4.control-label.devise{:for => "inputEmail1"}= t('label.email')
+            .col-md-8
+              = f.email_field :email, class: "form-control", id: "inputEmail1", placeholder: t('label.email_example').downcase
+          - if resource.pending_reconfirmation?
+            .help-block.devise
+              Currently waiting confirmation for: #{resource.unconfirmed_email}
+          .form-group
+            %label.col-md-4.control-label.devise{:for => "inputPassword1"}= t('label.new_password')
+            .col-md-8
+              = f.password_field :password, class: "form-control", id: "inputPassword1", placeholder: t('label.new_password').downcase
+              %span.help-block.devise (leave blank if you don't want to change it)
+          .form-group
+            %label.col-md-4.control-label.devise{:for => "inputConfirmPassword1"}= t('label.confirm_new_password')
+            .col-md-8
+              = f.password_field :password_confirmation, class: "form-control", id: "inputConfirmPassword1", placeholder: t('label.confirm_new_password').downcase
+          .form-group
+            .col-md-offset-4.col-md-8
+              %br/
+              = f.submit t('button.update'), class: "btn btn-success"
         .modal-footer.devise
           = render "devise/shared/links"
 - if current_user
