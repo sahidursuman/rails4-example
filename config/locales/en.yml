@@ -48,6 +48,7 @@ en:
     save_changes: "Save changes"
   label:
     username: "Username"
+    user: "User"
     email: "Email"
     email_example: "user@example.com"
     password: "Password"
@@ -67,7 +68,7 @@ en:
     manage_users: "Manage Users"
     logs: "Logs"
     pending: "Pending"
-    action_when: "Action (When)"
+    action: "Action"
     close_report: "Close Report"
     unconfirmed: "Unconfirmed"
     loading: "Loading..."
