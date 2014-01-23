@@ -92,8 +92,7 @@ RailsStarter::Application.configure do
     :enable_starttls_auto => true
   }
   
-  # log only Devise logins
-  #config.devise_usage_log_level = :login
+  # level of Devise usage tracking - :all, :login, :none (default)
   config.devise_usage_log_level = :all #TODO: for now
 
 end
