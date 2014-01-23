@@ -1,7 +1,5 @@
 class User < ActiveRecord::Base
 
-  has_many :devise_usage_log
-
   devise :database_authenticatable, :registerable, :confirmable, :lockable, :timeoutable,
          :recoverable, :rememberable, :trackable, :validatable #, :omniauthable
 

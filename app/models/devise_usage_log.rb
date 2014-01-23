@@ -1,5 +1,4 @@
 class DeviseUsageLog < ActiveRecord::Base
-  belongs_to :user
   
   classy_enum_attr :action, enum: 'DeviseAction', allow_nil: true
   
