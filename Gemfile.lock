@@ -34,8 +34,6 @@ GEM
       erubis (>= 2.6.6)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    bootstrap-on-rails (0.0.2)
-      less-rails
     builder (3.1.4)
     cancan (1.6.10)
     capistrano (2.15.4)
@@ -61,7 +59,7 @@ GEM
     coffee-script (2.2.0)
       coffee-script-source
       execjs
-    coffee-script-source (1.6.3)
+    coffee-script-source (1.7.0)
     commonjs (0.2.7)
     database_cleaner (1.2.0)
     debug_inspector (0.0.2)
@@ -95,12 +93,14 @@ GEM
     jbuilder (2.0.2)
       activesupport (>= 3.0.0)
       multi_json (>= 1.2.0)
-    jquery-rails (3.0.4)
+    jquery-rails (3.1.0)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     jquery-turbolinks (2.0.1)
       railties (>= 3.1.0)
       turbolinks
+    jquery-ui-rails (4.1.1)
+      railties (>= 3.1.0)
     json (1.8.1)
     launchy (2.4.2)
       addressable (~> 2.3)
@@ -109,6 +109,8 @@ GEM
     less-rails (2.4.2)
       actionpack (>= 3.1)
       less (~> 2.4.0)
+    less-rails-bootstrap (3.0.6)
+      less-rails (~> 2.4.2)
     libv8 (3.16.14.3)
     mail (2.5.4)
       mime-types (~> 1.16)
@@ -117,7 +119,7 @@ GEM
     mini_portile (0.5.2)
     minitest (4.7.5)
     multi_json (1.8.4)
-    mysql2 (0.3.14)
+    mysql2 (0.3.15)
     net-scp (1.1.2)
       net-ssh (>= 2.6.5)
     net-sftp (2.1.2)
@@ -162,7 +164,7 @@ GEM
       rspec-expectations (~> 2.14.0)
       rspec-mocks (~> 2.14.0)
     rubyzip (1.1.0)
-    sass (3.2.13)
+    sass (3.2.14)
     sass-rails (4.0.1)
       railties (>= 4.0.0, < 5.0)
       sass (>= 3.1.10)
@@ -214,7 +216,6 @@ PLATFORMS
 DEPENDENCIES
   better_errors
   binding_of_caller
-  bootstrap-on-rails
   cancan
   capistrano (= 2.15.4)
   capybara (~> 2)
@@ -229,8 +230,9 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks
+  jquery-ui-rails
   launchy (~> 2)
-  less-rails
+  less-rails-bootstrap (~> 3.0.0)
   mysql2
   rails (= 4.0.2)
   rspec-rails (~> 2)

@@ -1,5 +1,3 @@
-@import "bootstrap/variables";
-
 @import "colors";
 
 @navbar-inverse-color:               @white;
@@ -17,30 +15,3 @@
 @state-success-bg:     lighten( @state-success-text, 60%);
 @state-info-text:      darken(@peter-river, 20%);
 @state-info-bg:        lighten( @state-info-text, 50%);
-
-@import "bootstrap/bootstrap";
-@import "bootstrap-icons"; // reset default location for production (issue in gem?)
-
-// tighten up form spacing a bit
-// careful - may create problem with .help_block bottom
-.form-horizontal {
-  margin: 0;
-  padding: 0;
-  .form-group {
-    margin-bottom: 7px;
-    .clearfix();
-  }
-}
-
-.navbar-text {
-  &.avatar {
-    .navbar-vertical-align(34px); // based on avatar size up to 30x30
-  }
-  > a {
-    color: @navbar-inverse-link-color;
-    &:hover, &:focus {
-      color: @navbar-inverse-link-color;
-      text-decoration: underline;
-    }
-  }
-}

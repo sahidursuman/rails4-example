@@ -13,17 +13,25 @@ gem 'haml'
 gem "haml-rails"
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 gem 'turbolinks'
 gem 'jquery-turbolinks'
 
 gem 'jbuilder', '~> 2.0'
 
+gem 'less-rails-bootstrap', '~> 3.0'
+
+gem 'devise'
+gem 'cancan'
+gem 'classy_enum', '~> 3.3.2'
+
+
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
-
 
 group :development do
   gem 'capistrano', '2.15.4'
@@ -44,10 +52,3 @@ group :test do
   gem 'shoulda-matchers', '~> 2'
   gem 'selenium-webdriver', '~> 2'
 end
-
-gem 'less-rails'
-gem 'bootstrap-on-rails'
-
-gem 'devise'
-gem 'cancan'
-gem 'classy_enum', '~> 3.3.2'
