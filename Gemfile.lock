@@ -232,7 +232,7 @@ DEPENDENCIES
   jquery-turbolinks
   jquery-ui-rails
   launchy (~> 2)
-  less-rails-bootstrap (~> 3.0.0)
+  less-rails-bootstrap (~> 3.0)
   mysql2
   rails (= 4.0.2)
   rspec-rails (~> 2)
