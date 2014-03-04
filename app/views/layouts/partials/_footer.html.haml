@@ -1,22 +1,2 @@
 %p.muted.credit
-  Author: Joan Hughes [
-  %span.footer-link>
-    %a{:href => "http://joanswork.com", :target => "_blank"} joanswork.com
-  ]
-  [
-  %span.footer-link
-    = image_tag('Octocat_very_tiny.png')
-    = succeed "]," do
-      %a{:href => "http://github.com/jehughes", :target => "_blank"} Github.com Page
-    [
-    %a{:href => "http://www.linkedin.com/in/jehughes", :target => "_blank"}
-      %img{:alt => "LinkedIn profile", :border => "0", :height => "15", :src => "http://www.linkedin.com/img/webpromo/btn_in_20x15.png", :style => "vertical-align:middle", :width => "20"}
-      LinkedIn Profile
-  ]
-  %br/
-  %small
-    %a{:href => PRIVATE_DATA['legal_disclaimer_link'].html_safe, :target => "_blank"} Generic Site Usage Disclaimer
-    (exception: source in repository is under the MIT License)
-    %br/
-    %b PRIVACY:
-    Any personal data saved will not be intentionally sold or distributed. However, there is NO legal guarantee any information saved is maintained, private or secure. Use common sense.
+  = t('private.footer_html', default: 'footer text', disclaimer: PRIVATE_DATA['legal_disclaimer_link'])
