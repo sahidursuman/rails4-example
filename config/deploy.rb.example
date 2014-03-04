@@ -26,7 +26,7 @@ set :use_sudo, false
 default_run_options[:pty] = true
 set :keep_releases, 3
 
-# TODO: find a better way to do this, rvm?
+# TODO: find a better way to do this
 set :default_environment, {
   'PATH' => "#{deploy_to}/gems/bin:#{deploy_to}/bin:#{ENV['PATH']}",
   'GEM_HOME' => "#{deploy_to}/gems",
@@ -56,12 +56,12 @@ namespace :deploy do
   task :run_bundle_install, :roles => :app do
     run "cd #{release_path} && bundle install"
   end
-  
+ 
   desc "copy over files not stored in git: database.yml, private.yml, locales/en.private.yml"
   task :copy_git_ignored_config_files do  
 
     begin
-      run "cp -r #{shared_path}/local_config/* #{current_path}/config"
+      run "cp -r #{shared_path}/config/* #{release_path}/config"
     rescue Exception
       puts "\nCOPY OF LOCAL CONFIG FILES FAILED - CHECK THEY EXIST\n\n"
     end
