@@ -6,7 +6,7 @@ class LocalDevise::RegistrationsController < Devise::RegistrationsController
   end
 
   private
-  
+
   def after_inactive_sign_up_path_for(resource)
     DeviseUsageLog.log(resource, DeviseAction::New)
     root_path

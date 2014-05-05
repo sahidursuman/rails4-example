@@ -14,7 +14,7 @@ RailsStarter::Application.configure do
 
   # Configure static asset server for tests with Cache-Control for performance.
   config.serve_static_assets  = true
-  config.static_cache_control = "public, max-age=3600"
+  config.static_cache_control = 'public, max-age=3600'
 
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
@@ -33,19 +33,19 @@ RailsStarter::Application.configure do
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
-  
-  config.action_mailer.default_url_options = { :host => PRIVATE_DATA['url_host'] }
+
+  config.action_mailer.default_url_options = {host: PRIVATE_DATA['url_host']}
   config.action_mailer.perform_deliveries = true
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :address              => PRIVATE_DATA['mailer_address'],
-    :port                 => PRIVATE_DATA['mailer_port'],
-    :domain               => PRIVATE_DATA['mailer_domain'],
-    :user_name            => PRIVATE_DATA['mailer_user_name'],
-    :password             => PRIVATE_DATA['mailer_password'],
-    :authentication       => "plain",
-    :enable_starttls_auto => true
+    address: PRIVATE_DATA['mailer_address'],
+    port: PRIVATE_DATA['mailer_port'],
+    domain: PRIVATE_DATA['mailer_domain'],
+    user_name: PRIVATE_DATA['mailer_user_name'],
+    password: PRIVATE_DATA['mailer_password'],
+    authentication: 'plain',
+    enable_starttls_auto: true
   }
 
   # level of Devise usage tracking - :all, :login, :none (default)

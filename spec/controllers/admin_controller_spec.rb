@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe AdminController do
   login_user
-  
+
   describe "GET 'index'" do
     it "returns http success as admin" do
       subject.current_user.role = 'admin'

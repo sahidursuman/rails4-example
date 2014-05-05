@@ -1,13 +1,13 @@
 class AdminController < ApplicationController
 
-  before_filter :authenticate_user!
-  before_filter do |c|
+  before_action :authenticate_user!
+  before_action do |c|
     c.send(:check_access_level, 'manager')
   end
-  
+
   def index
-    @users = User.order("role,username")
+    @users = User.order('role,username')
     authorize! :read, @users
   end
-  
+
 end

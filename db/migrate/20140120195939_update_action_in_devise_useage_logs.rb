@@ -2,7 +2,7 @@ class UpdateActionInDeviseUseageLogs < ActiveRecord::Migration
   def self.up
     DeviseUsageLog.find_each do |entry|
       case
-      when entry.new_account_at.present? 
+      when entry.new_account_at.present?
         entry.action = 'new'
       when entry.confirmed_at.present?
         entry.action = 'confirmed'
@@ -20,8 +20,8 @@ class UpdateActionInDeviseUseageLogs < ActiveRecord::Migration
       entry.save
     end
   end
-  
+
   def self.down
   end
-  
+
 end

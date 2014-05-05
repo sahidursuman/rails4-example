@@ -78,21 +78,21 @@ RailsStarter::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
-  config.action_mailer.default_url_options = { :host => PRIVATE_DATA['url_host'] }
+  config.action_mailer.default_url_options = {host: PRIVATE_DATA['url_host']}
   config.action_mailer.perform_deliveries = true
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :address              => PRIVATE_DATA['mailer_address'],
-    :port                 => PRIVATE_DATA['mailer_port'],
-    :domain               => PRIVATE_DATA['mailer_domain'],
-    :user_name            => PRIVATE_DATA['mailer_user_name'],
-    :password             => PRIVATE_DATA['mailer_password'],
-    :authentication       => "plain",
-    :enable_starttls_auto => true
+    address: PRIVATE_DATA['mailer_address'],
+    port: PRIVATE_DATA['mailer_port'],
+    domain: PRIVATE_DATA['mailer_domain'],
+    user_name: PRIVATE_DATA['mailer_user_name'],
+    password: PRIVATE_DATA['mailer_password'],
+    authentication: 'plain',
+    enable_starttls_auto: true
   }
-  
+
   # level of Devise usage tracking - :all, :login, :none (default)
-  config.devise_usage_log_level = :all #TODO: for now
+  config.devise_usage_log_level = :all # TODO: for now
 
 end

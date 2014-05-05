@@ -1,0 +1,26 @@
+AllCops:
+  Include:
+    - Rakefile
+    - config.ru
+  Exclude:
+    - db/schema.rb
+
+LineLength:
+  Max: 120
+  
+SpaceInsideHashLiteralBraces:
+  EnforcedStyle: no_space
+  
+MethodLength:
+  Max: 18
+
+EmptyLinesAroundBody: # prefer empty line for legibility
+  Enabled: false
+
+Documentation: # format too restricted
+  Enabled: false
+
+# bug in current rubocop release 0.21.0
+Delegate:
+  Enabled: false
+

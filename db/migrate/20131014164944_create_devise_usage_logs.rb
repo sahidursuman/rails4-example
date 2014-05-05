@@ -1,10 +1,10 @@
 class CreateDeviseUsageLogs < ActiveRecord::Migration
   def change
     create_table :devise_usage_logs do |t|
-      t.integer    :user_id,      :null => false
+      t.integer    :user_id,      null: false
       t.string     :user_ip
       t.string     :role
-      
+
       t.datetime   :new_account_at
       t.datetime   :confirmed_at
       t.datetime   :login_at

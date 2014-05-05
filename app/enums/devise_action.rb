@@ -1,3 +1,5 @@
+# rubocop:disable ClassAndModuleChildren
+
 class DeviseAction < ClassyEnum::Base
 end
 
@@ -21,3 +23,5 @@ end
 
 class DeviseAction::Delete < DeviseAction
 end
+
+# rubocop:enable ClassAndModuleChildren
