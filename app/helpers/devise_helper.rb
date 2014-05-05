@@ -6,21 +6,24 @@ module DeviseHelper
   end
 
   def format_user_error_messages(resource)
-
     return '' if resource.errors.empty?
-
     msgs = resource.errors.full_messages
-    alert_class = 'alert-danger'
-
-    # empty out error messages so they don't linger
-    resource.errors.clear
-
-    content_tag :div, class: "alert fade in #{alert_class}" do
-      html = content_tag :ul do
-        msgs.map { |msg| concat(content_tag(:li, msg.html_safe)) }
-      end
-      content_tag(:button, raw('&times;'), :class => 'close', 'data-dismiss' => 'alert') + html
+    resource.errors.clear # empty out error messages so they don't linger
+    content_tag :div, class: 'alert fade in alert-danger' do
+      devise_close_button + devise_errors_list(msgs)
     end
+  end
+
+  private
+
+  def devise_errors_list(msgs)
+    content_tag :ul do
+      msgs.map { |msg| concat(content_tag(:li, msg.html_safe)) }
+    end
+  end
+
+  def devise_close_button
+    content_tag(:button, raw('&times;'), class: 'close', data: {dismiss: 'alert'})
   end
 
 end

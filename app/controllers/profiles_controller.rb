@@ -39,7 +39,7 @@ class ProfilesController < ApplicationController
       user = User.new_with_password(user_params)
       authorize! :create, user
       unless user.save
-        @error_message = user.errors.full_messages.map { |s| s }.join('<br />') if user.errors
+        @error_message = user.errors.full_messages.map { |msg| msg }.join('<br />') if user.errors
         @error_message ||= t(:cannot_save_new_user, scope: 'devise.errors.messages')
       end
     else

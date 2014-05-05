@@ -2,8 +2,8 @@ class DeviseUsageLogController < ApplicationController
   skip_authorization_check only: [:close_devise_usage_report]
 
   before_action :authenticate_user!
-  before_action do |c|
-    c.send(:check_access_level, 'admin')
+  before_action do |chk|
+    chk.send(:check_access_level, 'admin')
   end
 
   def devise_usage_report

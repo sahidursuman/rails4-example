@@ -8,7 +8,7 @@ module DashboardHelper
   def all_gems
     cnt = 0
     others = "<table class='table'><tr><td>"
-    bundled_gems.sort { |a, b|a.name <=> b.name }.each do |spec|
+    bundled_gems.sort { |gem_a, gem_b|gem_a.name <=> gem_b.name }.each do |spec|
       cnt += 1
       others += "#{spec.name} #{spec.version}<br />"
       others += '</td><td>' if (cnt % 18) == 0
@@ -17,18 +17,18 @@ module DashboardHelper
   end
 
   def display_devise_version
-    g = bundled_gems.find { |s| s.name =~ /devise/ }
-    "#{g.name} #{g.version}<br />"
+    gem = bundled_gems.find { |str| str.name =~ /devise/ }
+    "#{gem.name} #{gem.version}<br />"
   end
 
   def display_bootstrap_version
-    g = bundled_gems.find { |s| s.name =~ /bootstrap/ }
-    "#{g.name} #{g.version}<br />"
+    gem = bundled_gems.find { |str| str.name =~ /bootstrap/ }
+    "#{gem.name} #{gem.version}<br />"
   end
 
   def display_cancan_version
-    g = bundled_gems.find { |s| s.name =~ /cancan/ }
-    "#{g.name} #{g.version}<br />"
+    gem = bundled_gems.find { |str| str.name =~ /cancan/ }
+    "#{gem.name} #{gem.version}<br />"
   end
 
 end

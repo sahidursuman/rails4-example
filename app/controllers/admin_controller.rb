@@ -1,8 +1,8 @@
 class AdminController < ApplicationController
 
   before_action :authenticate_user!
-  before_action do |c|
-    c.send(:check_access_level, 'manager')
+  before_action do |chk|
+    chk.send(:check_access_level, 'manager')
   end
 
   def index

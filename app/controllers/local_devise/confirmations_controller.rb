@@ -23,6 +23,7 @@ class LocalDevise::ConfirmationsController < Devise::ConfirmationsController
 
   private
 
+  # TODO: :reek:FeatureEnvy :reek:UtilityFunction
   def set_reset_password_token(resource)
     raw, enc = Devise.token_generator.generate(resource.class, :reset_password_token)
     resource.reset_password_token   = enc

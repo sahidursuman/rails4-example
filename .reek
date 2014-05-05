@@ -1,0 +1,15 @@
+
+IrresponsibleModule:
+  # documentation - later - part of larger prject
+  enabled: false
+
+TooManyStatements:
+  max_statements: 15
+
+DuplicateMethodCall:
+  max_calls: 3
+
+NestedIterators:
+  max_allowed_nesting: 2
+
+
