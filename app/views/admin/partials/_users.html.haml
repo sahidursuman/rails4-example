@@ -23,11 +23,13 @@
         %td= user.sign_in_count if user.sign_in_count > 0
         %td
           - if current_user.role?('admin') && (user.username.downcase != current_user.username.downcase)
-            = link_to t('button.edit'), edit_profile_path(:id => user.id),
-             {:title => t('tooltip.edit_user'), :rel => :tooltip, 
-             data: { toggle: 'modal', target: 'edit_user_modal'},  
-             :remote => true, :class => 'btn btn-success btn-xs'}
+            = link_to t('button.edit'), edit_profile_path(id: user.id),
+                      title: t('tooltip.edit_user'), rel: :tooltip, 
+                      data: {toggle: 'modal', target: 'edit_user_modal'},  
+                      remote: true, class: 'btn btn-success btn-xs'
+          - else
+            ''          
             
-= render :partial => 'admin/partials/add_user'
+= render 'admin/partials/add_user'
 
-#edit_user_modal.modal{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+#edit_user_modal.modal{aria: {labelledby: 'myModalLabel', hidden: true}, role: 'dialog', tabindex: '-1'}

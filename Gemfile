@@ -37,7 +37,7 @@ group :development do
   gem "binding_of_caller"
   
   gem 'rubocop', require: false
-#  gem 'haml-lint', require: false
+  gem 'haml-lint', require: false
 #  gem 'reek', require:false
 #  gem 'rails_best_practices', require:false
  

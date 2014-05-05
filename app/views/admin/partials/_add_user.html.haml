@@ -1,17 +1,17 @@
 %br/
 %hr.green/
-= form_for User.new, :url => profiles_path, :html => { :class => "form-inline", :role => "form", :id => "admin_new_user", :data => { remote: true, spinner: "#admin_new_user_spinner"} } do |f|
+= form_for User.new, url: profiles_path, html: {class: 'form-inline', role: 'form', id: 'admin_new_user', data: {remote: true, spinner: '#admin_new_user_spinner'}} do |f|
   .container
     .row
       .col-md-8
         #add_user_errors
         %label Add new user:
         .form-group
-          %label.sr-only{:for => "username"}= t('label.username')
-          = f.text_field :username, :class =>"form-control", :placeholder => t('label.username').downcase, :autocomplete => "off", :id => "username"
+          %label.sr-only{for: 'username'}= t('label.username')
+          = f.text_field :username, class: 'form-control', placeholder: t('label.username').downcase, autocomplete: 'off', id: 'username'
         .form-group
-          %label.sr-only{:for => "email"}= t('label.email')
-          = f.email_field :email, :class =>"form-control", :placeholder => t('label.email_example').downcase, :autocomplete => "off", :id => "email"
-        = f.submit t('button.save'), :class => "btn btn-success btn-sml"
+          %label.sr-only{for: 'email'}= t('label.email')
+          = f.email_field :email, class: 'form-control', placeholder: t('label.email_example').downcase, autocomplete: 'off', id: 'email'
+        = f.submit t('button.save'), class: 'btn btn-success btn-sml'
         = spinner_tag('admin_new_user_spinner').html_safe
 %br/      

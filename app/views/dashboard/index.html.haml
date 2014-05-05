@@ -3,24 +3,24 @@
     .col-md-8
       %h1
         = get_view_text('h1')
-        = %{ <span class='mini-red'>(development)</span>}.html_safe if Rails.env == 'development'
+        = %{<span class='mini-red'>(development)</span>}.html_safe if Rails.env == 'development'
       %br/
       %br/
       %p Open source project illustrating a basic web application using Rails 4.0, Ruby 2.0, Devise and Twitter Bootstrap.
       %p 
         The source code can be found on github.com:
-        %a.btn.btn-link{:href => "https://github.com/jehughes/rails4-example", :target => "_blank"}
-          %img{:src => asset_path('GitHub-Mark-20px.png'), alt: "Github.com"}
+        %a.btn.btn-link{href: 'https://github.com/jehughes/rails4-example', target: '_blank'}
+          %img{src: asset_path('GitHub-Mark-20px.png'), alt: 'Github.com'}
           jehughes/rails4-example
       %p 
         = t('private.welcome_html', default: '')
     - unless current_user
       .col-md-3.round-box.devise
-        = render :partial => 'dashboard/partials/login_form'
+        = render 'dashboard/partials/login_form'
   .row
     .col-md-12
       %br/
       %br/
       %br/
       %b Gem versions:
-      = render :partial => 'dashboard/partials/listgems'
+      = render 'dashboard/partials/listgems'
