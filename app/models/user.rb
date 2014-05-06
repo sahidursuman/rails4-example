@@ -15,9 +15,9 @@ class User < ActiveRecord::Base
     ROLES[role.to_s] >= ROLES[base_role.to_s.downcase]
   end
 
-  def role_is?(test_role)
-    role == test_role
-  end
+  # def role_is?(test_role)
+  #   role == test_role
+  # end
 
   def user_exists_but_force_password_reset?
     return true if id && confirmed_at.present? && reset_password_token.present? \
@@ -26,7 +26,7 @@ class User < ActiveRecord::Base
   end
 
   def log_devise_action(new_action)
-    DeviseUsageLog.create(user_id: id, role: role, user_ip: current_sign_in_ip, username: username, action: new_action)
+    DeviseUsageLog.create!(user_id: id, role: role, user_ip: current_sign_in_ip, username: username, action: new_action)
   end
 
   def self.new_with_password(user_params)

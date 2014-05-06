@@ -30,7 +30,7 @@ set :keep_releases, 3
 set :default_environment, {
   'PATH' => "#{deploy_to}/gems/bin:#{deploy_to}/bin:#{ENV['PATH']}",
   'GEM_HOME' => "#{deploy_to}/gems",
-  'BUNDLE_PATH' => "#{deploy_to}/gems" 
+  'BUNDLE_PATH' => "#{deploy_to}/gems"
 }
 
 set :rails_env, :production
@@ -51,14 +51,14 @@ namespace :deploy do
   task :restart do
     run "#{deploy_to}/bin/stop && #{deploy_to}/bin/start && touch #{current_path}/tmp/restart.txt"
   end
-  
+
   desc "install the necessary prerequisites"
   task :run_bundle_install, :roles => :app do
     run "cd #{release_path} && bundle install"
   end
- 
+
   desc "copy over files not stored in git: database.yml, private.yml, locales/en.private.yml"
-  task :copy_git_ignored_config_files do  
+  task :copy_git_ignored_config_files do
 
     begin
       run "cp -r #{shared_path}/config/* #{release_path}/config"
@@ -67,9 +67,9 @@ namespace :deploy do
     end
 
   end
-  
+
   namespace :assets do
-    
+
     desc "compile assets"
     task :precompile, :roles => :web do
       run("cd #{release_path} && rake assets:precompile RAILS_ENV=#{rails_env}")
@@ -82,6 +82,6 @@ namespace :deploy do
       run("mkdir -p #{latest_release}/public/assets")
     end
   end
-  
+
 end
- 
+

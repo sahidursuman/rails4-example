@@ -29,11 +29,11 @@
               = f.select :role, options_for_select(list_roles_for_select(@user), @user.role.to_s), {}, class: 'form-control'
       .modal-footer
         - if current_user.role?('admin')
-          = link_to t('button.delete_user', username: @user.username), 
-                    profile_path(id: @user.id), title: t('tooltip.delete_user'), 
-                    rel: :tooltip, 
-                    data: {confirm: t('button.confirm_delete_user', username: @user.username)}, 
-                    method: :delete, remote: true, 
+          = link_to t('button.delete_user', username: @user.username),
+                    profile_path(id: @user.id), title: t('tooltip.delete_user'),
+                    rel: :tooltip,
+                    data: {confirm: t('button.confirm_delete_user', username: @user.username)},
+                    method: :delete, remote: true,
                     class: 'btn btn-danger', style: 'float:left;'
         %button.btn.btn-warning{data: {dismiss: 'modal'}, type: 'button'} Cancel
         = f.submit t('button.save_changes'), class: 'btn btn-success'
