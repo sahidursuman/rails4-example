@@ -25,6 +25,10 @@ class User < ActiveRecord::Base
     false
   end
 
+  def self.valid_user?(resource)
+    resource && resource.kind_of?(User) && resource.valid?
+  end
+
   def log_devise_action(new_action)
     DeviseUsageLog.create!(user_id: id, role: role, user_ip: current_sign_in_ip, username: username, action: new_action)
   end
