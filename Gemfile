@@ -35,12 +35,12 @@ group :development do
   gem 'capistrano', '2.15.4'
   gem "better_errors"
   gem "binding_of_caller"
-  
+
   gem 'rubocop', require: false
   gem 'haml-lint', require: false
   gem 'reek', require:false
-#  gem 'rails_best_practices', require:false
- 
+  gem 'rails_best_practices', require:false
+
 end
 
 group :development, :test do

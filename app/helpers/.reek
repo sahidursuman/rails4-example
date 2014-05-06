@@ -3,7 +3,7 @@ FeatureEnvy:
 
 UtilityFunction:
   enabled: false
-  
+
 ControlParameter:
   exclude:
   - active_tab

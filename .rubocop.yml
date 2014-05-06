@@ -7,10 +7,10 @@ AllCops:
 
 LineLength:
   Max: 120
-  
+
 SpaceInsideHashLiteralBraces:
   EnforcedStyle: no_space
-  
+
 MethodLength:
   Max: 18
 

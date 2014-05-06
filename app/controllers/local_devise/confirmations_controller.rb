@@ -12,7 +12,7 @@ class LocalDevise::ConfirmationsController < Devise::ConfirmationsController
         respond_with_navigational(resource) { redirect_to after_confirmation_set_password_path_for(token) }
       else
         resource.confirmation_token = nil # since update_attribute picks this up as a 'dirty' attribute
-        resource.update_attribute(:role, 'user') if resource.role?('guest')
+        # resource.update_attribute(:role, 'user') if resource.role?('guest') # force manual update by admin
         set_flash_message(:notice, :confirmed) if is_navigational_format?
         respond_with_navigational(resource) { redirect_to after_confirmation_path_for(resource_name, resource) }
       end
@@ -28,7 +28,7 @@ class LocalDevise::ConfirmationsController < Devise::ConfirmationsController
     raw, enc = Devise.token_generator.generate(resource.class, :reset_password_token)
     resource.reset_password_token   = enc
     resource.reset_password_sent_at = Time.now.utc
-    resource.save(validate: false)
+    resource.save!(validate: false)
     raw
   end
 

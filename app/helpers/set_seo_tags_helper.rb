@@ -1,8 +1,8 @@
 module SetSeoTagsHelper
 
-  def seo_tag(element, page_name, add_options = {})
-    content_for(:"#{element}") { get_header_text({element: element, page_name: page_name}.merge(add_options)) }
-  end
+  # def seo_tag(element, page_name, add_options = {})
+  #   content_for(:"#{element}") { get_header_text({element: element, page_name: page_name}.merge(add_options)) }
+  # end
 
   def yield_or_default(section, default = '')
     tag_text = content_for(section)

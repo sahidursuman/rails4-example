@@ -2,7 +2,7 @@ en:
   header:
     fix_me: "Missing %{thing}. Fix me!"
     branding: "rails4-example"
-    
+
     default:
       h1: "H1 text not found. Fix me!"
       title: "%{branding}"
@@ -15,13 +15,13 @@ en:
       title: "Help - %{branding}"
       meta_desc: "Help page for %{branding}"
       h1: "Help"
-      
+
   dashboard:
     index:
       title: "Dashboard - %{branding}"
       meta_desc: "Dashboard for %{branding}"
       h1: "Rails4 Example Application"
-  
+
   admin:
     index:
       title: "Administration - %{branding}"
@@ -35,7 +35,7 @@ en:
 # devise
 
   unlocks:
-    new:      
+    new:
       robots: "noindex,nofollow"
       title: "Unlock Account: %{branding}"
       meta_desc: "Unlock account for  %{branding}"
@@ -67,4 +67,3 @@ en:
       robots: "noindex,nofollow"
       title: "Change Password: %{branding}"
       meta_desc: "Change password on %{branding}"
-      
