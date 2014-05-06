@@ -1,18 +1,25 @@
 namespace :testcode do
   unless Rails.env == 'production'
+    require 'rspec/core/rake_task'
+    require 'rubocop/rake_task'
+    require 'reek/rake/task'
 
     desc 'Execute Rspec'
-    require 'rspec/core/rake_task'
     RSpec::Core::RakeTask.new(:spec) do |tsk|
       tsk.rspec_opts = '--format p'
     end
 
     desc 'Execute rubocop -DR'
-    require 'rubocop/rake_task'
-    # bug in current version 0.21.0 - runs twice
     Rubocop::RakeTask.new(:rubocop) do |tsk|
       tsk.options = ['-DR'] # Rails, display cop name
       tsk.fail_on_error = false
+    end
+
+    desc 'Execute reek'
+    Reek::Rake::Task.new do |tsk|
+      tsk.source_files = ['app/**/*.rb','lib/**/*.rb','lib/tasks/*.rake','config/**/*.rb']
+      tsk.fail_on_error = false
+      # tsk.verbose = true
     end
 
     desc 'Execute haml-lint'
@@ -29,20 +36,9 @@ namespace :testcode do
       puts analyzer.output
     end
 
-    desc 'Execute reek on app, lib, config and rake files'
-    task reek: :environment do
-      require 'reek/rake/task'
-      puts "REEK"
-      ['app','lib','lib/tasks/*.rake','config'].each do |path|
-        Reek::Rake::Task.new do |tsk|
-          tsk.source_files = path
-          tsk.fail_on_error = false
-        end
-      end
-    end
   end
 end
 
 task :testcode do
-  Rake.application.in_namespace(:testcode){|nspace| nspace.tasks.each{|task| task.invoke}}
+  ['rubocop','haml_lint','reek','rbp','spec'].each{|task| Rake::Task["testcode:#{task}"].invoke}
 end
