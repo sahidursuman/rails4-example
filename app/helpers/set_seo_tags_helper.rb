@@ -41,7 +41,7 @@ module SetSeoTagsHelper
   end
 
   def branding_text
-    t('branding', scope: :"header", default: '')
+    t('header.branding', default: '')
   end
 
   def fix_me_statement(thing = '')
