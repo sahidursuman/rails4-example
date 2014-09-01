@@ -26,7 +26,7 @@ class User < ActiveRecord::Base
   end
 
   def self.valid_user?(resource)
-    resource && resource.kind_of?(User) && resource.valid?
+    resource && resource.is_a?(User) && resource.valid?
   end
 
   def log_devise_action(new_action)

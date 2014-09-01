@@ -10,7 +10,7 @@ namespace :testcode do
     end
 
     desc 'Execute rubocop -DR'
-    Rubocop::RakeTask.new(:rubocop) do |tsk|
+    RuboCop::RakeTask.new(:rubocop) do |tsk|
       tsk.options = ['-DR'] # Rails, display cop name
       tsk.fail_on_error = false
     end

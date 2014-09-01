@@ -13,6 +13,7 @@
 /vendor
 /bin
 /public/assets
+*.org
 
 /config/database.yml
 /config/private.yml
