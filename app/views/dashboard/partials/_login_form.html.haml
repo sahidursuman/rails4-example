@@ -1,4 +1,4 @@
-= form_for(:user, as: 'user', url: session_path('user'), html: {role: 'form', class: 'form-horizontal'}) do |f|
+= form_for(:user, as: 'user', url: session_path(:user), html: {role: 'form', class: 'form-horizontal'}) do |f|
   .modal-body
     -# = format_user_error_messages(:user)
     .form-group
@@ -21,8 +21,8 @@
           .col-md-3
             = f.submit t('button.login'), class: 'btn btn-success'
           .col-md-offset-2.col-md-6.small-text
-            = link_to 'Forgot&nbsp;password?'.html_safe, new_password_path('user')
+            = link_to 'Forgot&nbsp;password?'.html_safe, new_password_path(:user)
             = link_to 'Other&nbsp;login&nbsp;help'.html_safe, help_path
     .form-group
       %hr.green/
-      = link_to t('button.register'), new_registration_path('user'), class: 'btn btn-block btn-primary'
+      = link_to t('button.register'), new_registration_path(:user), class: 'btn btn-block btn-primary'
