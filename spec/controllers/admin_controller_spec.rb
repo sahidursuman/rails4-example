@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe AdminController do
   login_user
@@ -7,13 +7,13 @@ describe AdminController do
     it "returns http success as admin" do
       subject.current_user.role = 'admin'
       get 'index'
-      response.should be_success
+      expect(response).to be_success
     end
 
     it "redirect user to home" do
       subject.current_user.role = 'user'
       get 'index'
-      response.should redirect_to '/'
+      expect(response).to redirect_to '/'
     end
   end
 
