@@ -1,4 +1,4 @@
-RailsStarter::Application.routes.draw do
+Rails.application.routes.draw do
 
   resources :profiles, only: [:edit, :update, :destroy, :create]
 

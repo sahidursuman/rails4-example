@@ -14,7 +14,19 @@ SpaceInsideHashLiteralBraces:
 MethodLength:
   Max: 18
 
-EmptyLinesAroundBody: # prefer empty line for legibility
+AbcSize:
+  Max: 30
+
+PerceivedComplexity:
+  Max: 10
+
+EmptyLinesAroundModuleBody: # prefer empty line for legibility
+  Enabled: false
+
+EmptyLinesAroundClassBody:
+  Enabled: false
+
+EmptyLinesAroundMethodBody:
   Enabled: false
 
 Documentation: # format too restricted

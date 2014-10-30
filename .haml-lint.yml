@@ -1,3 +1,5 @@
 linters:
   LineLength:
-    max: 150
+    max: 180
+  ConsecutiveComments: # I disagree
+    enabled: false

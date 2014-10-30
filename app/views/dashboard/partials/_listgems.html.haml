@@ -1,7 +1,9 @@
 .row
   .col-md-2
-    = "Rails #{Rails.version}<br />".html_safe
-    = "Ruby #{RUBY_VERSION}<br />".html_safe
+    Rails #{Rails.version}
+    %br/
+    Ruby #{RUBY_VERSION}
+    %br/
   .col-md-3
     = display_bootstrap_version.html_safe
   .col-md-2
@@ -9,6 +11,6 @@
     = display_cancan_version.html_safe
   .col-md-3
     %button.btn.btn-sm.btn-default{data: {target: '#list_gems', toggle: 'collapse'}, type: 'button'} +/- List All Gems
-#list_gems.row.collapse
+.row.collapse#list_gems
   %br/
   = all_gems.html_safe

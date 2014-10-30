@@ -17,5 +17,6 @@
 
 /config/database.yml
 /config/private.yml
+/config/secrets.yml
 /config/deploy.rb
 /config/locales/en.private.yml

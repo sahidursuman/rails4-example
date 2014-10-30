@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.0.10'
+gem 'rails', '4.1.6'
 
 gem 'mysql2'
 
@@ -35,6 +35,10 @@ group :development do
   gem 'capistrano', '2.15.4'
   gem "better_errors"
   gem "binding_of_caller"
+
+  # Spring speeds up development by keeping your application running in the background.
+  # Read more: https://github.com/rails/spring
+  gem 'spring'
 
   gem 'rubocop', require: false
   gem 'haml-lint', require: false

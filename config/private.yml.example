@@ -1,6 +1,5 @@
 # Template file for private.yml
 defaults: &defaults
-    secret_token: 'somethingsecure' # 'rake secret' to generate a token
     devise_secret_key: 'somethingsecure' # 'rake secret' to generate a token
     url_host: "example.test"
     devise_mailer_sender: "devise@example.com"

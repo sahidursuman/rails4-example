@@ -8,7 +8,7 @@ module FlashHelper
       bootstrap_class = "alert fade in alert-#{bootstrap_flash_type(key)}"
       messages << content_tag(:div, content_tag(:button, raw('&times;'),
                                                 class: 'close',
-                                                data: {dismiss: 'alert'}) + msg.to_s.html_safe, class: bootstrap_class)
+                                                data: {dismiss: 'alert'}) + msg.html_safe, class: bootstrap_class)
     end
     flash.clear # empty so doesn't linger
     messages.join("\n").html_safe
@@ -17,9 +17,9 @@ module FlashHelper
   private
 
   def bootstrap_flash_type(flash_type)
-    return 'info' if flash_type == :notice
-    return 'warning' if flash_type == :alert
-    return 'danger' if flash_type == :error
+    return 'info' if flash_type == 'notice'
+    return 'warning' if flash_type == 'alert'
+    return 'danger' if flash_type == 'error'
     flash_type.to_s
   end
 
