@@ -32,7 +32,10 @@ group :doc do
 end
 
 group :development do
-  gem 'capistrano', '2.15.4'
+  gem 'capistrano', '~> 3.2.0', require: false
+  gem 'capistrano-rails', '~> 1.1', require: false
+  gem 'capistrano-bundler', '~> 1.1', require: false
+
   gem "better_errors"
   gem "binding_of_caller"
 
@@ -59,5 +62,5 @@ end
 
 # temp fix for cap deploy
 # https://github.com/net-ssh/net-ssh/issues/145
-gem 'net-ssh', '2.7.0'
-gem 'net-ssh-gateway', '1.2.0'
+#gem 'net-ssh', '2.7.0'
+#gem 'net-ssh-gateway', '1.2.0'
