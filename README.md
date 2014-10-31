@@ -1,18 +1,25 @@
 ##rails4-example
 
-Beginnings of a Rails 4 / Ruby 2 site using Devise and Bootstrap 3.
+A Rails 4.1 / Ruby 2 starter site using Devise and Bootstrap 3.
 
 Active demo sites:
 
 - <http://rails4example.gitrepoexamples.com> (master branch)
 - <http://arails4eg.joanswork.net/> (dev branch)
 
+####Updates
+
+Oct 31, 2014:
+* Update to Rails 4.1
+* Update to Rspec 3.1
+* Update to Capistrano 3.1
+
 ###Related Blog Posts
 
 Blog posts on [joanswork.com](http://joanswork.com) that provide further explanation and instruction.
 
 - [Tracking Devise activity like login, sign-up, etc](http://joanswork.com/devise-usage-tracking/)
-- [Turbolinks, Google Analytics & SEO: Keeping everybody happy] (http://joanswork.com/turbolinks-and-ga/)
+- [Turbolinks, Google Analytics & SEO: Keeping everybody happy](http://joanswork.com/turbolinks-and-ga/)
 - [Using I18n for SEO related tags](http://joanswork.com/rails-seo-and-i18n-the-basics/)
 
 ###Installation Note
