@@ -24,7 +24,7 @@ Blog posts on [joanswork.com](http://joanswork.com) that provide further explana
 
 ###Installation Note
 
-There are three files will need to be customized to your installation.
+The following files will need to be customized to your installation.
 
   ```
   cp config/database-yml.example config/database.yml
