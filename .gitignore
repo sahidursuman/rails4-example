@@ -13,7 +13,6 @@
 /vendor
 /bin
 /public/assets
-/cap_old
 *.org
 
 /config/database.yml

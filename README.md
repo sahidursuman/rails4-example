@@ -29,7 +29,8 @@ There are three files will need to be customized to your installation.
   ```
   cp config/database-yml.example config/database.yml
   cp config/private.yml.example config/private.yml
-  cp config/debug.rb.example config/debug.rb
+  cp config/deploy.rb.example config/deploy.rb
+  cp config/deploy/production.rb.example config/deploy/production.rb
   ```
 
 ###Author
