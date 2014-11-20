@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.1.7'
+gem 'rails', '4.1.8'
 
 gem 'mysql2'
 
@@ -60,7 +60,3 @@ group :test do
   gem 'selenium-webdriver', '~> 2.43.0'
 end
 
-# temp fix for cap deploy
-# https://github.com/net-ssh/net-ssh/issues/145
-#gem 'net-ssh', '2.7.0'
-#gem 'net-ssh-gateway', '1.2.0'
