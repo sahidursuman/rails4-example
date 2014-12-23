@@ -20,13 +20,13 @@ AbcSize:
 PerceivedComplexity:
   Max: 10
 
-EmptyLinesAroundModuleBody: # prefer empty line for legibility
+Style/EmptyLinesAroundBlockBody:
   Enabled: false
 
-EmptyLinesAroundClassBody:
+Style/EmptyLinesAroundClassBody:
   Enabled: false
 
-EmptyLinesAroundMethodBody:
+Style/EmptyLinesAroundModuleBody:
   Enabled: false
 
 Documentation: # format too restricted

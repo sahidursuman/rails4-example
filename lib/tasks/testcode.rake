@@ -19,7 +19,7 @@ namespace :testcode do
     Reek::Rake::Task.new do |tsk|
       tsk.source_files = ['app/**/*.rb','lib/**/*.rb','lib/tasks/*.rake','config/**/*.rb']
       tsk.fail_on_error = false
-      # tsk.verbose = true
+      tsk.verbose = true
     end
 
     desc 'Execute haml-lint'

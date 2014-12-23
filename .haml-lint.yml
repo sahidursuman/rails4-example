@@ -3,3 +3,5 @@ linters:
     max: 180
   ConsecutiveComments: # I disagree
     enabled: false
+  SpaceInsideHashAttributes:
+    style: no_space

@@ -34,15 +34,15 @@
           - if user_signed_in?
             %p.navbar-text.avatar
               = image_tag(avatar_url(current_user), size: '30x30')
-              = '&nbsp;'.html_safe
+              &nbsp;
               = link_to "#{current_user.username}&nbsp;".html_safe, edit_user_registration_path
               = link_to '<span class=\'glyphicon glyphicon-cog\'></span>'.html_safe, edit_user_registration_path
-              = '&nbsp;&nbsp;|&nbsp;'.html_safe
+              &nbsp;&nbsp;|&nbsp;
               = link_to t('menu.logout').html_safe, destroy_user_session_path, method: 'delete'
           - else
             - unless controller_name == 'dashboard' && action_name == 'index'
               %p.navbar-text
-                = '&nbsp;'.html_safe
+                &nbsp;
                 = link_to t('menu.login').html_safe, new_user_session_path
-                = '&nbsp;|&nbsp;'.html_safe
+                &nbsp;|&nbsp;
                 = link_to t('menu.register').html_safe, new_user_registration_path
