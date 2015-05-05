@@ -7,6 +7,7 @@
 /.bundle
 /.rspec
 /.keep
+/.elasticbeanstalk
 
 /log/*.log
 /tmp
