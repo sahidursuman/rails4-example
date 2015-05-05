@@ -7,7 +7,6 @@
 /.bundle
 /.rspec
 /.keep
-/.elasticbeanstalk
 
 /log/*.log
 /tmp
@@ -22,3 +21,9 @@
 /config/deploy.rb
 /config/locales/en.private.yml
 /config/deploy/production.rb
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+
