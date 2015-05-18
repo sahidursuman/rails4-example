@@ -8,7 +8,9 @@
 /.rspec
 /.keep
 
-/log/*.log
+/log/*
+!/log/.keep
+
 /tmp
 /vendor
 /bin

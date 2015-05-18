@@ -1,6 +1,6 @@
 ##rails4-example
 
-A Rails 4.1 / Ruby 2 starter site using Devise and Bootstrap 3.
+A Rails 4.2 / Ruby 2 starter site using Devise and Bootstrap 3.
 
 Active demo sites:
 
@@ -8,6 +8,10 @@ Active demo sites:
 - <http://arails4eg.joanswork.net/> (dev branch)
 
 ####Updates
+
+May 18, 2015:
+* Update to Rails 4.2.1
+* Update to Rspec 3.2
 
 Oct 31, 2014:
 * Update to Rails 4.1
