@@ -36,22 +36,28 @@ group :development do
   gem 'capistrano-rails', '~> 1.1', require: false
   gem 'capistrano-bundler', '~> 1.1', require: false
 
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
-
-  gem "better_errors"
-  gem "binding_of_caller"
-
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 
-  gem 'rubocop', require: false
-  gem 'haml-lint', require: false
-  gem 'reek', require:false
-  gem 'rails_best_practices', require:false
+  gem 'pry', require:false
+  gem 'quiet_assets'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'awesome_print', require:'ap'
+  gem 'meta_request'
+  gem 'web-console', '~> 2.0'  #use <%= console %> in views
 
+  gem 'rubocop', require: false
+  gem 'reek', require: false
+  gem 'haml-lint', require: false
+  gem 'rails_best_practices', require:false
+  gem 'annotate', '~> 2.6.5', require:false
+
+end
+
+group :development, :test do
   gem 'rspec-rails', '~> 3.2'
-  gem 'factory_girl_rails', '~> 4'
+  gem 'factory_girl_rails'
 end
 
 group :test do
@@ -61,4 +67,3 @@ group :test do
   gem 'launchy', '~> 2.4.2'
   gem 'selenium-webdriver', '~> 2.43.0'
 end
-
