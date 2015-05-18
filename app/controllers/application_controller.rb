@@ -18,17 +18,22 @@ class ApplicationController < ActionController::Base
     redirect_to main_app.root_url, alert: exception.message
   end
 
+  def present(object, klass = nil)
+    klass ||= "#{object.class}Presenter".constantize
+    klass.new(object, view_context)
+  end
+
   ## devise
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) do
-      |user| user.permit(:username, :email, :role, :password, :password_confirmation)
+    devise_parameter_sanitizer.for(:sign_up) do |user|
+      user.permit(:username, :email, :role, :password, :password_confirmation)
     end
-    devise_parameter_sanitizer.for(:sign_in) do
-      |user| user.permit(:username, :password, :remember_me)
+    devise_parameter_sanitizer.for(:sign_in) do |user|
+      user.permit(:username, :password, :remember_me)
     end
-    devise_parameter_sanitizer.for(:account_update) do
-      |user| user.permit(:username, :email, :role, :current_password, :password, :password_confirmation)
+    devise_parameter_sanitizer.for(:account_update) do |user|
+      user.permit(:username, :email, :role, :current_password, :password, :password_confirmation)
     end
   end
 
@@ -40,5 +45,5 @@ class ApplicationController < ActionController::Base
     DeviseUsageLog.log(resource_or_scope, DeviseAction::Login)
     stored_location_for(resource_or_scope) || signed_in_root_path(resource_or_scope)
   end
-
+  
 end

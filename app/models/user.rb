@@ -49,8 +49,8 @@ class User < ActiveRecord::Base
   # end
 
   def user_exists_but_force_password_reset?
-    return true if id && confirmed_at.present? && reset_password_token.present? \
-                   && last_sign_in_at.blank? && last_sign_in_ip.blank?
+    return true if id && confirmed_at.present? && reset_password_token.present? && \
+                   last_sign_in_at.blank? && last_sign_in_ip.blank?
     false
   end
 

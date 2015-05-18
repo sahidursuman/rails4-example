@@ -12,4 +12,5 @@ DuplicateMethodCall:
 NestedIterators:
   max_allowed_nesting: 2
 
-
+FeatureEnvy:
+  exclude: [ListGems] # disagree

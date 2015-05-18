@@ -45,7 +45,7 @@ module SetSeoTagsHelper
   end
 
   def fix_me_statement(thing = '')
-    t('fix_me', scope: :"header", thing: thing)
+    t('fix_me', scope: :header, thing: thing)
   end
   # / en.header_text.yml
 

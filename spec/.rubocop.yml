@@ -1,8 +1,5 @@
 inherit_from:
   - ../.rubocop.yml
 
-Blocks:
-  Enabled: false
-
 StringLiterals:
   Enabled: false
