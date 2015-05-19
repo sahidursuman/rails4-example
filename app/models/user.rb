@@ -48,6 +48,12 @@ class User < ActiveRecord::Base
   #   role == test_role
   # end
 
+  def avatar_url
+    return image_url if image_url?
+    gravatar_id = Digest::MD5::hexdigest(email).downcase # rubocop:disable all
+    "http://gravatar.com/avatar/#{gravatar_id}.png?r=g&s=30&d=mm"
+  end
+
   def user_exists_but_force_password_reset?
     return true if id && confirmed_at.present? && reset_password_token.present? && \
                    last_sign_in_at.blank? && last_sign_in_ip.blank?

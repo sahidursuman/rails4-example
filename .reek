@@ -1,6 +1,6 @@
 
 IrresponsibleModule:
-  # documentation - later - part of larger prject
+  # documentation - later
   enabled: false
 
 TooManyStatements:
@@ -11,6 +11,3 @@ DuplicateMethodCall:
 
 NestedIterators:
   max_allowed_nesting: 2
-
-FeatureEnvy:
-  exclude: [ListGems] # disagree

@@ -45,5 +45,5 @@ class ApplicationController < ActionController::Base
     DeviseUsageLog.log(resource_or_scope, DeviseAction::Login)
     stored_location_for(resource_or_scope) || signed_in_root_path(resource_or_scope)
   end
-  
+
 end

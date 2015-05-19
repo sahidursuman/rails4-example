@@ -43,4 +43,14 @@ class UserPresenter < BasePresenter
   def sign_in_count
     (user.sign_in_count > 0) ? user.sign_in_count : ''
   end
+
+  def list_roles_for_select
+    list = []
+    user.roles.each do |role, _idx|
+      next if role == 'admin' && !user.role?('admin')
+      list << [role.humanize, role]
+    end
+    list
+  end
+
 end

@@ -9,7 +9,7 @@
       = link_to branding_text, root_path, class: 'navbar-brand'
     .collapse.navbar-collapse
       %ul.nav.navbar-nav
-        %li{class: active_tab('dashboard')}= link_to t('menu.home'), dashboard_path
+        %li{class: "#{(params[:controller] == 'dashboard') ? 'active' : ''}"}= link_to t('menu.home'), dashboard_path
         - if current_user && current_user.role?('user')
           %li
             %a{href: '#'}= t('menu.messages')
@@ -27,13 +27,13 @@
           %li
             %a{href: '#'}= t('menu.reports')
           - if current_user.role?('manager')
-            %li{class: active_tab('admin')}= link_to t('menu.admin'), admin_path
-        %li{class: active_tab('help')}= link_to t('menu.help'), help_path
+            %li{class: "#{(params[:controller] == 'admin') ? 'active' : ''}"}= link_to t('menu.admin'), admin_path
+        %li{class: "#{(params[:controller] == 'help') ? 'active' : ''}"}= link_to t('menu.help'), help_path
       %ul.nav.navbar-nav.navbar-right
         %li
           - if user_signed_in?
             %p.navbar-text.avatar
-              = image_tag(avatar_url(current_user), size: '30x30')
+              = image_tag(current_user.avatar_url, size: '30x30')
               &nbsp;
               = link_to "#{current_user.username}&nbsp;".html_safe, edit_user_registration_path
               = link_to '<span class=\'glyphicon glyphicon-cog\'></span>'.html_safe, edit_user_registration_path

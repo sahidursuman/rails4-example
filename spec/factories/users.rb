@@ -34,6 +34,6 @@ FactoryGirl.define do
     username "jane"
     email "jane@zoeoberon.com"
     password "123123"
-    confirmed_at Time.now
+    confirmed_at Time.zone.now
   end
 end
