@@ -1,3 +1,4 @@
+# rubocop:disable Style/ClassAndModuleChildren
 module Application::DeviseSetup
 
   def configure_permitted_parameters
@@ -21,3 +22,4 @@ module Application::DeviseSetup
     stored_location_for(resource_or_scope) || signed_in_root_path(resource_or_scope)
   end
 end
+# rubocop:enable all

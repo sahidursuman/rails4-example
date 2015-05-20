@@ -18,7 +18,7 @@ class DeviseUsageLog < ActiveRecord::Base
 
   def self.fetch_usage_report_entries(num_days = 10)
     # rubocop:disable MultilineOperationIndentation
-    DeviseUsageLog.where('created_at > ?', DateTime.zone.now - num_days.days)
+    DeviseUsageLog.where('created_at > ?', Time.zone.today - num_days.days)
                   .order('devise_usage_logs.created_at desc')
                   .order('user_id')
     # rubocop:enable all

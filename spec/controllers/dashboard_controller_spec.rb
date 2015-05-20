@@ -8,9 +8,16 @@ describe DashboardController do
   end
 
   describe "GET 'index'" do
-    it "returns http success" do
+    before :each do
       get 'index'
+    end
+
+    it "returns http success" do
       expect(response).to be_success
+    end
+
+    it "set @lists_of_gems" do
+      expect(assigns(:lists_of_gems)).to be_kind_of(ListOfGems)
     end
   end
 

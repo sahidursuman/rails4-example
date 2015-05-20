@@ -1,3 +1,4 @@
+# rubocop:disable Style/ClassAndModuleChildren
 module Application::Present
 
   # http://railscasts.com/episodes/287-presenters-from-scratch
@@ -7,3 +8,4 @@ module Application::Present
   end
 
 end
+# rubocop:enable all
