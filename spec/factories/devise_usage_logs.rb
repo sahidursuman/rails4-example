@@ -17,5 +17,8 @@
 FactoryGirl.define do
   factory :devise_usage_log do
     user_id 1
+    user_ip '100.100.100.100'
+    role 'user'
+    username 'jane'
   end
 end

@@ -27,8 +27,47 @@
 #  username               :string(255)      default(""), not null
 #
 
-require 'spec_helper'
+require 'rails_helper'
 
 describe User do
-  # pending "add some examples to (or delete) #{__FILE__}"
+
+  describe '#role?' do
+    it "returns true since a manager has a same or greater role than a user" do
+      user = create(:user, role: 'manager')
+      expect(user.role?('user')).to be_truthy
+    end
+    it "returns false since a user does not have the same as a manager" do
+      user = create(:user, role: 'user')
+      expect(user.role?('manager')).to be_falsey
+    end
+  end
+
+  describe '#avatar_url' do
+    it "return user's image_url when set" do
+      user = create(:user, image_url: 'this/that.jpg')
+      expect(user.avatar_url).to eq('this/that.jpg')
+    end
+    it "return link to gravatar if image_url not set" do
+      user = create(:user, image_url: nil)
+      expect(user.avatar_url).to match(/gravatar.com/)
+    end
+  end
+
+  describe '#log_devise_action' do
+    it "creates a DeviseUsageLog record" do
+      puts "TODO why is the method in the User model?"
+      user = create(:user)
+      expect do
+        user.log_devise_action(DeviseAction::Login)
+      end.to change(DeviseUsageLog, :count)
+    end
+  end
+
+  describe 'new_with_password' do
+    it 'returns a new user record all set for a Devise change password email' do
+      user = User.new_with_password(username: 'gabby', email: 'gabby@example.com')
+      expect(user.encrypted_password).not_to be_empty
+      expect(user.reset_password_token).not_to be_empty
+    end
+  end
 end

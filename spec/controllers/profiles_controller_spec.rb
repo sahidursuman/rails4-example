@@ -22,9 +22,9 @@ describe ProfilesController do
   describe "#create" do
     describe "with valid params" do
       it 'saves new user' do
-        expect {
+        expect do
           xhr :post, :create, user: attributes_for(:user, username: 'fred', email: 'fred@example.com')
-        }.to change(User, :count)
+        end.to change(User, :count)
       end
       it "renders admin/partials/users partial" do
         xhr :post, :create, user: attributes_for(:user, username: 'fred', email: 'fred@example.com')
@@ -33,9 +33,9 @@ describe ProfilesController do
     end
     describe "with invalid params" do
       it 'does not save user and displays an error message' do
-        expect {
+        expect do
           xhr :post, :create, user: attributes_for(:user, username: nil, email: nil)
-        }.to_not change(User, :count)
+        end.to_not change(User, :count)
         expect(response.body).to match(/alert_box/)
       end
     end
@@ -59,9 +59,9 @@ describe ProfilesController do
     end
     describe "with invalid params" do
       it 'does not update user and stay on edit form' do
-        expect {
+        expect do
           xhr :post, :update, user: {username: nil, email: nil}, id: @user.id
-        }.to_not change(User, :count)
+        end.to_not change(User, :count)
         expect(response).to render_template(partial: 'profiles/partials/_edit')
       end
     end
@@ -72,9 +72,9 @@ describe ProfilesController do
       @another_user = create(:user, username: 'fred', email: 'fred@example.com')
     end
     it 'deletes the user' do
-      expect {
+      expect do
         xhr :delete, :destroy, id: @another_user, format: 'js'
-      }.to change(User, :count).by(-1)
+      end.to change(User, :count).by(-1)
     end
     it "sets list of users" do
       xhr :delete, :destroy, id: @another_user, format: 'js'
