@@ -55,11 +55,16 @@ describe User do
 
   describe '#log_devise_action' do
     it "creates a DeviseUsageLog record" do
-      puts "TODO why is the method in the User model?"
       user = create(:user)
       expect do
         user.log_devise_action(DeviseAction::Login)
       end.to change(DeviseUsageLog, :count)
+    end
+    it "creates a DeviseUsageLog record for this user" do
+      user = create(:user)
+      user.log_devise_action(DeviseAction::Login)
+      log_entry = DeviseUsageLog.last
+      expect(log_entry.user_id).to eq(user.id)
     end
   end
 
