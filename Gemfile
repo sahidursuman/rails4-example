@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.1'
+gem 'rails', '4.2.4'
 
 gem 'mysql2'
 
@@ -23,7 +23,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'less-rails-bootstrap', '~> 3.0'
 
 gem 'devise'
-gem 'cancan'
+gem 'cancancan'
 gem 'classy_enum', '~> 3.4'
 
 group :doc do
