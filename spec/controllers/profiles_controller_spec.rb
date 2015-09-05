@@ -4,7 +4,7 @@ describe ProfilesController do
   login_admin
 
   before :each do
-    @user = create(:user, username: 'molly', email: 'molly@example.com')
+    @user = create(:user, username: 'molly', email: 'molly-rspec@zoeoberon.com')
   end
 
   describe "#edit" do
@@ -23,11 +23,11 @@ describe ProfilesController do
     describe "with valid params" do
       it 'saves new user' do
         expect do
-          xhr :post, :create, user: attributes_for(:user, username: 'fred', email: 'fred@example.com')
+          xhr :post, :create, user: attributes_for(:user, username: 'fred', email: 'fred-rspec@zoeoberon.com')
         end.to change(User, :count)
       end
       it "renders admin/partials/users partial" do
-        xhr :post, :create, user: attributes_for(:user, username: 'fred', email: 'fred@example.com')
+        xhr :post, :create, user: attributes_for(:user, username: 'fred', email: 'fred-rspec@zoeoberon.com')
         expect(response).to render_template(partial: 'admin/partials/_users')
       end
     end

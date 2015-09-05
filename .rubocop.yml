@@ -32,7 +32,9 @@ Style/EmptyLinesAroundModuleBody:
 Documentation: # format too restricted
   Enabled: false
 
-# bug in current rubocop release 0.21.0
-Delegate:
-  Enabled: false
+Style/EndOfLine:
+  Enabled: false # restore when editor sorted out
 
+# bug in current rubocop release 0.21.0
+# Delegate:
+#   Enabled: false

@@ -1,7 +1,7 @@
 class ListOfGems
   require 'bundler'
 
-  attr_accessor :gems, :columns_gems
+  attr_reader :gems, :columns_gems
 
   def initialize(params = {})
     @gems = []

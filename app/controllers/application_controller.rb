@@ -20,6 +20,6 @@ class ApplicationController < ActionController::Base
 
   # concerns
   include Application::DeviseSetup
-  include Application::Present      # presenter helper method
+  include Application::Present # presenter helper method
 
 end
