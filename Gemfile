@@ -1,6 +1,10 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.4'
+gem 'rails', '4.2.5'
+
+# not all gems support sprockets 3 yet (1/4/2015)
+# https://github.com/rails/sprockets/blob/master/UPGRADING.md
+gem 'sprockets-rails', '~> 2.3'
 
 gem 'mysql2'
 

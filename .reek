@@ -1,3 +1,8 @@
+exclude_paths:
+  - db/migrate
+
+UnusedPrivateMethod:
+  enabled: false # doesn't take into account controller callback statements
 
 IrresponsibleModule:
   # documentation - later
