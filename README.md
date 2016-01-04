@@ -9,6 +9,10 @@ Active demo sites:
 
 ####Updates
 
+Jan 4, 2016:
+* Update to Rails 4.2.5
+* Update to Rspec 3.4
+
 May 18, 2015:
 * Update to Rails 4.2.1
 * Update to Rspec 3.2
