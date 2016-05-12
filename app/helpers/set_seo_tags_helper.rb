@@ -27,10 +27,10 @@ module SetSeoTagsHelper
     return fix_me_statement('element') if element.blank?
 
     key = "#{page_name}.#{element}"
-    msg = (no_msg) ? '' : fix_me_statement(key)
+    msg = no_msg ? '' : fix_me_statement(key)
     default_key = "header.default.#{element}"
 
-    t(key, branding: branding_text, add_in: "#{add_in}", default: [:"#{default_key}", msg])
+    t(key, branding: branding_text, add_in: add_in.to_s, default: [:"#{default_key}", msg])
   end
 
   def get_view_text(element)

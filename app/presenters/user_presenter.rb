@@ -12,7 +12,7 @@ class UserPresenter < BasePresenter
     elsif user.confirmation_sent_at
       str = user.confirmation_sent_at
     end
-    (str) ? (l str, format: '%Y-%m-%d') : ''
+    str ? (l str, format: '%Y-%m-%d') : ''
   end
 
   def last_ip
@@ -21,7 +21,7 @@ class UserPresenter < BasePresenter
     elsif user.last_sign_in_ip
       str = user.last_sign_in_ip
     end
-    (str) ? str : ''
+    str ? str : ''
   end
 
   def user_name

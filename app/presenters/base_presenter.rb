@@ -6,8 +6,6 @@ class BasePresenter
     @template = template
   end
 
-  private
-
   def self.presents(name)
     define_method(name) do
       @object

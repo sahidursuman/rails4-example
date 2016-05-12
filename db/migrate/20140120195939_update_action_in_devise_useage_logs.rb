@@ -1,3 +1,4 @@
+# rubocop:disable Style/EmptyCaseCondition
 class UpdateActionInDeviseUseageLogs < ActiveRecord::Migration
   def self.up
     say_with_time('Updating log entry action') do

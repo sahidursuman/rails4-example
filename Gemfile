@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.5.1'
+gem 'rails', '4.2.6'
 
 # not all gems support sprockets 3 yet (1/4/2015)
 # https://github.com/rails/sprockets/blob/master/UPGRADING.md
@@ -26,7 +26,7 @@ gem 'jbuilder', '~> 2.0'
 
 gem 'less-rails-bootstrap', '~> 3.0'
 
-gem 'devise'
+gem 'devise', '3.5.5'
 gem 'cancancan'
 gem 'classy_enum', '~> 3.4'
 
@@ -52,7 +52,7 @@ group :development do
   gem 'web-console', '~> 2.0'  #use <%= console %> in views
 
   gem 'rubocop', require: false
-  gem 'reek', require: false
+  gem 'reek', '~> 3', require: false
   gem 'haml-lint', require: false
   gem 'rails_best_practices', require:false
   gem 'annotate', '~> 2.6.5', require:false
