@@ -18,12 +18,12 @@ module DeviseHelper
 
   def devise_errors_list(msgs)
     content_tag :ul do
-      msgs.map { |msg| concat(content_tag(:li, msg.html_safe)) }
+      msgs.map { |msg| concat(content_tag(:li, msg.html_safe)) } # rubocop:disable Rails/OutputSafety
     end
   end
 
   def devise_close_button
-    content_tag(:button, raw('&times;'), class: 'close', data: {dismiss: 'alert'})
+    content_tag(:button, raw('&times;'), class: 'close', data: {dismiss: 'alert'}) # rubocop:disable Rails/OutputSafety
   end
 
 end

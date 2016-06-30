@@ -7,12 +7,13 @@ module FlashHelper
       next if msg.blank?
       next unless msg.is_a? String
       bootstrap_class = "alert fade in alert-#{bootstrap_flash_type[key.to_sym]}"
-      messages << content_tag(:div, content_tag(:button, raw('&times;'),
-                                                class: 'close',
-                                                data: {dismiss: 'alert'}) + msg.html_safe, class: bootstrap_class)
+      # rubocop:disable Rails/OutputSafety
+      button = content_tag(:button, raw('&times;'), class: 'close', data: {dismiss: 'alert'})
+      messages << content_tag(:div, button + msg.html_safe, class: bootstrap_class)
+      # rubocop:enable Rails/OutputSafety
     end
     flash.clear # empty so doesn't linger
-    messages.join("\n").html_safe
+    safe_join(messages, "\n")
   end
 
 end

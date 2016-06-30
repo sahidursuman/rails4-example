@@ -17,10 +17,10 @@ include Warden::Test::Helpers
 
 describe DeviseUsageLog do
 
+  let!(:current_user) { create(:user, role: 'user') }
+  let!(:user) { create(:user, username: 'molly', email: 'molly@example.com') }
   before :each do
-    @current_user = create(:user, role: "user")
-    login_as @current_user
-    @user = create(:user, username: 'molly', email: 'molly@example.com')
+    login_as current_user
   end
 
   it "has a valid factory" do
@@ -29,8 +29,8 @@ describe DeviseUsageLog do
 
   it "#fetch_usage_report_entries returns selection" do
     allow(Rails.application.config).to receive(:devise_usage_log_level).and_return(:all)
-    DeviseUsageLog.log(@user,  DeviseAction::Login)
-    DeviseUsageLog.log(@user,  DeviseAction::Login)
+    DeviseUsageLog.log(user, DeviseAction::Login)
+    DeviseUsageLog.log(user, DeviseAction::Login)
     response = DeviseUsageLog.fetch_usage_report_entries
     expect(response.count).to eq(2)
   end
@@ -39,25 +39,25 @@ describe DeviseUsageLog do
     it "does nothing if :devise_usage_log_level is not set" do
       allow(Rails.application.config).to receive(:devise_usage_log_level).and_return(nil)
       expect do
-        DeviseUsageLog.log(@user, DeviseAction::Login)
+        DeviseUsageLog.log(user, DeviseAction::Login)
       end.to_not change(DeviseUsageLog, :count)
     end
     it "logs if level is :all" do
       allow(Rails.application.config).to receive(:devise_usage_log_level).and_return(:all)
       expect do
-        DeviseUsageLog.log(@user, DeviseAction::Confirmed)
+        DeviseUsageLog.log(user, DeviseAction::Confirmed)
       end.to change(DeviseUsageLog, :count)
     end
     it "logs if level is :login and action is login" do
       allow(Rails.application.config).to receive(:devise_usage_log_level).and_return(:login)
       expect do
-        DeviseUsageLog.log(@user, DeviseAction::Login)
+        DeviseUsageLog.log(user, DeviseAction::Login)
       end.to change(DeviseUsageLog, :count)
     end
     it "does nothing if :login but not login action" do
       allow(Rails.application.config).to receive(:devise_usage_log_level).and_return(:none)
       expect do
-        DeviseUsageLog.log(@user, DeviseAction::Confirmed)
+        DeviseUsageLog.log(user, DeviseAction::Confirmed)
       end.to_not change(DeviseUsageLog, :count)
     end
   end

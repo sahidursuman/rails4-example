@@ -20,8 +20,6 @@
               %th= t('label.role')
               %th= t('label.action')
           <tbody>
-          = render 'devise_usage_log/partials/devise_report_row', entry: entry
-        - else
-          = render 'devise_usage_log/partials/devise_report_row', entry: entry
+        = render 'devise_usage_log/partials/devise_report_row', entry: entry
         - prev_date = curr_date
       </table>

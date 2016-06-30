@@ -25,19 +25,26 @@ class UserPresenter < BasePresenter
   end
 
   def user_name
-    html = ''
-    html += "<span class=\'glyphicon glyphicon-user\'></span> " if user.role?('admin')
-    html += user.username
-    html += " <span class=\'help-block devise\'>#{t('label.unconfirmed').downcase}</span>" unless user.confirmed?
-    html.html_safe
+    html = []
+    if user.role?('admin')
+      html << content_tag(:span, '', class: 'glyphicon glyphicon-user')
+      html << spaces(1)
+    end
+    html << user.username
+    html << spaces(1)
+    html << content_tag(:span, t('label.unconfirmed').downcase, class: 'help-block devise') unless user.confirmed?
+    safe_join(html)
   end
 
   def email
-    html = user.email
+    html = []
+    html << user.email
     if user.pending_reconfirmation?
-      html += " <span class='help-block devise'>'#{user.unconfirmed_email}' #{t('label.pending').downcase}</span>"
+      unconfirmed_email = user.unconfirmed_email + ' ' + t('label.pending').downcase
+      html << spaces(1)
+      html << content_tag(:span, unconfirmed_email, class: 'help-block devise')
     end
-    html.html_safe
+    safe_join(html)
   end
 
   def sign_in_count

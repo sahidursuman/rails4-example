@@ -31,7 +31,7 @@ RemoveUnusedMethodsInControllersCheck: { except_methods: ['ApplicationController
                                                           'LocalDevise::SessionsController#failed_login',
                                                           'LocalDevise::PasswordsController#after_resetting_password_path_for',
                                                           'LocalDevise::ConfirmationsController#show']}
-RemoveUnusedMethodsInHelpersCheck: { except_methods: [] }
+RemoveUnusedMethodsInHelpersCheck: { except_methods: ['ApplicationHelper#spaces'] }
 RemoveUnusedMethodsInModelsCheck: { except_methods: [] }
 ReplaceComplexCreationWithFactoryMethodCheck: { attribute_assignment_count: 2 }
 ReplaceInstanceVariableWithLocalVariableCheck: { ignored_files: ['app/views']  }

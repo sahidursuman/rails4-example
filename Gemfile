@@ -52,6 +52,7 @@ group :development do
   gem 'web-console', '~> 2.0'  #use <%= console %> in views
 
   gem 'rubocop', require: false
+  gem 'rubocop-rspec', require: false
   gem 'reek', '~> 3', require: false
   gem 'haml-lint', require: false
   gem 'rails_best_practices', require:false

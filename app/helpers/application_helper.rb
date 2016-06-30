@@ -1,3 +1,4 @@
+# :reek:UtilityFunction
 module ApplicationHelper
 
   def present(object, klass = nil)
@@ -11,4 +12,9 @@ module ApplicationHelper
     # Assuming spinner image is called "spinner.gif"
     image_tag('spinner.gif', id: id, alt: t('label.loading'), style: 'display:none')
   end
+
+  def spaces(num)
+    ('&nbsp;' * num).html_safe # rubocop:disable Rails/OutputSafety
+  end
+
 end

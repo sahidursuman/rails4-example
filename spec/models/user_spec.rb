@@ -71,8 +71,8 @@ describe User do
   describe 'new_with_password' do
     it 'returns a new user record all set for a Devise change password email' do
       user = User.new_with_password(username: 'gabby', email: 'gabby@example.com')
-      expect(user.encrypted_password).not_to be_empty
-      expect(user.reset_password_token).not_to be_empty
+      expect(user.encrypted_password).to_not be_empty
+      expect(user.reset_password_token).to_not be_empty
     end
   end
 end

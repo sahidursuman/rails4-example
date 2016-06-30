@@ -7,6 +7,7 @@
 /.bundle
 /.rspec
 /.keep
+/.rubocop
 
 /log/*
 !/log/.keep

@@ -1,9 +1,17 @@
+require: rubocop-rspec
+
 AllCops:
   Include:
     - Rakefile
     - config.ru
+    - lib/**/*.rake
   Exclude:
+    - bin/*
     - db/schema.rb
+    - db/migrate/*.rb
+
+Rails:
+  Enabled: true
 
 LineLength:
   Max: 120
@@ -35,6 +43,14 @@ Documentation: # format too restricted
 Style/EndOfLine:
   Enabled: false # restore when editor sorted out
 
-# bug in current rubocop release 0.21.0
-# Delegate:
-#   Enabled: false
+RSpec/NotToNot:
+  EnforcedStyle: to_not
+
+RSpec/DescribedClass:
+  Enabled: false # prefer class name for readability
+
+RSpec/MultipleDescribes:
+  Enabled: false # conflicts with legit class names
+
+Delegate:
+  Enabled: false

@@ -3,15 +3,13 @@ require 'rails_helper'
 describe ProfilesController do
   login_admin
 
-  before :each do
-    @user = create(:user, username: 'molly', email: 'molly-rspec@zoeoberon.com')
-  end
+  let!(:user) { create(:user, username: 'molly', email: 'molly-rspec@zoeoberon.com') }
 
   describe "#edit" do
     before :each do
-      xhr :post, :edit, id: @user.id
+      xhr :post, :edit, id: user.id
     end
-    it "should set @user" do
+    it "sets @user" do
       expect(assigns(:user)).to_not be_nil
     end
     it "renders the edit partial" do
@@ -44,11 +42,11 @@ describe ProfilesController do
   describe "#update" do
     describe "with valid params" do
       before :each do
-        xhr :post, :update, user: {username: 'janet'}, id: @user.id
+        xhr :post, :update, user: {username: 'janet'}, id: user.id
       end
       it "update the user" do
-        @user.reload
-        expect(@user.username).to eq('janet')
+        user.reload
+        expect(user.username).to eq('janet')
       end
       it "sets a list of users" do
         expect(assigns(:users).count).to eq(2)
@@ -60,7 +58,7 @@ describe ProfilesController do
     describe "with invalid params" do
       it 'does not update user and stay on edit form' do
         expect do
-          xhr :post, :update, user: {username: nil, email: nil}, id: @user.id
+          xhr :post, :update, user: {username: nil, email: nil}, id: user.id
         end.to_not change(User, :count)
         expect(response).to render_template(partial: 'profiles/partials/_edit')
       end
@@ -68,20 +66,18 @@ describe ProfilesController do
   end
 
   describe "#destroy" do
-    before :each do
-      @another_user = create(:user, username: 'fred', email: 'fred@example.com')
-    end
+    let!(:another_user) { create(:user, username: 'fred', email: 'fred@example.com') }
     it 'deletes the user' do
       expect do
-        xhr :delete, :destroy, id: @another_user, format: 'js'
+        xhr :delete, :destroy, id: another_user, format: 'js'
       end.to change(User, :count).by(-1)
     end
     it "sets list of users" do
-      xhr :delete, :destroy, id: @another_user, format: 'js'
+      xhr :delete, :destroy, id: another_user, format: 'js'
       expect(assigns(:users).count).to eq(2)
     end
     it "renders admin/partials/users partial" do
-      xhr :delete, :destroy, id: @another_user, format: 'js'
+      xhr :delete, :destroy, id: another_user, format: 'js'
       expect(response).to render_template(partial: 'admin/partials/_users')
     end
   end

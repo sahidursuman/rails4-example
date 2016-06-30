@@ -23,7 +23,7 @@
           %td= user_presenter.last_login
           %td= user_presenter.sign_in_count
           %td
-            - if current_user.role?('admin') && (user.username.downcase != current_user.username.downcase)
+            - if current_user.role?('admin') && user.username.downcase.casecmp(current_user.username)
               = link_to t('button.edit'), edit_profile_path(id: user.id),
                         title: t('tooltip.edit_user'), rel: :tooltip,
                         data: {toggle: 'modal', target: 'edit_user_modal'},
