@@ -9,18 +9,11 @@ Active demo sites:
 
 ####Updates
 
-Jan 4, 2016:
-* Update to Rails 4.2.5
-* Update to Rspec 3.4
-
-May 18, 2015:
-* Update to Rails 4.2.1
-* Update to Rspec 3.2
-
-Oct 31, 2014:
-* Update to Rails 4.1
-* Update to Rspec 3.1
-* Update to Capistrano 3.1
+As oc Jun 30, 2016:
+* Updated to Rails 4.2.6
+* Updated to Rspec 3.4
+* Updated to Capistrano 3.2
+* Updated to Devise 3.5.5
 
 ###Related Blog Posts
 
