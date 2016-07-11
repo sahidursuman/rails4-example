@@ -8,6 +8,7 @@
 /.rspec
 /.keep
 /.rubocop
+/.ruby-version
 
 /log/*
 !/log/.keep
