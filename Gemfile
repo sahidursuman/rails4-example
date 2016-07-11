@@ -30,6 +30,8 @@ gem 'devise', '3.5.5'
 gem 'cancancan'
 gem 'classy_enum', '~> 3.4'
 
+gem 'figaro', '1.1.1'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
