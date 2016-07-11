@@ -1,7 +1,7 @@
-%table.table.table-hover.table-condensed
+%table.table.table-hover.table-condensed.footable
   %thead
     %tr
-      %th #
+      %th{data: {sort: {ignore: 'true'}}} #
       %th= t('label.username')
       - if current_user.role?('admin')
         %th= t('label.email')
@@ -9,7 +9,7 @@
         %th= t('label.role')
       %th= t('label.last_login')
       %th= t('label.login_count')
-      %th
+      %th{data: {sort: {ignore: 'true'}}}
   %tbody
     - @users.each do |user|
       - present user do |user_presenter|

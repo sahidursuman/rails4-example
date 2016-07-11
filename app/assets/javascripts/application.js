@@ -12,9 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.turbolinks
 //= require twitter/bootstrap
 //= require ie/respond.min
-//= require app_shared
-//= require jquery.turbolinks
 //= require turbolinks
-
+//= require footable
+//= require footable/footable.sort
+//= require app_shared

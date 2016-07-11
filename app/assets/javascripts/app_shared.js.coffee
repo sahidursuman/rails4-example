@@ -1,6 +1,9 @@
 ->
   $('#tabs').tab();
 
+$ ->
+  $('.footable').footable(breakpoints: filter: 300)
+
 # ajax spinners
 
 $(document).on "ajax:beforeSend", "*[data-spinner]", (e) ->
