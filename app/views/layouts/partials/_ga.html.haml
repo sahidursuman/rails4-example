@@ -1,8 +1,8 @@
 - unless Rails.env.test?
   %script{type: 'text/javascript'}
     var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', '#{PRIVATE_DATA['ga_tracker']}']);
-    _gaq.push(['_setDomainName','#{PRIVATE_DATA['ga_tracker_domain']}']);
+    _gaq.push(['_setAccount', '#{ENV['ga_tracker']}']);
+    _gaq.push(['_setDomainName','#{ENV['ga_tracker_domain']}']);
 
     (function() {
     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
