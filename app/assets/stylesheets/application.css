@@ -10,5 +10,6 @@
  *
  *= require colors
  *= require custom_bootstrap/custom_bootstrap
+ *= require footable
  *= require app_shared
  */
