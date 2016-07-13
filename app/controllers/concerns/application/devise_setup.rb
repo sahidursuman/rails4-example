@@ -2,13 +2,13 @@
 module Application::DeviseSetup
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) do |user|
+    devise_parameter_sanitizer.permit(:sign_up) do |user|
       user.permit(:username, :email, :role, :password, :password_confirmation)
     end
-    devise_parameter_sanitizer.for(:sign_in) do |user|
+    devise_parameter_sanitizer.permit(:sign_in) do |user|
       user.permit(:username, :password, :remember_me)
     end
-    devise_parameter_sanitizer.for(:account_update) do |user|
+    devise_parameter_sanitizer.permit(:account_update) do |user|
       user.permit(:username, :email, :role, :current_password, :password, :password_confirmation)
     end
   end

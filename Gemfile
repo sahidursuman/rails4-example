@@ -2,10 +2,6 @@ source 'https://rubygems.org' do
 
   gem 'rails', '4.2.6'
 
-  # not all gems support sprockets 3 yet (1/4/2015)
-  # https://github.com/rails/sprockets/blob/master/UPGRADING.md
-  gem 'sprockets-rails', '~> 2.3'
-
   gem 'mysql2'
 
   gem 'sass-rails', '~> 5.0'
@@ -26,11 +22,11 @@ source 'https://rubygems.org' do
 
   gem 'less-rails-bootstrap', '~> 3.0'
 
-  gem 'devise', '3.5.5'
+  gem 'devise', '4.2.0'
   gem 'cancancan'
   gem 'classy_enum', '~> 3.4'
 
-  gem 'figaro', '1.1.1'
+  gem 'figaro'
 
   group :doc do
     # bundle exec rake doc:rails generates the API under doc/api.
