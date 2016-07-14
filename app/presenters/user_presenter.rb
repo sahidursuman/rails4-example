@@ -4,15 +4,23 @@ class UserPresenter < BasePresenter
   delegate :id, to: :user
   delegate :role, to: :user
 
-  def last_login
+  def find_last_login
     if user.current_sign_in_at
-      str = user.current_sign_in_at
+      user.current_sign_in_at
     elsif user.last_sign_in_at
-      str = user.last_sign_in_at
+      user.last_sign_in_at
     elsif user.confirmation_sent_at
-      str = user.confirmation_sent_at
+      user.confirmation_sent_at
     end
-    str ? (l str, format: '%Y-%m-%d') : ''
+  end
+
+  def last_login
+    last_login_date = find_last_login
+    last_login_date ? (l find_last_login, format: '%Y-%m-%d') : ''
+  end
+
+  def last_login_int
+    find_last_login.to_i
   end
 
   def last_ip

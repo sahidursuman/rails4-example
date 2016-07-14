@@ -7,8 +7,8 @@
         %th= t('label.email')
         %th= t('label.ip')
         %th= t('label.role')
-      %th= t('label.last_login')
-      %th= t('label.login_count')
+      %th{data: {type: 'numeric', sort: {initial: 'true', initial: 'descending'}}}= t('label.last_login')
+      %th{data: {type: 'numeric'}}= t('label.login_count')
       %th{data: {sort: {ignore: 'true'}}}
   %tbody
     - @users.each do |user|
@@ -20,8 +20,8 @@
             %td= user_presenter.email
             %td= user_presenter.last_ip
             %td= user_presenter.role
-          %td= user_presenter.last_login
-          %td= user_presenter.sign_in_count
+          %td{data: {value: user_presenter.last_login_int}}= user_presenter.last_login
+          %td{data: {value: user_presenter.sign_in_count.to_i}}= user_presenter.sign_in_count
           %td
             - if current_user.role?('admin') && user.username.downcase.casecmp(current_user.username)
               = link_to t('button.edit'), edit_profile_path(id: user.id),
