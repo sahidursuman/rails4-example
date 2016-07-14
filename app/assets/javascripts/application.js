@@ -10,12 +10,14 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+// July 14, 2016: Temporarily remove turbolinks until can figure out conflict with bootstrap nav bar.
+//
 //= require jquery
-//= require jquery_ujs
 //= require jquery.turbolinks
+//= require jquery_ujs
 //= require twitter/bootstrap
 //= require ie/respond.min
-//= require turbolinks
 //= require footable
 //= require footable/footable.sort
 //= require app_shared
+// require turbolinks
