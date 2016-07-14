@@ -1,5 +1,4 @@
-@import "twitter/bootstrap/variables";
-@import "colors";
+@import "bootstrap_config.scss";
 
 html,body {
     height: 100%;
@@ -16,8 +15,8 @@ h1, .h1 {
 }
 #footer {
   height: 70px;
-  color: @gray-light;
-  background-color: lighten(@midnight-blue, 70%);
+  color: $gray-light;
+  background-color: lighten($midnight-blue, 70%);
   text-align: center;
 }
 
@@ -36,13 +35,13 @@ h1, .h1 {
     white-space: nowrap;
     padding-right: 0px;
     padding-left: 0px;
-    color: @nephritis;
+    color: $nephritis;
   }
 }
 
 > label {
   &.devise {
-    color: @nephritis;
+    color: $nephritis;
     &.normal {
       font-weight:normal;
     }
@@ -53,7 +52,7 @@ h1, .h1 {
   &.devise {
     font: 85% Arial,sans-serif;
     font-style:italic;
-    color: @nephritis;
+    color: $nephritis;
   }
 }
 
@@ -69,51 +68,51 @@ h1, .h1 {
   border:1px solid #000;
   &.devise {
     margin-top: 20px;
-    border-color: @nephritis;
+    border-color: $nephritis;
   }
 }
 
 > hr {
   &.devise {
-    border-color: @nephritis;
+    border-color: $nephritis;
     width: 80%;
     margin-top: 0;
   }
   &.green {
-    border-color: @nephritis;
+    border-color: $nephritis;
   }
 }
 
 .modal-header {
   &.devise {
-    padding: @modal-title-padding;
-    border-bottom: 1px solid @nephritis;
-    min-height: (@modal-title-padding + @modal-title-line-height);
+    padding: $modal-title-padding;
+    border-bottom: 1px solid $nephritis;
+    min-height: ($modal-title-padding + $modal-title-line-height);
   }
 }
 .modal-title {
   &.devise {
-    color: @belize-hole;
+    color: $belize-hole;
   }
 }
 .modal-footer {
   &.devise {
     margin-top: 0px;
     padding: 10px;
-    border-top: 1px solid @nephritis;
+    border-top: 1px solid $nephritis;
     font: 85% Arial,sans-serif;
   }
 }
 .mini-red {
-  color: @alizarin;
+  color: $alizarin;
   font-size: 9px;
 }
 .btn-default:hover,
 .btn-default:focus,
 .btn-default:active {
-  background-color: lighten(@belize-hole, 20%);
-  border-color: lighten(@belize-hole, 10%);
-  color: @white;
+  background-color: lighten($belize-hole, 20%);
+  border-color: lighten($belize-hole, 10%);
+  color: $white;
 }
 .nowrap {
   white-space: nowrap;

@@ -15,9 +15,9 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
-//= require twitter/bootstrap
+//= require bootstrap-sprockets
 //= require ie/respond.min
 //= require footable
 //= require footable/footable.sort
-//= require app_shared
+//= require common
 // require turbolinks

@@ -20,7 +20,7 @@ source 'https://rubygems.org' do
 
   gem 'jbuilder', '~> 2.0'
 
-  gem 'less-rails-bootstrap', '~> 3.0'
+  gem 'bootstrap-sass', '~> 3.3.6'
 
   gem 'devise', '4.2.0'
   gem 'cancancan'
