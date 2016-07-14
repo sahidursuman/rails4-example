@@ -59,7 +59,7 @@ source 'https://rubygems.org' do
   end
 
   group :development, :test do
-    gem 'rspec-rails', '~> 3.2'
+    gem 'rspec-rails', '~> 3.4'
     gem 'factory_girl_rails'
   end
 
