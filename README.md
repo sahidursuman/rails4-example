@@ -7,18 +7,22 @@ Active demo sites:
 - <http://rails4example.gitrepoexamples.com> (master branch)
 - <http://arails4eg.joanswork.net/> (dev branch)
 
-####Updates
+####Versions
 
-As of Jun 30, 2016:
-* Updated to Rails 4.2.6
-* Updated to Rspec 3.4
+As of Jul 19, 2016:
+* Updated to Bootstrap 4.0 (alpha3)
+* Updated to Rails 4.2.7
+* Updated to Devise 4.2.0
+* Updated to Rspec 3.5
 * Updated to Capistrano 3.2
-* Updated to Devise 3.5.5
+
+NOTE: The original Bootstap 3 version is available in the 'bootstrap3' branch. (not maintained)
 
 ###Related Blog Posts
 
 Blog posts on [joanswork.com](http://joanswork.com) that provide further explanation and instruction.
 
+- [Devise 4.2.0: Updating from 3.x](http://joanswork.com/updating-devise-4-2-0/)
 - [Tracking Devise activity like login, sign-up, etc](http://joanswork.com/devise-usage-tracking/)
 - [Turbolinks, Google Analytics & SEO: Keeping everybody happy](http://joanswork.com/turbolinks-and-ga/)
 - [Using I18n for SEO related tags](http://joanswork.com/rails-seo-and-i18n-the-basics/)
