@@ -1,6 +1,6 @@
 ##rails4-example
 
-A Rails 4.2 / Ruby 2 starter site using Devise and Bootstrap 3.
+A Rails 4.2 / Ruby 2 starter site using Devise and Bootstrap 4.
 
 Active demo sites:
 
