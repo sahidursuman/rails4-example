@@ -2,13 +2,13 @@
   %thead
     %tr
       %th{data: {sort: {ignore: 'true'}}} #
-      %th= t('label.username')
+      %th{nowrap: true}= t('label.username')
       - if current_user.role?('admin')
-        %th= t('label.email')
-        %th= t('label.ip')
-        %th= t('label.role')
-      %th{data: {type: 'numeric', sort: {initial: 'descending'}}}= t('label.last_login')
-      %th{data: {type: 'numeric'}}= t('label.login_count')
+        %th{nowrap: true}= t('label.email')
+        %th{nowrap: true}= t('label.ip')
+        %th{nowrap: true}= t('label.role')
+      %th{nowrap: true, data: {type: 'numeric', sort: {initial: 'descending'}}}= t('label.last_login')
+      %th{nowrap: true, data: {type: 'numeric'}}= t('label.login_count')
       %th{data: {sort: {ignore: 'true'}}}
   %tbody
     - @users.each do |user|
