@@ -35,7 +35,7 @@ class UserPresenter < BasePresenter
   def user_name
     html = []
     if user.role?('admin')
-      html << content_tag(:span, '', class: 'glyphicon glyphicon-user')
+      html << fa_icon('user')
       html << spaces(1)
     end
     html << user.username

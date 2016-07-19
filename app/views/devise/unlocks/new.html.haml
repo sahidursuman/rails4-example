@@ -1,18 +1,20 @@
-= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: {method: :post, role: 'form', class: 'form-horizontal'}) do |f|
- .container
-  .row
-   .col-md-offset-3.col-md-5.round-box.devise
-    .modal-header.devise
-     %h3.modal-title.devise= t('button.resend_unlock')
-    .modal-body
-     = devise_error_messages!
-     .form-group
-      %label.col-md-2.control-label.devise{for: 'inputEmail1'}= t('label.email')
-      .col-md-10
-       = f.email_field :email, class: 'form-control', id: 'inputEmail1', placeholder: t('label.email_example').downcase
-     .form-group
-      .col-md-offset-2.col-md-10
-       %br/
-       = f.submit t('button.resend_unlock'), class: 'btn btn-success'
-    .modal-footer.devise
-     = render 'devise/shared/links'
+= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: {method: :post, role: 'form'}) do |f|
+  .container
+    .row
+      .col-sm-offset-3.col-sm-5
+        .card.card-block.round-box.devise
+          %h4.card-title.devise= t('button.resend_unlock')
+          .card-text.devise
+            = devise_error_messages!
+
+            .row.form-group
+              .col-sm-12
+                = f.email_field :email, class: 'form-control form-control-sm', id: 'inputEmail1',
+                                        placeholder: t('label.email_example').downcase,
+                                        type: 'email'
+            .row.form-group
+              .col-sm-12
+                = f.submit t('button.send_email'), class: 'btn btn-success'
+
+          .card-footer.text-sm-right.devise
+            = render 'devise/shared/links'

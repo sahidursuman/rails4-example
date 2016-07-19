@@ -20,7 +20,8 @@ source 'https://rubygems.org' do
 
   gem 'jbuilder', '~> 2.0'
 
-  gem 'bootstrap-sass', '~> 3.3.6'
+  gem 'bootstrap', '~> 4.0.0.alpha3'
+  gem "font-awesome-rails"
 
   gem 'devise', '4.2.0'
   gem 'cancancan'
@@ -74,4 +75,5 @@ end
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-footable', '2.0.3'
+  gem 'rails-assets-tether', '>= 1.1.0'
 end

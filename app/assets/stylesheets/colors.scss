@@ -23,21 +23,13 @@ $clouds: #ecf0f1;
 $silver: #bdc3c7;
 $asbestos: #7f8c8d;
 
-$gray-base:              #000;
-$gray-darker:            lighten($gray-base, 13.5%); // #222
-$gray-dark:              lighten($gray-base, 20%);   // #333
-$gray:                   lighten($gray-base, 33.5%); // #555
-$gray-light:             lighten($gray-base, 46.7%); // #777
-$gray-lighter:           lighten($gray-base, 93.5%); // #eee
-
 // bootstrap element colors
 
-$navbar-inverse-color:               $white;
-$navbar-inverse-bg:                  $belize-hole;
-$navbar-inverse-border:              $navbar-inverse-bg;
-$navbar-inverse-link-color:          $white;
-$navbar-inverse-link-hover-color:    $white;
-$navbar-inverse-brand-hover-color:   $white;
+$brand-primary:             $belize-hole !default;
+$brand-success:             $nephritis !default;
+$brand-info:                #5bc0de !default;
+$brand-warning:             #f0ad4e !default;
+$brand-danger:              #d9534f !default;
 
 $state-warning-text:   darken($sun-flower, 20%);
 $state-warning-bg:     lighten( $state-warning-text, 50%);

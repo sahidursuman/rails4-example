@@ -7,7 +7,7 @@
         %th= t('label.email')
         %th= t('label.ip')
         %th= t('label.role')
-      %th{data: {type: 'numeric', sort: {initial: 'true', initial: 'descending'}}}= t('label.last_login')
+      %th{data: {type: 'numeric', sort: {initial: 'descending'}}}= t('label.last_login')
       %th{data: {type: 'numeric'}}= t('label.login_count')
       %th{data: {sort: {ignore: 'true'}}}
   %tbody
@@ -28,8 +28,5 @@
                         title: t('tooltip.edit_user'), rel: :tooltip,
                         data: {toggle: 'modal', target: 'edit_user_modal'},
                         remote: true, class: 'btn btn-success btn-xs'
-
-
-= render 'admin/partials/add_user'
 
 .modal#edit_user_modal{aria: {labelledby: 'myModalLabel', hidden: true}, role: 'dialog', tabindex: '-1'}

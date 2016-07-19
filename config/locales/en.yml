@@ -46,6 +46,8 @@ en:
     confirm_delete_user: "Are you sure you want to delete \"%{username}\"?"
     edit: "Edit"
     save_changes: "Save changes"
+    send_email: "Send Email"
+    add_new_user: "Add New User"
   label:
     username: "Username"
     user: "User"

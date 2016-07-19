@@ -29,7 +29,7 @@ class LocalDevise::ConfirmationsController < Devise::ConfirmationsController
   def set_reset_password_token(resource)
     raw, enc = Devise.token_generator.generate(resource.class, :reset_password_token)
     resource.reset_password_token   = enc
-    resource.reset_password_sent_at = Time.zone.utc
+    resource.reset_password_sent_at = Time.now.utc
     resource.save!(validate: false)
     raw
   end

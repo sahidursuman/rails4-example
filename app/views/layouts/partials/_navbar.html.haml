@@ -1,47 +1,50 @@
-.navbar.navbar-inverse.navbar-fixed-top
-  .container
-    .navbar-header
-      %button.navbar-toggle{data: {target: '.navbar-collapse', toggle: 'collapse'}, type: 'button'}
-        %span.icon-bar
-        %span.icon-bar
-        %span.icon-bar
-      = link_to branding_text, root_path, class: 'navbar-brand'
-    .collapse.navbar-collapse
-      %ul.nav.navbar-nav
-        %li{class: "#{params[:controller] == 'dashboard' ? 'active' : ''}"}= link_to t('menu.home'), dashboard_path
-        - if current_user && current_user.role?('user')
-          %li
-            %a{href: '#'}= t('menu.messages')
-          %li.dropdown
-            %a.dropdown-toggle{data: {toggle: 'dropdown'}, href: '#'}
-              = t('menu.profile')
-              %b.caret
-            %ul.dropdown-menu
-              %li
-                %a{href: '#'}= t('menu.details')
-              %li
-                %a{href: '#'}= t('menu.licensing')
-              %li
-                %a{href: '#'}= t('menu.education')
-          %li
-            %a{href: '#'}= t('menu.reports')
-          - if current_user.role?('manager')
-            %li{class: "#{params[:controller] == 'admin' ? 'active' : ''}"}= link_to t('menu.admin'), admin_path
-        %li{class: "#{params[:controller] == 'help' ? 'active' : ''}"}= link_to t('menu.help'), help_path
-      %ul.nav.navbar-nav.navbar-right
-        %li
-          - if user_signed_in?
-            %p.navbar-text.avatar
-              = image_tag(current_user.avatar_url, size: '30x30')
-              &nbsp;
-              = link_to "#{current_user.username}&nbsp;".html_safe, edit_user_registration_path
-              = link_to '<span class=\'glyphicon glyphicon-cog\'></span>'.html_safe, edit_user_registration_path
-              &nbsp;&nbsp;|&nbsp;
-              = link_to t('menu.logout').html_safe, destroy_user_session_path, method: 'delete'
-          - else
-            - unless controller_name == 'dashboard' && action_name == 'index'
-              %p.navbar-text
-                &nbsp;
-                = link_to t('menu.login').html_safe, new_user_session_path
-                &nbsp;|&nbsp;
-                = link_to t('menu.register').html_safe, new_user_registration_path
+%nav.navbar.navbar-dark.navbar-fixed-top
+
+  %button.navbar-toggler.hidden-sm-up{data: {target: '#top-nav-content', toggle: 'collapse'}, type: 'button'}
+    &#9776;
+  %a.navbar-brand{href: root_path}
+    = branding_text
+    - if Rails.env == 'development'
+      %span [dev]
+
+  .collapse.navbar-toggleable-xs#top-nav-content
+    %ul.nav.navbar-nav
+
+      %li.nav-item
+        %a.nav-link{class: "#{params[:controller] == 'dashboard' ? 'active' : ''}", href: dashboard_path}
+          = t('menu.home')
+
+      - if user_signed_in?
+        %li.nav-item
+          %a.nav-link{href: '#'}= t('menu.messages')
+        %li.nav-item.dropdown
+          %a.nav-link.dropdown-toggle{aria: {expanded: 'false', haspopup: 'true'}, data: {toggle: 'dropdown'}, href: '#', role: 'button'}
+            = t('menu.profile')
+          .dropdown-menu
+            %a.dropdown-item{href: '#'}= t('menu.details')
+            %a.dropdown-item{href: '#'}= t('menu.licensing')
+            %a.dropdown-item{href: '#'}= t('menu.education')
+
+        - if current_user.role?('manager')
+          %li.nav-item
+            %a.nav-link{class: "#{params[:controller] == 'admin' ? 'active' : ''}", href: admin_path}
+              = t('menu.admin')
+      %li.nav-item
+        %a.nav-link{class: "#{params[:controller] == 'help' ? 'active' : ''}", href: help_path}
+          = t('menu.help')
+
+    %ul.nav.navbar-nav.pull-md-right
+      - if user_signed_in?
+        %li.nav-item
+          %a.nav-link{href: edit_user_registration_path}
+            = image_tag(current_user.avatar_url, size: '30x30', class: 'avatar')
+            = current_user.username
+            = fa_icon('cog')
+        %li.nav-item
+          %a.nav-link{href: destroy_user_session_path, data: {method: 'delete'}}= t('menu.logout')
+      - else
+        - unless controller_name == 'dashboard' && action_name == 'index'
+          %li.nav-item
+            %a.nav-link{href: new_user_session_path}= t('menu.login')
+          %li.nav-item
+            %a.nav-link{href: new_user_registration_path}= t('menu.register')

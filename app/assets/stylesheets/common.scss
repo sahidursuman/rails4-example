@@ -1,56 +1,55 @@
 @import "bootstrap_config.scss";
 
-html,body {
-    height: 100%;
-}
-h1, .h1 {
-  font-size: 24px;
-}
-#wrap {
-    min-height: 100%;
-    height: auto !important;
-    height: 100%;
-    margin: 0 auto -60px;
-    padding: 0 0 60px;
-}
-#footer {
-  height: 70px;
-  color: $gray-light;
-  background-color: lighten($midnight-blue, 70%);
-  text-align: center;
+.fullpage-body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
-.footer-link {
-  font: 80% Arial,sans-serif;
+.fullpage-content {
+  flex: 1;
 }
 
 .narrow-well {
   margin: 0 auto;
-  max-width: 1000px;
+  max-width: 1240px;
   padding-top: 60px; /* nav bar space */
 }
 
-.control-label {
-  &.devise {
-    white-space: nowrap;
-    padding-right: 0px;
-    padding-left: 0px;
-    color: $nephritis;
-  }
+footer {
+  color: $gray-light;
+  background-color: lighten($midnight-blue, 70%);
+  text-align: center;
+  margin-top: 1rem;
 }
 
-> label {
+.footer-link {
+  font: 90% Arial,sans-serif;
+}
+
+h1, .h1 {
+  font-size: 2.1rem;
+}
+
+.form-control-label {
   &.devise {
+    white-space: nowrap;
     color: $nephritis;
+    font-weight: bold;
+    padding-right: 0rem;
     &.normal {
-      font-weight:normal;
+      font-weight: normal;
+      padding-right: 0.75rem;
+      &.small {
+        font-size: 90%;
+      }
     }
   }
 }
 
 .help-block {
   &.devise {
-    font: 85% Arial,sans-serif;
+    font: 80% Arial,sans-serif;
     font-style:italic;
     color: $nephritis;
   }
@@ -72,7 +71,7 @@ h1, .h1 {
   }
 }
 
-> hr {
+hr {
   &.devise {
     border-color: $nephritis;
     width: 80%;
@@ -83,37 +82,43 @@ h1, .h1 {
   }
 }
 
-.modal-header {
+.card-title {
   &.devise {
-    padding: $modal-title-padding;
+    color: $nephritis;
     border-bottom: 1px solid $nephritis;
-    min-height: ($modal-title-padding + $modal-title-line-height);
+    padding-bottom: 15px;
   }
 }
+
 .modal-title {
   &.devise {
-    color: $belize-hole;
+    color: $nephritis;
   }
 }
-.modal-footer {
+
+.card-footer {
   &.devise {
-    margin-top: 0px;
-    padding: 10px;
+    background-color: $white;
+    color: $nephritis;
+    padding: none;
     border-top: 1px solid $nephritis;
-    font: 85% Arial,sans-serif;
   }
 }
-.mini-red {
-  color: $alizarin;
-  font-size: 9px;
+
+a,
+a:hover,
+a:active {
+  &.devise_shared {
+    font-size: 90%;
+  }
 }
-.btn-default:hover,
-.btn-default:focus,
-.btn-default:active {
-  background-color: lighten($belize-hole, 20%);
-  border-color: lighten($belize-hole, 10%);
-  color: $white;
+
+.form-group {
+  &.devise {
+    margin-bottom: .25rem;
+  }
 }
+
 .nowrap {
   white-space: nowrap;
 }
