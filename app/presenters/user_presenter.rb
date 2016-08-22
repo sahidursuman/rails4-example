@@ -56,7 +56,7 @@ class UserPresenter < BasePresenter
   end
 
   def sign_in_count
-    (user.sign_in_count > 0) ? user.sign_in_count : ''
+    user.sign_in_count > 0 ? user.sign_in_count : ''
   end
 
   def list_roles_for_select

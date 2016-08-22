@@ -12,7 +12,12 @@ class BasePresenter
     end
   end
 
+  def respond_to_missing?(*)
+    true
+  end
+
   def method_missing(*args, &block)
     @template.send(*args, &block)
+    super
   end
 end
