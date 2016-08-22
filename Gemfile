@@ -1,6 +1,6 @@
 source 'https://rubygems.org' do
 
-  gem 'rails', '4.2.7'
+  gem 'rails', '4.2.7.1'
 
   gem 'mysql2'
 
