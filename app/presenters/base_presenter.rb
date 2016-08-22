@@ -17,7 +17,10 @@ class BasePresenter
   end
 
   def method_missing(*args, &block)
-    @template.send(*args, &block)
-    super
+    if @template
+      @template.send(*args, &block)
+    else
+      super # don't actually want to get here?
+    end
   end
 end
