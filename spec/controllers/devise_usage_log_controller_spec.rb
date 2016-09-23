@@ -3,12 +3,14 @@ require 'rails_helper'
 describe DeviseUsageLogController do
   login_admin
 
+  let(:devise_usage_log_controller) { subject }
+
   it "has a current_user" do
-    expect(subject.current_user).to_not be_nil
+    expect(devise_usage_log_controller.current_user).to_not be_nil
   end
 
   describe "#devise_usage_report" do
-    before :each do
+    before do
       xhr :post, :devise_usage_report, num_days: 15
     end
     it "sets number of days (@num_days)" do
@@ -23,7 +25,7 @@ describe DeviseUsageLogController do
   end
 
   describe "#close_devise_usage_report" do
-    before :each do
+    before do
       xhr :post, :close_devise_usage_report
     end
     it "renders the devise usage report link partial" do

@@ -5,7 +5,7 @@ describe Ability do
 
   describe "User Role" do
     let!(:user) { create(:user, role: 'user') }
-    before :each do
+    before do
       login_as user
     end
 
@@ -19,7 +19,7 @@ describe Ability do
 
   describe "Manager Role" do
     let!(:user) { create(:user, role: 'manager') }
-    before :each do
+    before do
       login_as user
     end
 
@@ -36,7 +36,7 @@ describe Ability do
 
   describe "Admin Role" do
     let!(:user) { create(:user, role: 'admin') }
-    before :each do
+    before do
       login_as user
     end
 

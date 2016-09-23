@@ -52,5 +52,8 @@ RSpec/DescribedClass:
 RSpec/MultipleDescribes:
   Enabled: false # conflicts with legit class names
 
-Delegate:
-  Enabled: false
+RSpec/MultipleExpectations:
+  Max: 3 # todo: this should be 2
+
+RSpec/NestedGroups:
+  MaxNesting: 4

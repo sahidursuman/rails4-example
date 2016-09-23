@@ -19,7 +19,7 @@ describe DeviseUsageLog do
 
   let!(:current_user) { create(:user, role: 'user') }
   let!(:user) { create(:user, username: 'molly', email: 'molly@example.com') }
-  before :each do
+  before do
     login_as current_user
   end
 

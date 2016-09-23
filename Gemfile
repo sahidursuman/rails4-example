@@ -52,7 +52,7 @@ source 'https://rubygems.org' do
 
     gem 'rubocop', require: false
     gem 'rubocop-rspec', require: false
-    gem 'reek', '~> 3', require: false
+    gem 'reek', '~> 4', require: false
     gem 'haml-lint', require: false
     gem 'rails_best_practices', require:false
     gem 'annotate', '~> 2.6.5', require:false

@@ -3,12 +3,14 @@ require 'rails_helper'
 describe DashboardController do
   login_user
 
+  let(:dashboard_controller) { subject }
+
   it "has a current_user" do
-    expect(subject.current_user).to_not be_nil
+    expect(dashboard_controller.current_user).to_not be_nil
   end
 
   describe "GET 'index'" do
-    before :each do
+    before do
       get 'index'
     end
 

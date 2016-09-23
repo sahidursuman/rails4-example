@@ -6,7 +6,7 @@ describe ProfilesController do
   let!(:user) { create(:user, username: 'molly', email: 'molly-rspec@zoeoberon.com') }
 
   describe "#edit" do
-    before :each do
+    before do
       xhr :post, :edit, id: user.id
     end
     it "sets @user" do
@@ -41,7 +41,7 @@ describe ProfilesController do
 
   describe "#update" do
     describe "with valid params" do
-      before :each do
+      before do
         xhr :post, :update, user: {username: 'janet'}, id: user.id
       end
       it "update the user" do

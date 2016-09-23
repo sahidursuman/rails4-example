@@ -5,7 +5,7 @@ describe ListOfGems do
 
   let!(:current_user) { create(:user, role: 'user') }
   let!(:list_of_gems) { ListOfGems.new(columns: 4) }
-  before :each do
+  before do
     login_as current_user
   end
 
