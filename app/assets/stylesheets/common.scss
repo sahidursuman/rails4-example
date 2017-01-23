@@ -19,12 +19,12 @@
 footer {
   color: $gray-light;
   background-color: lighten($midnight-blue, 70%);
-  text-align: center;
   margin-top: 1rem;
+  padding-top: 1rem;
 }
 
 .footer-link {
-  font: 90% Arial,sans-serif;
+  color: darken($gray-light, 30%);
 }
 
 h1, .h1 {
