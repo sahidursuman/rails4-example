@@ -10,7 +10,7 @@ Active demo sites:
 ####Versions
 
 As of Jan 23, 2017:
-* Updated to Bootstrap 4.0 (alpha6)
+* Updated to Bootstrap 4.0 (alpha4)
 * Updated to Rails 4.2.7
 * Updated to Devise 4.2.0
 * Updated to Rspec 3.5
