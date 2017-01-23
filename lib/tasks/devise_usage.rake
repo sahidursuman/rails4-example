@@ -20,12 +20,13 @@ namespace :devise_usage do
     entries.each do |entry|
       current_date_string = entry.created_at.strftime('%m/%d/%Y')
       printf "\n%s:\n-----------\n", current_date_string if current_date_string != previous_date_string
-      printf "USER: %-12s IP: %-15s ROLE: %-8s ACTION: %s\n",
-             entry.username.present? ? entry.username : '(unknown)',
-             entry.user_ip,
-             entry.role,
-             "#{I18n.t(entry.action, scope: 'classy_enum.devise_action')} (#{entry.created_at.strftime('%H:%M')})" \
-        unless (exclude_ip.present? && entry.user_ip == exclude_ip) || entry.action.blank?
+      unless (exclude_ip.present? && entry.user_ip == exclude_ip) || entry.action.blank?
+        printf "USER: %-12s IP: %-15s ROLE: %-8s ACTION: %s\n",
+               entry.username.present? ? entry.username : '(unknown)',
+               entry.user_ip,
+               entry.role,
+               "#{I18n.t(entry.action, scope: 'classy_enum.devise_action')} (#{entry.created_at.strftime('%H:%M')})"
+      end
       previous_date_string = current_date_string
     end
   end

@@ -23,11 +23,11 @@ describe DeviseUsageLog do
     login_as current_user
   end
 
-  it "has a valid factory" do
+  it 'has a valid factory' do
     expect(create(:devise_usage_log)).to be_valid
   end
 
-  it "#fetch_usage_report_entries returns selection" do
+  it '#fetch_usage_report_entries returns selection' do
     allow(Rails.application.config).to receive(:devise_usage_log_level).and_return(:all)
     DeviseUsageLog.log(user, DeviseAction::Login)
     DeviseUsageLog.log(user, DeviseAction::Login)
@@ -35,26 +35,26 @@ describe DeviseUsageLog do
     expect(response.count).to eq(2)
   end
 
-  describe "#log" do
-    it "does nothing if :devise_usage_log_level is not set" do
+  describe '#log' do
+    it 'does nothing if :devise_usage_log_level is not set' do
       allow(Rails.application.config).to receive(:devise_usage_log_level).and_return(nil)
       expect do
         DeviseUsageLog.log(user, DeviseAction::Login)
       end.to_not change(DeviseUsageLog, :count)
     end
-    it "logs if level is :all" do
+    it 'logs if level is :all' do
       allow(Rails.application.config).to receive(:devise_usage_log_level).and_return(:all)
       expect do
         DeviseUsageLog.log(user, DeviseAction::Confirmed)
       end.to change(DeviseUsageLog, :count)
     end
-    it "logs if level is :login and action is login" do
+    it 'logs if level is :login and action is login' do
       allow(Rails.application.config).to receive(:devise_usage_log_level).and_return(:login)
       expect do
         DeviseUsageLog.log(user, DeviseAction::Login)
       end.to change(DeviseUsageLog, :count)
     end
-    it "does nothing if :login but not login action" do
+    it 'does nothing if :login but not login action' do
       allow(Rails.application.config).to receive(:devise_usage_log_level).and_return(:none)
       expect do
         DeviseUsageLog.log(user, DeviseAction::Confirmed)

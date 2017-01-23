@@ -32,11 +32,11 @@ require 'rails_helper'
 describe User do
 
   describe '#role?' do
-    it "returns true since a manager has a same or greater role than a user" do
+    it 'returns true since a manager has a same or greater role than a user' do
       user = create(:user, role: 'manager')
       expect(user.role?('user')).to be_truthy
     end
-    it "returns false since a user does not have the same as a manager" do
+    it 'returns false since a user does not have the same as a manager' do
       user = create(:user, role: 'user')
       expect(user.role?('manager')).to be_falsey
     end
@@ -47,20 +47,20 @@ describe User do
       user = create(:user, image_url: 'this/that.jpg')
       expect(user.avatar_url).to eq('this/that.jpg')
     end
-    it "return link to gravatar if image_url not set" do
+    it 'return link to gravatar if image_url not set' do
       user = create(:user, image_url: nil)
       expect(user.avatar_url).to match(/gravatar.com/)
     end
   end
 
   describe '#log_devise_action' do
-    it "creates a DeviseUsageLog record" do
+    it 'creates a DeviseUsageLog record' do
       user = create(:user)
       expect do
         user.log_devise_action(DeviseAction::Login)
       end.to change(DeviseUsageLog, :count)
     end
-    it "creates a DeviseUsageLog record for this user" do
+    it 'creates a DeviseUsageLog record for this user' do
       user = create(:user)
       user.log_devise_action(DeviseAction::Login)
       log_entry = DeviseUsageLog.last

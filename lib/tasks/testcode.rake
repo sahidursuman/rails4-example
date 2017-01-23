@@ -1,3 +1,4 @@
+# rubocop:disable Metrics/BlockLength
 namespace :testcode do
   unless Rails.env == 'production'
     require 'rspec/core/rake_task'

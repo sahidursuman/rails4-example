@@ -5,7 +5,7 @@ describe DashboardController do
 
   let(:dashboard_controller) { subject }
 
-  it "has a current_user" do
+  it 'has a current_user' do
     expect(dashboard_controller.current_user).to_not be_nil
   end
 
@@ -14,11 +14,11 @@ describe DashboardController do
       get 'index'
     end
 
-    it "returns http success" do
+    it 'returns http success' do
       expect(response).to be_success
     end
 
-    it "set @lists_of_gems" do
+    it 'set @lists_of_gems' do
       expect(assigns(:lists_of_gems)).to be_kind_of(ListOfGems)
     end
   end

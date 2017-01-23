@@ -25,6 +25,9 @@ MethodLength:
 AbcSize:
   Max: 30
 
+BlockLength:
+  Max: 30
+
 PerceivedComplexity:
   Max: 10
 
@@ -56,4 +59,4 @@ RSpec/MultipleExpectations:
   Max: 3 # todo: this should be 2
 
 RSpec/NestedGroups:
-  MaxNesting: 4
+  Max: 4

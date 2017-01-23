@@ -47,21 +47,21 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
 
-  if Socket.gethostname == ENV['local_hostname']
-    # use Mailcatcher
-    # http://mailcatcher.me/
-    config.action_mailer.smtp_settings = {address: 'localhost', port: 1025}
-  else
-    config.action_mailer.smtp_settings = {
-      address: ENV['mailer_address'],
-      port: ENV['mailer_port'],
-      domain: ENV['mailer_domain'],
-      user_name: ENV['mailer_user_name'],
-      password: ENV['mailer_password'],
-      authentication: 'plain',
-      enable_starttls_auto: true
-    }
-  end
+  config.action_mailer.smtp_settings = if Socket.gethostname == ENV['local_hostname']
+                                         # use Mailcatcher
+                                         # http://mailcatcher.me/
+                                         {address: 'localhost', port: 1025}
+                                       else
+                                         {
+                                           address: ENV['mailer_address'],
+                                           port: ENV['mailer_port'],
+                                           domain: ENV['mailer_domain'],
+                                           user_name: ENV['mailer_user_name'],
+                                           password: ENV['mailer_password'],
+                                           authentication: 'plain',
+                                           enable_starttls_auto: true
+                                         }
+                                       end
 
   # level of Devise usage tracking - :all, :login, :none (default)
   config.devise_usage_log_level = :all

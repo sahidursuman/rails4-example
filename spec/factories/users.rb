@@ -31,9 +31,9 @@
 
 FactoryGirl.define do
   factory :user do
-    username "jane"
-    email "jane@zoeoberon.com"
-    password "123123"
+    username 'jane'
+    email 'jane@zoeoberon.com'
+    password '123123'
     confirmed_at Time.zone.now
   end
 end

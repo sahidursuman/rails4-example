@@ -1,5 +1,11 @@
 inherit_from:
   - ../.rubocop.yml
 
-StringLiterals:
+Metrics/BlockLength:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Enabled: false
+
+Rails/HttpPositionalArguments:
   Enabled: false
