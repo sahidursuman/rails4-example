@@ -9,7 +9,7 @@ module DeviseHelper
     return '' if resource.errors.empty?
     msgs = resource.errors.full_messages
     resource.errors.clear # empty out error messages so they don't linger
-    content_tag :div, class: 'alert fade in alert-danger' do
+    content_tag :div, class: 'alert fade show alert-danger' do
       devise_close_button + devise_errors_list(msgs)
     end
   end

@@ -3,8 +3,8 @@
     .modal-dialog{role: 'document'}
       .modal-content
         .modal-header
-          %button.close{aria: {hidden: true}, data: {dismiss: 'modal'}, type: 'button'} X
           %h4.modal-title.devise= t('profiles.edit.h1')
+          %button.close{aria: {hidden: true}, data: {dismiss: 'modal'}, type: 'button'} X
 
         .modal-body.devise
           = format_user_error_messages(@user)
@@ -41,7 +41,7 @@
                           rel: :tooltip,
                           data: {confirm: t('button.confirm_delete_user', username: @user.username)},
                           method: :delete, remote: true,
-                          class: 'btn btn-danger'
+                          class: 'btn btn-danger btn-sm'
             .col-md-6.text-md-right
-              %button.btn.btn-warning{data: {dismiss: 'modal'}, type: 'button'} Cancel
-              = f.submit t('button.save_changes'), class: 'btn btn-success'
+              %button.btn.btn-warning.btn-sm{data: {dismiss: 'modal'}, type: 'button'} Cancel
+              = f.submit t('button.save_changes'), class: 'btn btn-success btn-sm'

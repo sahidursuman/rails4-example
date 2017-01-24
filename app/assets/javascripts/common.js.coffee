@@ -18,9 +18,9 @@ $(document).on "ajax:complete", "*[data-spinner]", ->
 @alert_box = (level, close_btn, msg) ->
   if close_btn == 'y'
     html = \
-    "<div class='alert fade in alert-#{level}'>
+    "<div class='alert fade show alert-#{level}'>
     <button class='close' data-dismiss='alert'>\&times;</button>#{msg}</div>"
   else
     html = \
-    "<div class='alert fade in alert-#{level}'>#{msg}</div>"
+    "<div class='alert fade show alert-#{level}'>#{msg}</div>"
   return html

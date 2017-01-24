@@ -1,14 +1,17 @@
-%nav.navbar.navbar-dark.navbar-fixed-top
+%nav.navbar.navbar-inverse.navbar-toggleable-sm.fixed-top
 
-  %button.navbar-toggler.hidden-sm-up{data: {target: '#top-nav-content', toggle: 'collapse'}, type: 'button'}
-    &#9776;
+  %button.navbar-toggler.navbar-toggler-right{data: {target: '#top-nav-content', toggle: 'collapse'},
+                                       aria: {controls: 'top-nav-content', expanded: 'false', label: 'menu'},
+                                       type: 'button'}
+    %i.fa.fa-reorder.fa-lg
+
   %a.navbar-brand{href: root_path}
     = branding_text
     - if Rails.env == 'development'
       %span [dev]
 
-  .collapse.navbar-toggleable-xs#top-nav-content
-    %ul.nav.navbar-nav
+  .collapse.navbar-collapse#top-nav-content
+    %ul.nav.navbar-nav.mr-auto
 
       %li.nav-item
         %a.nav-link{class: "#{params[:controller] == 'dashboard' ? 'active' : ''}", href: dashboard_path}
@@ -33,7 +36,7 @@
         %a.nav-link{class: "#{params[:controller] == 'help' ? 'active' : ''}", href: help_path}
           = t('menu.help')
 
-    %ul.nav.navbar-nav.pull-md-right
+    %ul.nav.navbar-nav
       - if user_signed_in?
         %li.nav-item
           %a.nav-link{href: edit_user_registration_path}

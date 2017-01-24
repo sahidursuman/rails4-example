@@ -20,7 +20,7 @@ source 'https://rubygems.org' do
 
   gem 'jbuilder', '~> 2.0'
 
-  gem 'bootstrap', '4.0.0.alpha4'
+  gem 'bootstrap', '4.0.0.alpha6'
   gem "font-awesome-rails"
 
   gem 'devise', '4.2.0'
