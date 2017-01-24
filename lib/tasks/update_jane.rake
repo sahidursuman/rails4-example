@@ -5,7 +5,7 @@ namespace :update_jane do
     jane = User.where(username: 'jane')
                .first_or_create(username: 'jane', email: 'jane@zoeoberon.com', role: 'user',
                                 password: '123123', password_confirmation: '123123', confirmed_at: Time.zone.now)
-    jane.update_attributes :password, '123123'
+    jane.update_attributes(password: '123123')
   end
 
 end
