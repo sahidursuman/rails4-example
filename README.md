@@ -11,7 +11,7 @@ Active demo sites:
 
 As of Jan 23, 2017:
 * Bootstrap 4.0 (alpha6)
-* Rails 4.2.7
+* Rails 4.2.7.1
 * Devise 4.2.0
 * Rspec 3.5
 * Capistrano 3.2
