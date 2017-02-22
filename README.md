@@ -10,11 +10,11 @@ Active demo sites:
 ####Versions
 
 As of Jan 23, 2017:
-* Updated to Bootstrap 4.0 (alpha4)
-* Updated to Rails 4.2.7
-* Updated to Devise 4.2.0
-* Updated to Rspec 3.5
-* Updated to Capistrano 3.2
+* Bootstrap 4.0 (alpha6)
+* Rails 4.2.7.1
+* Devise 4.2.0
+* Rspec 3.5
+* Capistrano 3.2
 
 NOTE: The original Bootstap 3 version is available in the 'bootstrap3' branch. (not maintained)
 
