@@ -20,12 +20,12 @@ NOTE: The original Bootstap 3 version is available in the 'bootstrap3' branch. (
 
 ###Related Blog Posts
 
-Blog posts on [joanswork.com](http://joanswork.com) that provide further explanation and instruction.
+Blog posts on [joanswork.com](https://joanswork.com) that provide further explanation and instruction.
 
-- [Devise 4.2.0: Updating from 3.x](http://joanswork.com/updating-devise-4-2-0/)
-- [Tracking Devise activity like login, sign-up, etc](http://joanswork.com/devise-usage-tracking/)
-- [Turbolinks, Google Analytics & SEO: Keeping everybody happy](http://joanswork.com/turbolinks-and-ga/)
-- [Using I18n for SEO related tags](http://joanswork.com/rails-seo-and-i18n-the-basics/)
+- [Devise 4.2.0: Updating from 3.x](https://joanswork.com/updating-devise-4-2-0/)
+- [Tracking Devise activity like login, sign-up, etc](https://joanswork.com/devise-usage-tracking/)
+- [Turbolinks, Google Analytics & SEO: Keeping everybody happy](https://joanswork.com/turbolinks-and-ga/)
+- [Using I18n for SEO related tags](https://joanswork.com/rails-seo-and-i18n-the-basics/)
 
 ###Installation Note
 
@@ -40,7 +40,7 @@ The following files will need to be customized to your installation.
 
 ###Author
 
-Joan Hughes @ [http://72breezy.io](http://72breezy.io)
+Joan Hughes @ [https://72breezy.io](https://72breezy.io)
 
 <http://www.linkedin.com/in/jehughes>
 
