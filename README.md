@@ -2,10 +2,9 @@
 
 A Rails 4.2 / Ruby 2 starter site using Devise and Bootstrap 4.
 
-Active demo sites:
+Active demo site:
 
 - <https://rails4example.gitrepoexamples.com> (master branch)
-- <http://arails4eg.joanswork.net/> (dev branch)
 
 #### Versions
 
