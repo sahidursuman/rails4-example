@@ -27,6 +27,8 @@ AbcSize:
 
 BlockLength:
   Max: 30
+  Exclude:
+    - 'Gemfile'
 
 PerceivedComplexity:
   Max: 10
@@ -60,3 +62,10 @@ RSpec/MultipleExpectations:
 
 RSpec/NestedGroups:
   Max: 4
+
+Style/FileName:
+  Exclude:
+    - 'Gemfile'
+
+Bundler/OrderedGems:
+  Enabled: false

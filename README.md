@@ -1,24 +1,24 @@
-##rails4-example
+## rails4-example
 
 A Rails 4.2 / Ruby 2 starter site using Devise and Bootstrap 4.
 
 Active demo sites:
 
-- <http://rails4example.gitrepoexamples.com> (master branch)
+- <https://rails4example.gitrepoexamples.com> (master branch)
 - <http://arails4eg.joanswork.net/> (dev branch)
 
-####Versions
+#### Versions
 
-As of Jan 23, 2017:
-* Bootstrap 4.0 (alpha6)
-* Rails 4.2.8
-* Devise 4.2.0
-* Rspec 3.5
-* Capistrano 3.2
+As of April 21, 2017:
+* Updated to Bootstrap 4.0 (alpha6)
+* Updated to Rails 4.2.8
+* Updated to Devise 4.2.1
+* Updated to Rspec 3.5
+* Updated to Capistrano 3.2
 
 NOTE: The original Bootstap 3 version is available in the 'bootstrap3' branch. (not maintained)
 
-###Related Blog Posts
+### Related Blog Posts
 
 Blog posts on [joanswork.com](https://joanswork.com) that provide further explanation and instruction.
 
@@ -27,7 +27,7 @@ Blog posts on [joanswork.com](https://joanswork.com) that provide further explan
 - [Turbolinks, Google Analytics & SEO: Keeping everybody happy](https://joanswork.com/turbolinks-and-ga/)
 - [Using I18n for SEO related tags](https://joanswork.com/rails-seo-and-i18n-the-basics/)
 
-###Installation Note
+### Installation Note
 
 The following files will need to be customized to your installation.
 
@@ -38,13 +38,13 @@ The following files will need to be customized to your installation.
   cp config/deploy/production.rb.example config/deploy/production.rb
   ```
 
-###Author
+### Author
 
 Joan Hughes @ [https://72breezy.io](https://72breezy.io)
 
 <http://www.linkedin.com/in/jehughes>
 
-###License
+### License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.md)
 
 [![Analytics](https://ga-beacon.appspot.com/UA-46923629-1/rails4-example/README)](https://github.com/igrigorik/ga-beacon)

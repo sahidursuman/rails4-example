@@ -10,7 +10,7 @@ source 'https://rubygems.org' do
   gem 'therubyracer', platforms: :ruby
 
   gem 'haml'
-  gem "haml-rails"
+  gem 'haml-rails'
 
   gem 'jquery-rails'
   gem 'jquery-ui-rails'
@@ -21,9 +21,9 @@ source 'https://rubygems.org' do
   gem 'jbuilder', '~> 2.0'
 
   gem 'bootstrap', '4.0.0.alpha6'
-  gem "font-awesome-rails"
+  gem 'font-awesome-rails'
 
-  gem 'devise', '4.2.0'
+  gem 'devise', '~> 4.2'
   gem 'cancancan'
   gem 'classy_enum', '~> 3.4'
 
@@ -42,20 +42,20 @@ source 'https://rubygems.org' do
     # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
     gem 'spring'
 
-    gem 'pry', require:false
+    gem 'pry', require: false
     gem 'quiet_assets'
     gem 'better_errors'
     gem 'binding_of_caller'
-    gem 'awesome_print', require:'ap'
+    gem 'awesome_print', require: 'ap'
     gem 'meta_request'
-    gem 'web-console', '~> 2.0'  #use <%= console %> in views
+    gem 'web-console', '~> 2.0' # use <%= console %> in views
 
     gem 'rubocop', require: false
     gem 'rubocop-rspec', require: false
     gem 'reek', '~> 4', require: false
     gem 'haml-lint', require: false
-    gem 'rails_best_practices', require:false
-    gem 'annotate', '~> 2.6.5', require:false
+    gem 'rails_best_practices', require: false
+    gem 'annotate', '~> 2.6.5', require: false
 
   end
 
