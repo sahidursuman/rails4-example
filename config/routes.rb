@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :profiles, only: [:edit, :update, :destroy, :create]
+  resources :profiles, only: %i[edit update destroy create]
 
   get '/admin' => 'admin#index'
   get '/dashboard' => 'dashboard#index'

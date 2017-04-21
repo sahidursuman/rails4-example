@@ -67,6 +67,7 @@ describe ProfilesController do
 
   describe '#destroy' do
     let!(:another_user) { create(:user, username: 'fred', email: 'fred@example.com') }
+
     it 'deletes the user' do
       expect do
         xhr :delete, :destroy, id: another_user, format: 'js'

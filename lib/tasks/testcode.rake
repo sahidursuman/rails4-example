@@ -41,5 +41,5 @@ namespace :testcode do
 end
 
 task :testcode do
-  %w(rubocop haml_lint reek rbp spec).each { |task| Rake::Task["testcode:#{task}"].invoke }
+  %w[rubocop haml_lint reek rbp spec].each { |task| Rake::Task["testcode:#{task}"].invoke }
 end
