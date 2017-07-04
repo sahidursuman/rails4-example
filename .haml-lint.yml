@@ -7,6 +7,9 @@ linters:
     style: no_space
   FinalNewline:
     enabled: false
+  IdNames:
+    style: snake_case
+
   RuboCop:
     ignored_cops:
       - Style/NestedParenthesizedCalls
@@ -25,7 +28,7 @@ linters:
       - Style/IfUnlessModifier
       - Style/IndentationWidth
       - Style/Next
-      - Style/TrailingBlankLines
+      - Layout/TrailingBlankLines
       - Style/TrailingWhitespace
       - Style/WhileUntilModifier
       - Rails/OutputSafety # don't disagree, just need to investigate alternatives
