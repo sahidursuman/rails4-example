@@ -1,5 +1,5 @@
-= form_for(@user, url: profile_path(@user), remote: true, html: {method: :patch, role: 'form'}) do |f|
-  - present @user do |user_presenter|
+= form_for(user, url: profile_path(user), remote: true, html: {method: :patch, role: 'form'}) do |f|
+  - present user do |user_presenter|
     .modal-dialog{role: 'document'}
       .modal-content
         .modal-header
@@ -7,11 +7,11 @@
           %button.close{aria: {hidden: true}, data: {dismiss: 'modal'}, type: 'button'} X
 
         .modal-body.devise
-          = format_user_error_messages(@user)
+          = format_user_error_messages(user)
           .row.form-group
             %label.col-sm-4.form-control-label.text-sm-right.devise{for: 'inputUsername1'}= t('label.username')
             .col-sm-8
-              = f.text_field :username, class: 'form-control form-control-sm', id: 'inputUsername1', value: @user.username
+              = f.text_field :username, class: 'form-control form-control-sm', id: 'inputUsername1', value: user.username
 
           .row.form-group
             %label.col-sm-4.form-control-label.text-sm-right.devise= t('label.password')
@@ -21,25 +21,25 @@
           .row.form-group
             %label.col-sm-4.form-control-label.text-sm-right.devise{for: 'inputEmail1'}= t('label.email')
             .col-md-8
-              = f.email_field :email, class: 'form-control form-control-sm', id: 'inputEmail1', value: @user.email
-              - if @user.pending_reconfirmation?
+              = f.email_field :email, class: 'form-control form-control-sm', id: 'inputEmail1', value: user.email
+              - if user.pending_reconfirmation?
                 %span.help-block.devise
-                  Currently waiting confirmation for: "#{@user.unconfirmed_email}"
+                  Currently waiting confirmation for: "#{user.unconfirmed_email}"
               - else
                 %span.help-block.devise (email confirmation request will be sent)
-          - unless current_user.role?('manager') && @user.role?('admin')
+          - unless current_user.role?('manager') && user.role?('admin')
             .row.form-group
               %label.col-md-4.form-control-label.text-md-right.devise{for: 'selectRole'}= t('label.role')
               .col-md-8
-                = f.select :role, options_for_select(user_presenter.list_roles_for_select, @user.role.to_s), {},
+                = f.select :role, options_for_select(user_presenter.list_roles_for_select, user.role.to_s), {},
                                   class: 'form-control form-control-sm'
           .row.form-group
             .col-md-6.text-md-left
               - if current_user.role?('admin')
-                = link_to t('button.delete_user', username: @user.username),
-                          profile_path(id: @user.id), title: t('tooltip.delete_user'),
+                = link_to t('button.delete_user', username: user.username),
+                          profile_path(id: user.id), title: t('tooltip.delete_user'),
                           rel: :tooltip,
-                          data: {confirm: t('button.confirm_delete_user', username: @user.username)},
+                          data: {confirm: t('button.confirm_delete_user', username: user.username)},
                           method: :delete, remote: true,
                           class: 'btn btn-danger btn-sm'
             .col-md-6.text-md-right

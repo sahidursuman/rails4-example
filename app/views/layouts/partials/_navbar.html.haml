@@ -1,7 +1,7 @@
 %nav.navbar.navbar-inverse.navbar-toggleable-sm.fixed-top
 
-  %button.navbar-toggler.navbar-toggler-right{data: {target: '#top-nav-content', toggle: 'collapse'},
-                                       aria: {controls: 'top-nav-content', expanded: 'false', label: 'menu'},
+  %button.navbar-toggler.navbar-toggler-right{data: {target: '#top_nav_content', toggle: 'collapse'},
+                                       aria: {controls: 'top_nav_content', expanded: 'false', label: 'menu'},
                                        type: 'button'}
     %i.fa.fa-reorder.fa-lg
 
@@ -10,7 +10,7 @@
     - if Rails.env == 'development'
       %span [dev]
 
-  .collapse.navbar-collapse#top-nav-content
+  .collapse.navbar-collapse#top_nav_content
     %ul.nav.navbar-nav.mr-auto
 
       %li.nav-item
