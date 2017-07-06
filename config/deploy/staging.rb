@@ -1,4 +1,3 @@
-# rubocop:disable all
 # Simple Role Syntax
 # ==================
 # Supports bulk-adding hosts to roles, the primary server in each group
@@ -44,4 +43,3 @@ server 'example.com', user: 'deploy', roles: %w{web app}, my_property: :my_value
 #     auth_methods: %w(publickey password)
 #     # password: 'please use keys'
 #   }
-# rubocop:enable all

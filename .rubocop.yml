@@ -9,6 +9,8 @@ AllCops:
     - bin/*
     - db/schema.rb
     - db/migrate/*.rb
+    - config/deploy/*
+    - converage
 
 Rails:
   Enabled: true
@@ -29,6 +31,8 @@ BlockLength:
   Max: 30
   Exclude:
     - 'Gemfile'
+    - 'spec/**/*.rb'
+    - 'lib/tasks/testcode.rake'
 
 PerceivedComplexity:
   Max: 10
@@ -63,13 +67,27 @@ RSpec/MultipleExpectations:
 RSpec/NestedGroups:
   Max: 4
 
-Style/FileName:
-  Exclude:
-    - 'Gemfile'
-    - 'Capfile'
+Style/EmptyMethod:
+  EnforcedStyle: expanded
 
 Bundler/OrderedGems:
   Enabled: false
 
 Rails/ApplicationRecord:
   Enabled: false
+
+ClassAndModuleChildren:
+  Enabled: false # too many legit exceptions
+
+Style/FileName:
+  Exclude:
+    - 'Gemfile'
+    - 'Capfile'
+
+AccessorMethodName:
+  Exclude:
+    - 'app/controllers/local_devise/*.rb'
+
+Style/ColonMethodCall:
+  Exclude:
+    - 'app/models/user.rb'

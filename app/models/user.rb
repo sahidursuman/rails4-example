@@ -51,7 +51,7 @@ class User < ActiveRecord::Base
   def avatar_url
     return image_url if image_url?
 
-    gravatar_id = Digest::MD5::hexdigest(email).downcase # rubocop:disable all
+    gravatar_id = Digest::MD5::hexdigest(email).downcase
     "http://gravatar.com/avatar/#{gravatar_id}.png?r=g&s=30&d=mm"
   end
 

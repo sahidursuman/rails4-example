@@ -9,10 +9,10 @@ module FlashHelper
       next unless msg.is_a? String
 
       bootstrap_class = "alert fade show alert-#{bootstrap_flash_type[key.to_sym]}"
-      # rubocop:disable Rails/OutputSafety
-      button = content_tag(:button, raw('&times;'), class: 'close', data: {dismiss: 'alert'})
-      messages << content_tag(:div, button + msg.html_safe, class: bootstrap_class)
-      # rubocop:enable Rails/OutputSafety
+
+      button = content_tag(:button, "\u{00D7}", class: 'close', data: {dismiss: 'alert'})
+
+      messages << content_tag(:div, button + msg, class: bootstrap_class)
     end
 
     flash.clear # empty so doesn't linger

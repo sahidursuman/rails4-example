@@ -98,9 +98,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
-  # rubocop:disable LineLength
-  # config.pepper = 'c1c979ec82f9159e14a00757b5ee4d96e32f605393cc9e9f6cece24461ad2420e0cca325d2b81a4de66e9535a59add52d176983021a0dc7ff03e4abef1591776'
-  # rubocop:enable LineLength
+  # config.pepper = 'c1c979ec82f9159e'
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
