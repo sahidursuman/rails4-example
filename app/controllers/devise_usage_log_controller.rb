@@ -7,12 +7,15 @@ class DeviseUsageLogController < ApplicationController
   end
 
   def devise_usage_report
-    @num_days = 10 # default
-    if params[:num_days]
-      @num_days = params[:num_days].to_i if params[:num_days].to_i.between?(1, 60)
-    end
+    @num_days = if params[:num_days] && params[:num_days].to_i.between?(1, 60)
+                  params[:num_days].to_i
+                else
+                  10
+                end
+
     @log_entries = DeviseUsageLog.fetch_usage_report_entries(@num_days)
     authorize! :read, @log_entries
+
     respond_to do |format|
       format.html { redirect_to admin_path }
       format.js

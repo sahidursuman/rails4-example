@@ -50,6 +50,7 @@ class User < ActiveRecord::Base
 
   def avatar_url
     return image_url if image_url?
+
     gravatar_id = Digest::MD5::hexdigest(email).downcase # rubocop:disable all
     "http://gravatar.com/avatar/#{gravatar_id}.png?r=g&s=30&d=mm"
   end
@@ -72,6 +73,7 @@ class User < ActiveRecord::Base
     pwd = SecureRandom.hex(8)
     # use a reset_password_token to force password creation on confirmation
     _raw, enc = Devise.token_generator.generate(User, :reset_password_token)
+
     options = {username: user_params[:username], email: user_params[:email],
                password: pwd, password_confirmation: pwd, reset_password_token: enc, role: 'user'}
     new(options)

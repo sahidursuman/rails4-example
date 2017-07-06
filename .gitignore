@@ -18,6 +18,7 @@
 /bin
 /public/assets
 *.org
+/coverage
 
 /config/database.yml
 /config/private.yml

@@ -25,8 +25,10 @@ class DeviseUsageLog < ActiveRecord::Base
   # :reek:ManualDispatch:
   def self.log(resource, new_action)
     return unless User.valid_user?(resource) && (Rails.configuration.respond_to? :devise_usage_log_level)
+
     level = Rails.configuration.devise_usage_log_level
     return unless level == :all || (level == :login && new_action == DeviseAction::Login)
+
     resource.log_devise_action(new_action)
   end
 

@@ -1,5 +1,6 @@
 class HelpController < ApplicationController
   skip_authorization_check only: [:index]
 
-  def index; end
+  def index
+  end
 end

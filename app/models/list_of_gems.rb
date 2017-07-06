@@ -5,10 +5,13 @@ class ListOfGems
 
   def initialize(params = {})
     @gems = []
+
     specs = Bundler.load.specs
+
     specs.each do |spec|
       @gems << "#{spec.name.downcase} #{spec.version}"
     end
+
     @gems.sort! { |gem_a, gem_b| gem_a <=> gem_b }
 
     if params[:columns]

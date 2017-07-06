@@ -56,7 +56,6 @@ source 'https://rubygems.org' do
     gem 'haml-lint', require: false
     gem 'rails_best_practices', require: false
     gem 'annotate', '~> 2.6.5', require: false
-
   end
 
   group :development, :test do
@@ -70,6 +69,7 @@ source 'https://rubygems.org' do
     gem 'database_cleaner', '~> 1.3.0'
     gem 'launchy', '~> 2.4.2'
     gem 'selenium-webdriver', '~> 2.43.0'
+    gem 'simplecov', require: false
   end
 end
 
