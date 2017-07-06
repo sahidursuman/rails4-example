@@ -11,7 +11,8 @@
           .row.form-group
             %label.col-sm-4.form-control-label.text-sm-right.devise{for: 'inputUsername1'}= t('label.username')
             .col-sm-8
-              = f.text_field :username, class: 'form-control form-control-sm', id: 'inputUsername1', value: user.username
+              = f.text_field :username, class: 'form-control form-control-sm',
+                                        id: 'inputUsername1', value: user.username
 
           .row.form-group
             %label.col-sm-4.form-control-label.text-sm-right.devise= t('label.password')

@@ -16,6 +16,11 @@ module DeviseHelper
     end
   end
 
+  def display_resend_unlocking_instructions?(resource_class)
+    !(controller_name == 'registrations' && action_name == 'edit') \
+      && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks'
+  end
+
   private
 
   def devise_errors_list(msgs)
