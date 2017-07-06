@@ -17,6 +17,10 @@ NestedIterators:
 RepeatedConditional:
   max_ifs: 3
 
+UtilityFunction:
+  exclude:
+    - set_reset_password_token
+
 "app/controllers":
   NestedIterators:
     max_allowed_nesting: 2
@@ -24,8 +28,14 @@ RepeatedConditional:
     enabled: false
   InstanceVariableAssumption:
     enabled: false
+
 "app/helpers":
   IrresponsibleModule:
     enabled: false
   UtilityFunction:
     enabled: false
+  FeatureEnvy:
+    enabled: false
+  ControlParameter:
+    exclude:
+    - active_tab
