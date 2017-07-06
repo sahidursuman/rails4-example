@@ -1,12 +1,19 @@
+exclude:
+  - './**/*.js.haml'
+
 linters:
   LineLength:
-    max: 180
+    max: 120
+
   ConsecutiveComments: # I disagree
     enabled: false
+
   SpaceInsideHashAttributes:
     style: no_space
+
   FinalNewline:
     enabled: false
+
   IdNames:
     style: snake_case
 
@@ -31,4 +38,4 @@ linters:
       - Layout/TrailingBlankLines
       - Style/TrailingWhitespace
       - Style/WhileUntilModifier
-      - Rails/OutputSafety # don't disagree, just need to investigate alternatives
+

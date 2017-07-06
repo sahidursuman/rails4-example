@@ -18,7 +18,7 @@
     .tab-pane.active#users
       %br/
       #user_list
-        = render 'admin/partials/users'
+        = render 'admin/partials/users', users: @users
     .tab-pane#logs
       %br/
       #devise_usage_report_block

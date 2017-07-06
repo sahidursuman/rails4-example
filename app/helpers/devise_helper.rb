@@ -7,23 +7,30 @@ module DeviseHelper
 
   def format_user_error_messages(resource)
     return '' if resource.errors.empty?
+
     msgs = resource.errors.full_messages
     resource.errors.clear # empty out error messages so they don't linger
+
     content_tag :div, class: 'alert fade show alert-danger' do
       devise_close_button + devise_errors_list(msgs)
     end
+  end
+
+  def display_resend_unlocking_instructions?(resource_class)
+    !(controller_name == 'registrations' && action_name == 'edit') \
+      && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks'
   end
 
   private
 
   def devise_errors_list(msgs)
     content_tag :ul do
-      msgs.map { |msg| concat(content_tag(:li, msg.html_safe)) } # rubocop:disable Rails/OutputSafety
+      msgs.map { |msg| concat(content_tag(:li, msg)) }
     end
   end
 
   def devise_close_button
-    content_tag(:button, raw('&times;'), class: 'close', data: {dismiss: 'alert'}) # rubocop:disable Rails/OutputSafety
+    content_tag(:button, "\u{00D7}", class: 'close', data: {dismiss: 'alert'})
   end
 
 end

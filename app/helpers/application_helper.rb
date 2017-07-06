@@ -1,4 +1,3 @@
-# :reek:UtilityFunction
 module ApplicationHelper
 
   def present(object, klass = nil)
@@ -14,7 +13,7 @@ module ApplicationHelper
   end
 
   def spaces(num)
-    ('&nbsp;' * num).html_safe # rubocop:disable Rails/OutputSafety
+    "\u{0020}" * num
   end
 
 end

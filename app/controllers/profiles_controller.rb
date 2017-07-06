@@ -12,12 +12,14 @@ class ProfilesController < ApplicationController
 
   def update
     authorize! :update, @user
+
     if @user.update(user_params)
       @users = User.order('role,username')
       flash[:info] = t('devise.registrations.update_user')
     else
       @errors_found = true
     end
+
     respond_to do |format|
       format.html { redirect_to admin_path }
       format.js
@@ -26,8 +28,10 @@ class ProfilesController < ApplicationController
 
   def destroy
     authorize! :delete, @user
+
     @user.destroy
     @users = User.order('role,username')
+
     respond_to do |format|
       format.html { redirect_to admin_path }
       format.js
@@ -45,7 +49,9 @@ class ProfilesController < ApplicationController
     else
       @error_message ||= t(:cannot_save_new_user, scope: 'devise.errors.messages')
     end
+
     @users = User.order('role,username')
+
     respond_to do |format|
       format.html { redirect_to admin_path }
       format.js { render layout: false }

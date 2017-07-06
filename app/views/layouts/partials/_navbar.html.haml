@@ -1,8 +1,8 @@
 %nav.navbar.navbar-inverse.navbar-toggleable-sm.fixed-top
 
   %button.navbar-toggler.navbar-toggler-right{data: {target: '#top_nav_content', toggle: 'collapse'},
-                                       aria: {controls: 'top_nav_content', expanded: 'false', label: 'menu'},
-                                       type: 'button'}
+                                              aria: {controls: 'top_nav_content', expanded: 'false', label: 'menu'},
+                                              type: 'button'}
     %i.fa.fa-reorder.fa-lg
 
   %a.navbar-brand{href: root_path}
@@ -21,7 +21,8 @@
         %li.nav-item
           %a.nav-link{href: '#'}= t('menu.messages')
         %li.nav-item.dropdown
-          %a.nav-link.dropdown-toggle{aria: {expanded: 'false', haspopup: 'true'}, data: {toggle: 'dropdown'}, href: '#', role: 'button'}
+          %a.nav-link.dropdown-toggle{aria: {expanded: 'false', haspopup: 'true'},
+                                      data: {toggle: 'dropdown'}, href: '#', role: 'button'}
             = t('menu.profile')
           .dropdown-menu
             %a.dropdown-item{href: '#'}= t('menu.details')

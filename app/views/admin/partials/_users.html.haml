@@ -11,7 +11,7 @@
       %th{nowrap: true, data: {type: 'numeric'}}= t('label.login_count')
       %th{data: {sort: {ignore: 'true'}}}
   %tbody
-    - @users.each do |user|
+    - users.each do |user|
       - present user do |user_presenter|
         %tr
           %td= user_presenter.id

@@ -6,11 +6,13 @@ module SetSeoTagsHelper
 
   def yield_or_default(section, default = '')
     tag_text = content_for(section)
+
     # if content_for() not set, use "lazy" lookup to check locale file for controller/action entry
     if tag_text.blank?
       tag_text = get_header_text(element: section, page_name: "#{controller_name}.#{action_name}", no_msg: true)
       tag_text = default if tag_text.blank? # use optional default as last resort
     end
+
     tag_text
   end
 
@@ -35,6 +37,7 @@ module SetSeoTagsHelper
 
   def get_view_text(element)
     return fix_me_statement('element') if element.blank?
+
     # assume "lazy" lookup based on calling controller and action
     #   e.g. ".h1" for view help/index.html.erb rendered by controler/action help/index
     t(".#{element}", default: fix_me_statement(".#{element}"))

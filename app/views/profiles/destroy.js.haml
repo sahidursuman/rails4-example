@@ -1,2 +1,2 @@
 $('#edit_user_modal').modal('hide')
-$('#user_list').html('#{escape_javascript(render 'admin/partials/users')}')
+$('#user_list').html('#{escape_javascript(render 'admin/partials/users', locals: {users: @users})}')
