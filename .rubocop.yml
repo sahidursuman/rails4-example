@@ -10,7 +10,7 @@ AllCops:
     - db/schema.rb
     - db/migrate/*.rb
     - config/deploy/*
-    - converage
+    - coverage
 
 Rails:
   Enabled: true
