@@ -27,7 +27,7 @@ class DeviseUsageLog < ActiveRecord::Base
 
     level = begin
               Rails.configuration.devise_usage_log_level
-            rescue
+            rescue StandardError
               nil
             end
     return unless level == :all || (level == :login && new_action == DeviseAction::Login)

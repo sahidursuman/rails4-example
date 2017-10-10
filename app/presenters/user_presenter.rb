@@ -61,7 +61,7 @@ class UserPresenter < BasePresenter
 
   def list_roles_for_select
     list = []
-    user.roles.each do |role, _idx|
+    user.roles.each_key do |role|
       next if role == 'admin' && !user.role?('admin')
       list << [role.humanize, role]
     end

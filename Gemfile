@@ -1,6 +1,6 @@
 source 'https://rubygems.org' do
 
-  gem 'rails', '4.2.9'
+  gem 'rails', '4.2.10'
 
   gem 'mysql2', '0.3.21'
 
@@ -9,7 +9,8 @@ source 'https://rubygems.org' do
   gem 'coffee-rails', '~> 4.1.0'
   gem 'therubyracer', platforms: :ruby
 
-  gem 'haml'
+  # https://github.com/haml/haml/issues/946
+  gem 'haml', git: 'https://github.com/haml/haml.git', branch: 'master'
   gem 'haml-rails'
 
   gem 'jquery-rails'
