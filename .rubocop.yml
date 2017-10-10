@@ -67,6 +67,9 @@ RSpec/MultipleExpectations:
 RSpec/NestedGroups:
   Max: 4
 
+RSpec/PredicateMatcher:
+  Enabled: false # picks up legit method names
+
 Style/EmptyMethod:
   EnforcedStyle: expanded
 
@@ -79,7 +82,7 @@ Rails/ApplicationRecord:
 ClassAndModuleChildren:
   Enabled: false # too many legit exceptions
 
-Style/FileName:
+Naming/FileName:
   Exclude:
     - 'Gemfile'
     - 'Capfile'
