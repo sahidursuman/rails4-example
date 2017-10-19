@@ -1,5 +1,7 @@
 ## rails4-example
 
+[![Build Status](https://travis-ci.org/jehughes/rails4-example.svg?branch=master)](https://travis-ci.org/jehughes/rails4-example)
+
 A Rails 4.2 / Ruby 2 starter site using Devise and Bootstrap 4.
 
 Active demo site:
