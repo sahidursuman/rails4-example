@@ -34,7 +34,7 @@ class User < ActiveRecord::Base
 
   validates :username, uniqueness: true, length: {within: 4..12}
 
-  ROLES = {'guest' => 1, 'user' => 2, 'manager' => 3, 'admin' => 4}.freeze
+  ROLES = {'guest' => 1, 'user' => 2, 'manager' => 3, 'admin' => 4}
 
   def roles
     ROLES
