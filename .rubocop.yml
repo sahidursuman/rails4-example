@@ -11,7 +11,7 @@ AllCops:
     - db/migrate/*.rb
     - config/deploy/*
     - coverage
-    - vendor
+    - vendor/**/*
 
 Rails:
   Enabled: true
