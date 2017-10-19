@@ -3,4 +3,5 @@ services:
 
 before_script:
   - cp config/database.travis.yml config/database.yml
+  - cp config/private.travis.yml config/private.yml
   - mysql -e 'CREATE DATABASE IF NOT EXISTS rails4eg_test;'
