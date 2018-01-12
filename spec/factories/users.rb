@@ -27,9 +27,9 @@
 #  username               :string(255)      default(""), not null
 #
 
-# Read about factories at https://github.com/thoughtbot/factory_girl
+# Read about factories at https://github.com/thoughtbot/factory_bot
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :user do
     username 'jane'
     email 'jane@zoeoberon.com'

@@ -13,9 +13,10 @@
 #
 
 require 'rails_helper'
-include Warden::Test::Helpers
 
 describe DeviseUsageLog do
+
+  include Warden::Test::Helpers
 
   let!(:current_user) { create(:user, role: 'user') }
   let!(:user) { create(:user, username: 'molly', email: 'molly@example.com') }

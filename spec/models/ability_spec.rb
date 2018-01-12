@@ -1,7 +1,7 @@
 require 'rails_helper'
-include Warden::Test::Helpers
 
 describe Ability do
+  include Warden::Test::Helpers
 
   describe 'User Role' do
     let!(:user) { create(:user, role: 'user') }

@@ -31,7 +31,7 @@ module RailsStarter
                                routing_specs: false,
                                controller_specs: true,
                                request_specs: false
-      generator.fixture_replacement :factory_girl, dir: 'spec/factories'
+      generator.fixture_replacement :factory_bot, dir: 'spec/factories'
     end
     config.generators.assets = false
   end
