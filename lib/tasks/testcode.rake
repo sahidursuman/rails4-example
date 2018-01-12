@@ -1,5 +1,5 @@
 namespace :testcode do
-  unless Rails.env == 'production'
+  unless Rails.env.production?
     require 'rspec/core/rake_task'
     require 'rubocop/rake_task'
     require 'reek/rake/task'

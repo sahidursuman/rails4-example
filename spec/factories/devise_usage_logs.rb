@@ -12,9 +12,9 @@
 #  action     :string(255)
 #
 
-# Read about factories at https://github.com/thoughtbot/factory_girl
+# Read about factories at https://github.com/thoughtbot/factory_bot
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :devise_usage_log do
     user_id 1
     user_ip '100.100.100.100'

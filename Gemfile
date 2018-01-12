@@ -61,7 +61,7 @@ source 'https://rubygems.org' do
 
   group :development, :test do
     gem 'rspec-rails', '~> 3.4'
-    gem 'factory_girl_rails'
+    gem 'factory_bot_rails'
   end
 
   group :test do

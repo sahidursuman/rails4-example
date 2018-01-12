@@ -1,7 +1,8 @@
 require 'rails_helper'
-include Warden::Test::Helpers
 
 describe ListOfGems do
+
+  include Warden::Test::Helpers
 
   let!(:current_user) { create(:user, role: 'user') }
   let!(:list_of_gems) { ListOfGems.new(columns: 4) }

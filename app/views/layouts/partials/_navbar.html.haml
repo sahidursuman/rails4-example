@@ -7,7 +7,7 @@
 
   %a.navbar-brand{href: root_path}
     = branding_text
-    - if Rails.env == 'development'
+    - if Rails.env.development?
       %span [dev]
 
   .collapse.navbar-collapse#top_nav_content
