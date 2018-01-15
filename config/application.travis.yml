@@ -1,2 +1,2 @@
 devise_secret_key: 'f30427fdc03300400dbaa5ae1692d68061f5e38df7f134c84ff47fb3c0b8c367ba09d57a18fb406200540230ccf4b77c93eaf9101212fef301b9db77c34a5b40'
-url_host: "localhost:3000"
+url_host: "travisci.net"
