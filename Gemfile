@@ -24,7 +24,7 @@ source 'https://rubygems.org' do
   gem 'bootstrap', '4.0.0.alpha6'
   gem 'font-awesome-rails'
 
-  gem 'devise', '~> 4.2'
+  gem 'devise', '4.2.1'
   gem 'cancancan'
   gem 'classy_enum', '~> 3.4'
 
@@ -71,6 +71,7 @@ source 'https://rubygems.org' do
     gem 'launchy', '~> 2.4.2'
     gem 'selenium-webdriver', '~> 2.43.0'
     gem 'simplecov', require: false
+    gem 'mailcatcher', require: false # for Travis CI
   end
 end
 

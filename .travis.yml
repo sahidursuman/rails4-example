@@ -16,6 +16,8 @@ before_script:
   - cp config/application.travis.yml config/application.yml
   - cp config/secrets.travis.yml config/secrets.yml
   - mysql -e 'CREATE DATABASE IF NOT EXISTS rails4eg_test;'
+  - gem install mailcatcher
+  - mailcatcher
 
 cache:
-  - bundler
+  bundler
