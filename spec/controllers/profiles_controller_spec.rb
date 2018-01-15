@@ -20,6 +20,9 @@ describe ProfilesController do
   describe '#create' do
     describe 'with valid params' do
       it 'saves new user' do
+        puts "---"
+        puts Socket.gethostname
+        puts "---"
         expect do
           xhr :post, :create, user: attributes_for(:user, username: 'fred', email: 'fred-rspec@zoeoberon.com')
         end.to change(User, :count)
