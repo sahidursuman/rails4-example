@@ -19,3 +19,5 @@ before_script:
   - gem install mailcatcher
   - mailcatcher
 
+cache:
+  bundle

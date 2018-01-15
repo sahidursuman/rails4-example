@@ -71,6 +71,7 @@ source 'https://rubygems.org' do
     gem 'launchy', '~> 2.4.2'
     gem 'selenium-webdriver', '~> 2.43.0'
     gem 'simplecov', require: false
+    gem 'mailcatcher', require: false # for Travis CI
   end
 end
 

@@ -48,7 +48,7 @@ Rails.application.configure do
     puts ENV['local_hostname']
     puts Socket.gethostname
   config.action_mailer.smtp_settings = if Socket.gethostname == ENV['local_hostname'] \
-                                       || Socket.gethostname.match?(/travisci.net/)
+                                       || Socket.gethostname =~ /travisci.net/
                                          # use Mailcatcher
                                          # http://mailcatcher.me/
                                          {address: 'localhost', port: 1025}
