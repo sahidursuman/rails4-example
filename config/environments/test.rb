@@ -45,7 +45,10 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
 
-  config.action_mailer.smtp_settings = if (Socket.gethostname =~ /ENV['local_hostname']/).present?
+    puts ENV['local_hostname']
+    puts Socket.gethostname
+  config.action_mailer.smtp_settings = if Socket.gethostname == ENV['local_hostname'] \
+                                       || Socket.gethostname.match?(/travisci.net/)
                                          # use Mailcatcher
                                          # http://mailcatcher.me/
                                          {address: 'localhost', port: 1025}
@@ -60,6 +63,7 @@ Rails.application.configure do
                                            enable_starttls_auto: true
                                          }
                                        end
+  puts config.action_mailer.smtp_settings.inspect
 
   # level of Devise usage tracking - :all, :login, :none (default)
   config.devise_usage_log_level = :all
