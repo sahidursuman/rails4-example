@@ -1,4 +1,4 @@
-%nav.navbar.navbar-inverse.navbar-toggleable-sm.fixed-top
+%nav.navbar.navbar-inverse.navbar-expand-sm.fixed-top
 
   %button.navbar-toggler.navbar-toggler-right{data: {target: '#top_nav_content', toggle: 'collapse'},
                                               aria: {controls: 'top_nav_content', expanded: 'false', label: 'menu'},
@@ -21,10 +21,10 @@
         %li.nav-item
           %a.nav-link{href: '#'}= t('menu.messages')
         %li.nav-item.dropdown
-          %a.nav-link.dropdown-toggle{aria: {expanded: 'false', haspopup: 'true'},
-                                      data: {toggle: 'dropdown'}, href: '#', role: 'button'}
+          %a.nav-link.dropdown-toggle#navbar_profile_dropdown{aria: {expanded: 'false', haspopup: 'true'},
+                                      data: {toggle: 'dropdown'}, href: '#'}
             = t('menu.profile')
-          .dropdown-menu
+          .dropdown-menu{aria: {labelledby: 'navbar_profile_dropdown'}}
             %a.dropdown-item{href: '#'}= t('menu.details')
             %a.dropdown-item{href: '#'}= t('menu.licensing')
             %a.dropdown-item{href: '#'}= t('menu.education')

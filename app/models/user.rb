@@ -52,7 +52,7 @@ class User < ActiveRecord::Base
     return image_url if image_url?
 
     gravatar_id = Digest::MD5::hexdigest(email).downcase
-    "http://gravatar.com/avatar/#{gravatar_id}.png?r=g&s=30&d=mm"
+    "https://gravatar.com/avatar/#{gravatar_id}.png?r=g&s=30&d=mm"
   end
 
   def user_exists_but_force_password_reset?

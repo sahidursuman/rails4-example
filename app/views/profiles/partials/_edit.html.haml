@@ -9,28 +9,28 @@
         .modal-body.devise
           = format_user_error_messages(user)
           .row.form-group
-            %label.col-sm-4.form-control-label.text-sm-right.devise{for: 'inputUsername1'}= t('label.username')
+            %label.col-sm-4.col-form-label-sm.text-sm-right.devise{for: 'inputUsername1'}= t('label.username')
             .col-sm-8
               = f.text_field :username, class: 'form-control form-control-sm',
                                         id: 'inputUsername1', value: user.username
 
           .row.form-group
-            %label.col-sm-4.form-control-label.text-sm-right.devise= t('label.password')
+            %label.col-sm-4.col-form-label-sm.text-sm-right.devise= t('label.password')
             .col-sm-8
               %p.form-control-static.form-control-sm Passwords can only be reset by the user.
 
           .row.form-group
-            %label.col-sm-4.form-control-label.text-sm-right.devise{for: 'inputEmail1'}= t('label.email')
+            %label.col-sm-4.col-form-label-sm.text-sm-right.devise{for: 'inputEmail1'}= t('label.email')
             .col-md-8
               = f.email_field :email, class: 'form-control form-control-sm', id: 'inputEmail1', value: user.email
               - if user.pending_reconfirmation?
-                %span.help-block.devise
+                %span.help-text.devise
                   Currently waiting confirmation for: "#{user.unconfirmed_email}"
               - else
-                %span.help-block.devise (email confirmation request will be sent)
+                %span.help-text.devise (email confirmation request will be sent)
           - unless current_user.role?('manager') && user.role?('admin')
             .row.form-group
-              %label.col-md-4.form-control-label.text-md-right.devise{for: 'selectRole'}= t('label.role')
+              %label.col-md-4.col-form-label-sm.text-md-right.devise{for: 'selectRole'}= t('label.role')
               .col-md-8
                 = f.select :role, options_for_select(user_presenter.list_roles_for_select, user.role.to_s), {},
                                   class: 'form-control form-control-sm'

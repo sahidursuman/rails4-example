@@ -1,5 +1,8 @@
 $white: #ffffff;
+$black: #000000;
 $radiant_orchid: #B163A3;
+
+$gray-text: #636c72;
 
 // colors from Designmodo's Flat UI (free)
 // http://designmodo.com/flat-free/
@@ -25,17 +28,11 @@ $asbestos: #7f8c8d;
 
 // bootstrap element colors
 
-$brand-primary:             $belize-hole !default;
-$brand-success:             $nephritis !default;
-$brand-info:                #5bc0de !default;
-$brand-warning:             #f0ad4e !default;
-$brand-danger:              #d9534f !default;
-
-$state-warning-text:   darken($sun-flower, 20%);
-$state-warning-bg:     lighten( $state-warning-text, 50%);
-$state-danger-text:    darken($pomegranate, 20%);
-$state-danger-bg:      lighten( $state-danger-text, 50%);
-$state-success-text:   darken($turquoise, 20%);
-$state-success-bg:     lighten( $state-success-text, 60%);
-$state-info-text:      darken($peter-river, 20%);
-$state-info-bg:        lighten( $state-info-text, 50%);
+$theme-colors: (
+  'primary': $belize-hole,
+  'success': $nephritis,
+  'info': #5bc0de,
+  'warning': #f0ad4e,
+  'danger': #d9534f,
+  'light': #efefef
+);

@@ -1,5 +1,5 @@
 ->
-  $('#tabs').tab();
+  $('#tabs').tab()
 
 $ ->
   $('.footable').footable(breakpoints: filter: 300)

@@ -1,54 +1,63 @@
 // buttons
 .btn-xs {
-  padding: 0.15rem 0.65rem;
+  border-radius: .2rem;
   font-size: .8rem;
   line-height: 1.5;
-  border-radius: 0.2rem;
+  padding: .15rem .65rem;
 }
 
 // modals
 
 .model-content {
-  boder: none;
+  border: 0;
 }
 
 // top navbar
-.navbar.fixed-top {
-  background-color: $belize-hole;
+.navbar {
+  min-height: 25px;
+
+  &.fixed-top {
+    background-color: $belize-hole;
+    color: $white;
+    padding-bottom: 0;
+  }
+}
+
+.navbar-nav > li > a,
+.navbar-brand,
+.nav-text,
+.navbar-toggler {
   color: $white;
+  height: 30px;
+  line-height: .8rem;
   padding-bottom: 0;
+  padding-top: 5px;
 }
 
-.navbar-nav > li > a, .navbar-brand, .nav-text, .navbar-toggler {
-    padding-top:5px !important;
-    padding-bottom:0 !important;
-    height: 30px;
-    line-height: 0.8rem;
-}
-.navbar {min-height:25px !important;}
-
-.navbar.fixed-top a:hover,
-.navbar.fixed-top a:focus,
-.navbar.fixed-top a {
-  text-decoration: none;
-}
-
-.navbar-inverse .navbar-nav .nav-link,
-.navbar-inverse .navbar-toggler {
-  color: $white;
+.navbar-inverse {
+  &.navbar-toggler,
+  &.navbar-link {
+    color: $white;
+  }
 }
 
 .avatar {
   margin-top: -7px;
 }
 
-.navbar-brand {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
+a {
+  &:hover,
+  &:active {
+    &.navbar-brand {
+      color: $white;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+    }
+  }
 }
 
 .navbar-toggler {
+  border: 0;
   cursor: pointer;
-  border: none;
-  padding-top: 0 !important;
-  margin: 0 !important;
+  margin: 0;
+  padding-top: 0;
 }

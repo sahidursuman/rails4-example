@@ -2,33 +2,33 @@
   .container
     .row
       .col-md-offset-3.col-md-7
-        .card.card-block.round-box.devise
+        .card.card-body.round-box.devise
           %h4.card-title.devise= t('menu.login')
 
           .card-text.devise
             = devise_error_messages!
 
             .row.form-group
-              %label.col-sm-4.form-control-label.text-sm-right.devise= t('label.username')
+              %label.col-sm-4.col-form-label-sm.text-sm-right.devise= t('label.username')
               .col-sm-8
                 = f.text_field :username, class: 'form-control form-control-sm', id: 'inputUsername1',
                                           placeholder: t('label.username').downcase
 
             .row.form-group.devise
-              %label.col-sm-4.form-control-label.text-sm-right.devise{for: 'inputPassword1'}= t('label.password')
+              %label.col-sm-4.col-form-label-sm.text-sm-right.devise{for: 'inputPassword1'}= t('label.password')
               .col-md-8
                 = f.password_field :password, class: 'form-control form-control-sm', id: 'inputPassword1',
                                               placeholder: t('label.password').downcase
 
             .row.form-group
-              .col-sm-offset-4.col-sm-8
+              .offset-sm-4.col-sm-8
                 .checkbox
-                  %label.form-control-label.devise.normal
+                  %label.col-form-label-sm.devise.normal
                     = f.check_box :remember_me
                     = t('label.remember_me')
 
             .row.form-group
-              .col-sm-offset-4.col-sm-8
+              .offset-sm-4.col-sm-8
                 = f.submit t('button.login'), class: 'btn btn-success'
           .card-footer.text-sm-right.devise
             = render 'devise/shared/links'
