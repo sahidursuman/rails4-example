@@ -15,7 +15,7 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
-//= require tether
+//= require popper
 //= require bootstrap-sprockets
 //= require ie/respond.min
 //= require footable

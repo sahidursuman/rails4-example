@@ -66,12 +66,13 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.8.0)
       debug_inspector (>= 0.0.1)
-    bootstrap (4.0.0.alpha6)
+    bootstrap (4.0.0.beta3)
       autoprefixer-rails (>= 6.0.3)
-      sass (>= 3.4.19)
+      popper_js (>= 1.12.3, < 2)
+      sass (>= 3.5.2)
     builder (3.2.3)
     callsite (0.0.11)
-    cancancan (2.1.2)
+    cancancan (2.1.3)
     capistrano (3.2.1)
       i18n
       rake (>= 10.0.0)
@@ -213,6 +214,7 @@ GEM
     parallel (1.12.1)
     parser (2.4.0.2)
       ast (~> 2.3)
+    popper_js (1.12.9)
     powerpack (0.1.1)
     pry (0.11.3)
       coderay (~> 1.1.0)
@@ -241,7 +243,6 @@ GEM
     rails-assets-footable (2.0.3)
       rails-assets-jquery (>= 1.4.4)
     rails-assets-jquery (3.2.1)
-    rails-assets-tether (1.4.3)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
     rails-dom-testing (1.0.9)
@@ -303,7 +304,7 @@ GEM
       rainbow (>= 2.2.2, < 4.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (~> 1.0, >= 1.0.1)
-    rubocop-rspec (1.22.0)
+    rubocop-rspec (1.22.1)
       rubocop (>= 0.52.1)
     ruby-progressbar (1.9.0)
     ruby_parser (3.10.1)
@@ -398,7 +399,7 @@ DEPENDENCIES
   awesome_print!
   better_errors!
   binding_of_caller!
-  bootstrap (= 4.0.0.alpha6)!
+  bootstrap (= 4.0.0.beta3)!
   cancancan!
   capistrano (~> 3.2.0)!
   capistrano-bundler (~> 1.1)!
@@ -427,7 +428,6 @@ DEPENDENCIES
   quiet_assets!
   rails (= 4.2.10)!
   rails-assets-footable (= 2.0.3)!
-  rails-assets-tether (>= 1.1.0)!
   rails_best_practices!
   reek (~> 4)!
   rspec-rails (~> 3.4)!

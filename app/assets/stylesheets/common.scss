@@ -1,9 +1,9 @@
-@import "bootstrap_config.scss";
+@import 'bootstrap_config';
 
 .fullpage-body {
   display: flex;
-  min-height: 100vh;
   flex-direction: column;
+  min-height: 100vh;
 }
 
 .fullpage-content {
@@ -13,33 +13,36 @@
 .narrow-well {
   margin: 0 auto;
   max-width: 1240px;
-  padding-top: 60px; /* nav bar space */
+  padding-top: 60px; // navbar space
 }
 
 footer {
+  background-color: lighten($midnight-blue, 70%);
+  color: $gray-text;
   margin-top: 1rem;
   padding: 2rem 1.5rem;
-  color: $gray-light;
-  background-color: lighten($midnight-blue, 70%);
 }
 
 .footer-link {
-  color: darken($gray-light, 30%);
+  color: var(--gray-dark);
 }
 
-h1, .h1 {
+h1,
+.h1 {
   font-size: 2.1rem;
 }
 
-.form-control-label {
+.col-form-label-sm {
   &.devise {
-    white-space: nowrap;
     color: $nephritis;
     font-weight: bold;
-    padding-right: 0rem;
+    padding-right: 0;
+    white-space: nowrap;
+
     &.normal {
       font-weight: normal;
-      padding-right: 0.75rem;
+      padding-right: .75rem;
+
       &.small {
         font-size: 90%;
       }
@@ -47,36 +50,38 @@ h1, .h1 {
   }
 }
 
-.help-block {
+.help-text {
   &.devise {
-    font: 80% Arial,sans-serif;
-    font-style:italic;
     color: $nephritis;
+    font: 80% Arial, sans-serif;
+    font-style: italic;
   }
 }
 
 .small-text {
-  font: 85% Arial,sans-serif;
-  font-style:italic;
+  font: 85% Arial, sans-serif;
+  font-style: italic;
 }
 
 .round-box {
-  -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border: 1px solid $black;
   border-radius: 20px;
-  border:1px solid #000;
+
   &.devise {
-    margin-top: 20px;
     border-color: $nephritis;
+    margin-top: 20px;
   }
 }
 
 hr {
   &.devise {
     border-color: $nephritis;
-    width: 80%;
     margin-top: 0;
+    width: 80%;
   }
+
   &.green {
     border-color: $nephritis;
   }
@@ -84,8 +89,8 @@ hr {
 
 .card-title {
   &.devise {
-    color: $nephritis;
     border-bottom: 1px solid $nephritis;
+    color: $nephritis;
     padding-bottom: 15px;
   }
 }
@@ -99,16 +104,16 @@ hr {
 .card-footer {
   &.devise {
     background-color: $white;
+    border-top: 1px solid $nephritis;
     color: $nephritis;
     padding: none;
-    border-top: 1px solid $nephritis;
   }
 }
 
 a,
 a:hover,
 a:active {
-  &.devise_shared {
+  &.devise-shared {
     font-size: 90%;
   }
 }

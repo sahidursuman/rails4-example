@@ -3,8 +3,8 @@
                      html: {method: :post, role: 'form'}) do |f|
   .container
     .row
-      .col-sm-offset-3.col-sm-5
-        .card.card-block.round-box.devise
+      .offset-sm-3.col-sm-5
+        .card.card-body.round-box.devise
           %h4.card-title.devise= t('button.resend_confirm')
           .card-text.devise
             = devise_error_messages!

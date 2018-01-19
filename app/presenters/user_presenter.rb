@@ -40,7 +40,7 @@ class UserPresenter < BasePresenter
     end
     html << user.username
     html << spaces(1)
-    html << content_tag(:span, t('label.unconfirmed').downcase, class: 'help-block devise') unless user.confirmed?
+    html << content_tag(:span, t('label.unconfirmed').downcase, class: 'help-text devise') unless user.confirmed?
     safe_join(html)
   end
 
@@ -50,7 +50,7 @@ class UserPresenter < BasePresenter
     if user.pending_reconfirmation?
       unconfirmed_email = user.unconfirmed_email + ' ' + t('label.pending').downcase
       html << spaces(1)
-      html << content_tag(:span, unconfirmed_email, class: 'help-block devise')
+      html << content_tag(:span, unconfirmed_email, class: 'help-text devise')
     end
     safe_join(html)
   end

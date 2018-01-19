@@ -2,7 +2,7 @@
   .container
     .row
       .col-md-offset-3.col-md-7
-        .card.card-block.round-box.devise
+        .card.card-body.round-box.devise
           %h4.card-title.devise= t('devise.passwords.change_form')
 
           .card-text.devise
@@ -10,13 +10,13 @@
             = f.hidden_field :reset_password_token
 
             .row.form-group
-              %label.col-sm-4.form-control-label.text-sm-right.devise{for: 'inputPassword1'}= t('label.new_password')
+              %label.col-sm-4.col-form-label-sm.text-sm-right.devise{for: 'inputPassword1'}= t('label.new_password')
               .col-sm-8
                 = f.password_field :password, class: 'form-control form-control-sm', id: 'inputPassword1',
                                               placeholder: t('label.new_password').downcase
 
             .row.form-group
-              %label.col-sm-4.form-control-label.text-sm-right.devise{for: 'inputConfirmPassword1'}
+              %label.col-sm-4.col-form-label-sm.text-sm-right.devise{for: 'inputConfirmPassword1'}
                 = t('label.confirm_new_password')
               .col-sm-8
                 = f.password_field :password_confirmation, class: 'form-control form-control-sm',
@@ -24,7 +24,7 @@
                                                            placeholder: t('label.confirm_new_password').downcase
 
             .row.form-group
-              .col-sm-offset-4.col-sm-8
+              .offset-sm-4.col-sm-8
                 = f.submit t('button.update_password'), class: 'btn btn-success'
           .card-footer.text-sm-right.devise
             = render 'devise/shared/links'

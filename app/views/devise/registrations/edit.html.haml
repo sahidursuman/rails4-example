@@ -4,49 +4,49 @@
   .container
     .row
       .col-md-offset-3.col-md-7
-        .card.card-block.round-box.devise
+        .card.card-body.round-box.devise
           %h4.card-title.devise= t('label.edit_user')
 
           .card-text.devise
             = devise_error_messages!
 
             .row.form-group
-              %label.col-sm-4.form-control-label.text-sm-right.devise= t('label.username')
+              %label.col-sm-4.col-form-label-sm.text-sm-right.devise= t('label.username')
               .col-sm-8
                 %p.form-control-static= current_user.username
 
             .row.form-group
-              %label.col-sm-4.form-control-label.text-sm-right.devise{for: 'inputCurrentPassword1'}
+              %label.col-sm-4.col-form-label-sm.text-sm-right.devise{for: 'inputCurrentPassword1'}
                 = t('label.current_password')
               .col-md-8
                 = f.password_field :current_password, class: 'form-control form-control-sm',
                                                       id: 'inputCurrentPassword1',
                                                       placeholder: t('label.current_password').downcase
 
-                %span.help-block.devise (need current password to confirm changes)
+                %span.help-text.devise (need current password to confirm changes)
 
             %hr.devise
 
             .row.form-group
-              %label.col-sm-4.form-control-label.text-sm-right.devise{for: 'inputEmail1'}= t('label.email')
+              %label.col-sm-4.col-form-label-sm.text-sm-right.devise{for: 'inputEmail1'}= t('label.email')
               .col-sm-8
                 = f.email_field :email, class: 'form-control form-control-sm', id: 'inputEmail1',
                                         placeholder: t('label.email_example').downcase,
                                         type: 'email'
 
             - if resource.pending_reconfirmation?
-              .help-block.devise.text-sm-right
+              .help-text.devise.text-sm-right
                 Currently waiting confirmation for: #{resource.unconfirmed_email}
 
             .row.form-group
-              %label.col-sm-4.form-control-label.text-sm-right.devise{for: 'inputPassword1'}= t('label.new_password')
+              %label.col-sm-4.col-form-label-sm.text-sm-right.devise{for: 'inputPassword1'}= t('label.new_password')
               .col-sm-8
                 = f.password_field :password, class: 'form-control form-control-sm', id: 'inputPassword1',
                                               placeholder: t('label.new_password').downcase
-                %span.help-block.devise (leave blank if you don't want to change it)
+                %span.help-text.devise (leave blank if you don't want to change it)
 
             .row.form-group
-              %label.col-sm-4.form-control-label.text-sm-right.devise{for: 'inputConfirmPassword1'}
+              %label.col-sm-4.col-form-label-sm.text-sm-right.devise{for: 'inputConfirmPassword1'}
                 = t('label.confirm_new_password')
               .col-sm-8
                 = f.password_field :password_confirmation, class: 'form-control form-control-sm',
@@ -55,7 +55,7 @@
 
 
             .row.form-group
-              .col-sm-offset-4.col-sm-8
+              .offset-sm-4.col-sm-8
                 = f.submit t('button.update'), class: 'btn btn-success'
           .card-footer.text-sm-right.devise
             = render 'devise/shared/links'
@@ -64,7 +64,7 @@
   .container
     .row
       .col-md-offset-3.col-md-7
-        .card.card-block.round-box.devise
+        .card.card-body.round-box.devise
           %h4.card-title.devise= t('label.delete_user')
 
           .card-text.devise
