@@ -1,5 +1,5 @@
 # Load the Rails application.
-require File.expand_path('../application', __FILE__)
+require File.expand_path('application', __dir__)
 
 VERSION = '1.0.0'.freeze
 
