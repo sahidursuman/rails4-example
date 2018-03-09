@@ -73,6 +73,9 @@ source 'https://rubygems.org' do
     gem 'simplecov', require: false
     gem 'mailcatcher', require: false # for Travis CI
   end
+
+  # TODO: find out why sinatra is a dependency?
+  gem 'rack-protection', '~> 2.0.0' # reported vulnerabilty
 end
 
 source 'https://rails-assets.org' do
