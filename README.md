@@ -4,19 +4,6 @@
 
 A Rails 4.2 / Ruby 2 starter site using Devise and Bootstrap 4.
 
-Active demo site:
-
-- <https://rails4example.gitrepoexamples.com> (master branch)
-
-#### Versions
-
-As of January 2018:
-* Bootstrap 4.0 (beta3)
-* Rails 4.2.10
-* Devise 4.2.1
-* Rspec 3.7
-* Capistrano 3.2
-
 NOTE: The original Bootstap 3 version is available in the 'bootstrap3' branch. (not maintained)
 
 ### Related Blog Posts
